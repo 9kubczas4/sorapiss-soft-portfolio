@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NgUtilsComponent should match snapshot 1`] = `
+<lib-common-ui
+  __ngContext__={[Function LRootView]}
+>
+  <p>
+     common-ui works! 
+  </p>
+</lib-common-ui>
+`;
+
+exports[`NgUtilsComponent should match snapshot when diagram is loading 1`] = `
+<lib-ng-utils
+  __ngContext__={[Function LRootView]}
+>
+  <p>
+    ng-utils component works!
+  </p>
+</lib-ng-utils>
+`;
