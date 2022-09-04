@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+mat-drawer-container {
+  height: 100%;
+
+  mat-drawer {
+    width: max(25%, 18rem);
+
+    a {
+      display: flex;
+      padding: 0.25rem 0.5rem;
+      align-items: center;
+      text-decoration: none;
+      gap: 0.25rem;
+      line-height: 1.6rem;
+
+      mat-icon {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .sandbox-layout-content {
+    padding: 2rem;
+  }
+}

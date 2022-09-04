@@ -1,1 +1,17 @@
-<lib-ng-utils></lib-ng-utils>
+<header>
+  <mat-toolbar color="primary">
+    <span>Portfolio</span>
+    <span class="sandbox-header-spacer"></span>
+    <a mat-icon-button class="sandbox-header-button" aria-label="Utils" routerLink="/">
+      <mat-icon>settings</mat-icon>
+      <span>Utils</span>
+    </a>
+    <a mat-icon-button class="sandbox-header-button" aria-label="UI components" routerLink="/components">
+      <mat-icon>view_column</mat-icon>
+      <span>UI components</span>
+    </a>
+  </mat-toolbar>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
