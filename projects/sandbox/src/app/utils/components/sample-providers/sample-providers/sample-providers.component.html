@@ -1,1 +1,31 @@
-<p>sample-providers works!</p>
+<lib-readme class="sample-provider__readme" [readmeImport]="readmeImport"></lib-readme>
+
+<section class="sample-provider__examples">
+  <h2>Examples</h2>
+
+  <article>
+    <h4>Window Provider</h4>
+    <button mat-raised-button (click)="displayWindowHistoryState()">Display Window History State</button>
+    <p>{{ windowHistoryState | json }}</p>
+  </article>
+
+  <article>
+    <h4>Location Provider</h4>
+    <button mat-raised-button (click)="reload()">Reload</button>
+  </article>
+
+  <article>
+    <h4>Local Storage Provider</h4>
+    <div>
+      <p>Current local storage value: {{ localStorageSavedValue }}</p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Local storage value</mat-label>
+        <input #localStorageValue matInput placeholder="Write new local storage value" />
+      </mat-form-field>
+      <div class="sample-provider__buttons">
+        <button mat-raised-button (click)="loadLocalStorage()">Read</button>
+        <button mat-raised-button (click)="writeToLocalStorage()">Write</button>
+      </div>
+    </div>
+  </article>
+</section>

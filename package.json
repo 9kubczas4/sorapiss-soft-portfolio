@@ -49,17 +49,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "~4.6.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,md,scss,yml,html}": "prettier --check",
-    "*.ts": [
-      "tslint",
-      "prettier --check"
-    ]
   }
 }
