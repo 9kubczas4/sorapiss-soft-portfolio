@@ -1,4 +1,4 @@
-/* tslint:disable:ordered-imports */
+/* eslint-disable import/order */
 import 'jest-preset-angular'; // Important: keep it at first line
 
 /* global mocks for jsdom */
@@ -19,10 +19,8 @@ Object.defineProperty(window, 'getComputedStyle', {
 });
 
 Object.defineProperty(document.body.style, 'transform', {
-  value: () => {
-    return {
-      enumerable: true,
-      configurable: true,
-    };
-  },
+  value: () => ({
+    enumerable: true,
+    configurable: true,
+  }),
 });

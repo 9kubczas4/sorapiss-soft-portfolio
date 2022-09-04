@@ -29,6 +29,12 @@
           "options": {
             "tsConfig": "tsconfig.spec.json"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/ng-utils/**/*.ts", "projects/ng-utils/**/*.html"]
+          }
         }
       }
     },
@@ -163,6 +169,12 @@
           "builder": "@angular-builders/jest:run",
           "options": {
             "tsConfig": "tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/common-ui/**/*.ts", "projects/common-ui/**/*.html"]
           }
         }
       }
