@@ -1,0 +1,14 @@
+.sample-page {
+  &__readme {
+    margin-bottom: 4rem;
+    display: block;
+  }
+
+  &__examples {
+    article {
+      &:not(:last-of-type) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
