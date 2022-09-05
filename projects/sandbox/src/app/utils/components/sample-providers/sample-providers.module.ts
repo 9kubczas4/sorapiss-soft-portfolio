@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleProvidersComponent } from './sample-providers/sample-providers.component';
+import { SampleProvidersComponent } from './sample-providers.component';
 import { materialModules } from '../material';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ReadmeModule, SamplePageModule } from '@common-ui';
+import { SamplePageModule } from '@common-ui';
 
 @NgModule({
   declarations: [SampleProvidersComponent],
-  imports: [CommonModule, ReactiveFormsModule, ReadmeModule, SamplePageModule, ...materialModules],
+  imports: [CommonModule, ReactiveFormsModule, SamplePageModule, ...materialModules],
 })
 export class SampleProvidersModule {}

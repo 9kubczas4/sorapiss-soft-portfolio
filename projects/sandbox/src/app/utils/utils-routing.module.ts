@@ -1,5 +1,6 @@
+import { FeatureToggleComponent } from './components/feature-toggle/feature-toggle.component';
 import { UtilsComponent } from './utils.component';
-import { SampleProvidersComponent } from './components/sample-providers/sample-providers/sample-providers.component';
+import { SampleProvidersComponent } from './components/sample-providers/sample-providers.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'providers',
         component: SampleProvidersComponent,
+      },
+      {
+        path: 'feature-toggle',
+        component: FeatureToggleComponent,
       },
     ],
   },

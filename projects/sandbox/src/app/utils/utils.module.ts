@@ -1,3 +1,4 @@
+import { FeatureToggleModule } from './components/feature-toggle/feature-toggle.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,6 +9,6 @@ import { SampleProvidersModule } from './components/sample-providers/sample-prov
 
 @NgModule({
   declarations: [UtilsComponent],
-  imports: [CommonModule, SampleProvidersModule, SharedModule, UtilsRoutingModule],
+  imports: [CommonModule, FeatureToggleModule, SampleProvidersModule, SharedModule, UtilsRoutingModule],
 })
 export class UtilsModule {}
