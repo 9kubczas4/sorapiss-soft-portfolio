@@ -2,4 +2,4 @@
  * Public API Surface of common-ui
  */
 
-export * from './lib/components/readme';
+export * from './lib/components';
