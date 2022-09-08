@@ -6,7 +6,7 @@ import { FeatureToggleService } from '../services/feature-toggle.service';
 })
 export class FeatureToggleDirective<T extends string> implements OnInit {
   @Input('libFeatureToggle') public featureToggleKey?: T;
-  @Input() public disabledFeatureTemplate?: TemplateRef<unknown>;
+  @Input() public libFeatureToggleElse?: TemplateRef<unknown>;
 
   constructor(
     private readonly featureToggleService: FeatureToggleService<T>,
@@ -17,8 +17,8 @@ export class FeatureToggleDirective<T extends string> implements OnInit {
   ngOnInit(): void {
     if (this.featureToggleKey && this.featureToggleService.isFlagEnabled(this.featureToggleKey)) {
       this.viewContainer.createEmbeddedView(this.templateRef);
-    } else if (this.disabledFeatureTemplate) {
-      this.viewContainer.createEmbeddedView(this.disabledFeatureTemplate);
+    } else if (this.libFeatureToggleElse) {
+      this.viewContainer.createEmbeddedView(this.libFeatureToggleElse);
     } else {
       this.viewContainer.clear();
     }

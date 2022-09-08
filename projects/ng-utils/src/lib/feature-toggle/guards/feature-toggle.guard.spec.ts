@@ -31,25 +31,25 @@ describe('FeatureToggleGuard', () => {
     jest.clearAllMocks();
   });
 
-  it('should allow to access page when feature is enabled', () => {
+  it('should activate route when feature is enabled', () => {
     const route = { data: { featureFlag: 'enabledFeature', featureFlagRedirect } } as unknown as ActivatedRouteSnapshot;
 
     expect(service.canActivate(route)).toBe(true);
   });
 
-  it('should allow to access module when feature is enabled', () => {
+  it('should load module when feature is enabled', () => {
     const route = { data: { featureFlag: 'enabledFeature', featureFlagRedirect } } as unknown as Route;
 
     expect(service.canLoad(route)).toBeTruthy();
   });
 
-  it('should allow to access children when feature is enabled', () => {
+  it('should activate children when feature is enabled', () => {
     const route = { data: { featureFlag: 'enabledFeature', featureFlagRedirect } } as unknown as ActivatedRouteSnapshot;
 
     expect(service.canActivateChild(route)).toBeTruthy();
   });
 
-  it('should redirect user if feature is disabled', () => {
+  it('should redirect when feature is disabled', () => {
     mockIsEnabledAsFalse(service);
 
     const route = {
@@ -60,7 +60,7 @@ describe('FeatureToggleGuard', () => {
     expect(canActivate.root.children['primary'].segments[0].path).toStrictEqual(featureFlagRedirect);
   });
 
-  it('should does not allow to access module when feature is disabled', () => {
+  it('should does not load module when feature is disabled', () => {
     mockIsEnabledAsFalse(service);
 
     const route = { data: { featureFlag: 'disabledFeature' } } as unknown as Route;
@@ -68,7 +68,7 @@ describe('FeatureToggleGuard', () => {
     expect(service.canLoad(route)).toBeFalsy();
   });
 
-  it('should does not allow to access children when feature is disabled', () => {
+  it('should does not activate children when feature is disabled', () => {
     mockIsEnabledAsFalse(service);
 
     const route = { data: { featureFlag: 'disabledFeature' } } as unknown as ActivatedRouteSnapshot;
