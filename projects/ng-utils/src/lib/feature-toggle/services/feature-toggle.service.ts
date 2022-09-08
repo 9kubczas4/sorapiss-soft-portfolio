@@ -10,7 +10,7 @@ export class FeatureToggleService<T extends string> {
   /* TODO: It's only sample implementation, that's why I've used fake data
    */
   async loadFeatureFlags(): Promise<void> {
-    const response = await fetch('./fake-api.json');
+    const response = await fetch('/assets/fake-feature-toggles.json');
     const data: FeatureFlagApiResponse<T> = await response.json();
     this.#features = data.features;
   }
