@@ -2,6 +2,8 @@ import { FeatureToggleService } from '@ng-utils';
 import { Component, OnInit } from '@angular/core';
 import { FeatureToggleKey } from './enums/feature-toggle-keys';
 import { BehaviorSubject } from 'rxjs';
+import { MatTabChangeEvent } from '@angular/material/tabs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sample-feature-toggle',
@@ -25,10 +27,17 @@ export class SampleFeatureToggleComponent implements OnInit {
   loaded = this.#loaded.asObservable();
   readmeImport = import('./readme.md');
 
-  constructor(private readonly featureToggleService: FeatureToggleService<FeatureToggleKey>) {}
+  constructor(
+    private readonly featureToggleService: FeatureToggleService<FeatureToggleKey>,
+    private readonly router: Router,
+  ) {}
 
   async ngOnInit(): Promise<void> {
     await this.featureToggleService.loadFeatureFlags();
     this.#loaded.next(true);
+  }
+
+  selectedTabChange($event: MatTabChangeEvent): void {
+    this.router.navigateByUrl(`/utils/feature-toggle/feature${$event.index + 1}`);
   }
 }

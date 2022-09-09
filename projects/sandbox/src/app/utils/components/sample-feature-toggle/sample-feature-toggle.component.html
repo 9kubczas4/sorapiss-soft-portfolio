@@ -6,6 +6,19 @@
         {{ feature.key }}
       </mat-slide-toggle>
     </article>
+    <article class="feature-toggle__guards">
+      <h3>Feature toggle guards</h3>
+      <div class="feature-toggle__guards-row">
+        <a
+          *ngFor="let feature of features; let i = index"
+          mat-raised-button
+          color="primary"
+          [routerLink]="'feature' + (i + 1)"
+          >{{ feature.key }}</a
+        >
+      </div>
+      <router-outlet></router-outlet>
+    </article>
     <article class="feature-toggle__directive">
       <h3>Feature toggle directive</h3>
       <div class="feature-toggle__directive-components">
