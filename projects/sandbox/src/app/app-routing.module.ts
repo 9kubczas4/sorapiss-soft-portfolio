@@ -11,6 +11,14 @@ const routes: Routes = [
         redirectTo: 'utils',
       },
       {
+        path: 'ui',
+        loadChildren: () => import('./ui/ui.module').then(m => m.UiModule),
+      },
+      {
+        path: 'use-cases',
+        loadChildren: () => import('./use-cases/use-cases.module').then(m => m.UseCasesModule),
+      },
+      {
         path: 'utils',
         loadChildren: () => import('./utils/utils.module').then(m => m.UtilsModule),
       },
