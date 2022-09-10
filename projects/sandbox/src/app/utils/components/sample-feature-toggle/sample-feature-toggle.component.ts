@@ -1,4 +1,3 @@
-import { FeatureToggleService } from '@ng-utils';
 import { Component, OnInit } from '@angular/core';
 import { FeatureToggleKey } from './enums/feature-toggle-keys';
 import { BehaviorSubject } from 'rxjs';
@@ -27,13 +26,9 @@ export class SampleFeatureToggleComponent implements OnInit {
   loaded = this.#loaded.asObservable();
   readmeImport = import('./readme.md');
 
-  constructor(
-    private readonly featureToggleService: FeatureToggleService<FeatureToggleKey>,
-    private readonly router: Router,
-  ) {}
+  constructor(private readonly router: Router) {}
 
   async ngOnInit(): Promise<void> {
-    await this.featureToggleService.loadFeatureFlags();
     this.#loaded.next(true);
   }
 
