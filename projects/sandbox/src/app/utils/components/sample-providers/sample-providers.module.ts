@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleProvidersComponent } from './sample-providers/sample-providers.component';
-import { materialModules } from '../material';
+import { SampleProvidersComponent } from './sample-providers.component';
+import { materialModules } from './material';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ReadmeModule, SamplePageModule } from '@common-ui';
+import { SamplePageModule } from '@common-ui';
+import { SampleProvidersRoutingModule } from './sample-providers-routing.module';
 
 @NgModule({
   declarations: [SampleProvidersComponent],
-  imports: [CommonModule, ReactiveFormsModule, ReadmeModule, SamplePageModule, ...materialModules],
+  imports: [CommonModule, ReactiveFormsModule, SamplePageModule, ...materialModules, SampleProvidersRoutingModule],
 })
 export class SampleProvidersModule {}

@@ -7,5 +7,8 @@ import { Page } from '../shared/interfaces/page';
   styleUrls: ['./utils.component.scss'],
 })
 export class UtilsComponent {
-  pages?: Page[] = [{ label: 'Providers', url: 'providers', icon: '360' }];
+  pages?: Page[] = [
+    { label: 'Providers', url: 'providers', icon: '360' },
+    { label: 'Feature Toggle', url: 'feature-toggle', icon: 'check_box' },
+  ];
 }

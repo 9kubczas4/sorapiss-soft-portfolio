@@ -1,0 +1,49 @@
+<lib-sample-page [readmeImport]="readmeImport">
+  <ng-container *ngIf="loaded | async">
+    <article class="feature-toggle__settings">
+      <h3>Feature toggle settings</h3>
+      <mat-slide-toggle *ngFor="let feature of features" color="primary" disabled [checked]="!feature.disabled">
+        {{ feature.key }}
+      </mat-slide-toggle>
+    </article>
+    <article class="feature-toggle__guards">
+      <h3>Feature toggle guards</h3>
+      <div class="feature-toggle__guards-row">
+        <a
+          *ngFor="let feature of features; let i = index"
+          mat-raised-button
+          color="primary"
+          [routerLink]="'feature' + (i + 1)"
+          >{{ feature.key }}</a
+        >
+      </div>
+      <router-outlet></router-outlet>
+    </article>
+    <article class="feature-toggle__directive">
+      <h3>Feature toggle directive</h3>
+      <div class="feature-toggle__directive-components">
+        <div *ngFor="let feature of features">
+          {{ feature.key }}
+          <span *libFeatureToggle="feature.key">Content</span>
+        </div>
+      </div>
+      <span>*Box with title `Feature 2` doesn\'t have `Content` box, cause Feature 2 is disabled.</span>
+    </article>
+    <article class="feature-toggle__directive">
+      <h3>Feature toggle directive - alternative content</h3>
+      <div class="feature-toggle__directive-components">
+        <div *ngFor="let feature of features">
+          {{ feature.key }}
+          <span *libFeatureToggle="feature.key; else alternativeContent">Content</span>
+          <ng-template #alternativeContent>
+            <span>Alternative content</span>
+          </ng-template>
+        </div>
+      </div>
+      <span
+        >*Box with title `Feature 2` does have `Alternative content` box, cause Feature 2 is disabled and `else`
+        template was provided.</span
+      >
+    </article>
+  </ng-container>
+</lib-sample-page>

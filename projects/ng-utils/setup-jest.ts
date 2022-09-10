@@ -1,5 +1,6 @@
 /* eslint-disable import/order */
 import 'jest-preset-angular'; // Important: keep it at first line
+import fetchMock from 'jest-fetch-mock';
 
 /* global mocks for jsdom */
 const mock = () => {
@@ -24,3 +25,5 @@ Object.defineProperty(document.body.style, 'transform', {
     configurable: true,
   }),
 });
+
+fetchMock.enableMocks();
