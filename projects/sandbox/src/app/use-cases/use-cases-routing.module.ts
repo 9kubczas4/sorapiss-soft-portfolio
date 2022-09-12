@@ -10,7 +10,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'abstract-multi-step-form',
+        redirectTo: 'abstract-multi-step-form/contact',
       },
       {
         path: 'abstract-multi-step-form',
@@ -21,7 +21,7 @@ const routes: Routes = [
       },
     ],
     data: {
-      pages: [{ label: 'Abstract Multi Step Form', url: 'abstract-multi-step-form', icon: 'library_books' }],
+      pages: [{ label: 'Abstract Multi Step Form', url: 'abstract-multi-step-form/contact', icon: 'library_books' }],
     },
   },
 ];
