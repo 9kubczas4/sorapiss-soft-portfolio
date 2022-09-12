@@ -1,11 +1,11 @@
-import { UtilsComponent } from './utils.component';
+import { LayoutComponent } from './../shared/components/layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: UtilsComponent,
+    component: LayoutComponent,
     children: [
       {
         path: '',
@@ -25,6 +25,12 @@ const routes: Routes = [
           ),
       },
     ],
+    data: {
+      pages: [
+        { label: 'Providers', url: 'providers', icon: '360' },
+        { label: 'Feature Toggle', url: 'feature-toggle', icon: 'check_box' },
+      ],
+    },
   },
 ];
 

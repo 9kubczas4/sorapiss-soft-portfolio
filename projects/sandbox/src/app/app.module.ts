@@ -6,10 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { materialModules } from './material';
 import { FeatureToggleModule, FeatureToggleService } from '@ng-utils';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, ...materialModules, FeatureToggleModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+    AppRoutingModule,
+
+    ...materialModules,
+    FeatureToggleModule,
+  ],
   providers: [
     {
       provide: APP_INITIALIZER,

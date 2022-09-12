@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 import { Page } from '../../interfaces/page';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-layout',
@@ -7,5 +9,7 @@ import { Page } from '../../interfaces/page';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
-  @Input() pages?: Page[];
+  pages$: Observable<Page[]> = this.activatedRoute.data.pipe(map(data => data['pages']));
+
+  constructor(private readonly activatedRoute: ActivatedRoute) {}
 }
