@@ -1,0 +1,25 @@
+<lib-sample-page [readmeImport]="readmeImport">
+  <form class="component-form" [formGroup]="form" (ngSubmit)="addDynamicComponent()">
+    <label for="component-type">Component Type: </label>
+    <select id="component-type" formControlName="componentType" required="required">
+      <option [value]="componentTypes.square">Square</option>
+      <option [value]="componentTypes.triangle">Triangle</option>
+      <option [value]="componentTypes.circle">Circle</option>
+    </select>
+    <label for="component-color">Component Color: </label>
+    <select id="component-color" formControlName="componentColor" required="required">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="yellow">Yellow</option>
+      <option value="black">Black</option>
+    </select>
+    <button type="submit" [disabled]="!form.valid">Add Component</button>
+  </form>
+
+  <div *ngFor="let component of dynamicComponents; let i = index" class="dynamic-component-container">
+    {{ i + 1 }}.
+    <!-- The magic happens here: -->
+    <ng-template [appComponentFactory] [color]="component.color" [type]="component.type"></ng-template>
+  </div>
+</lib-sample-page>

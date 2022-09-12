@@ -12,6 +12,7 @@
     "lint:fix": "ng lint --fix",
     "format": "prettier --check \"*.{json,md}\" \"projects/**/*.{js,json,md,scss,ts,yml,html}\"",
     "format:fix": "prettier --write \"*.{json,md}\" \"projects/**/*.{js,json,md,scss,ts,yml,html}\"",
+    "test:sandbox": "jest --config ./projects/sandbox/jest.config.js",
     "test:ui": "jest --config ./projects/common-ui/jest.config.js",
     "test:utils": "jest --config ./projects/ng-utils/jest.config.js"
   },
