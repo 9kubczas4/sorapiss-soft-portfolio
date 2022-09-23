@@ -19,9 +19,19 @@ const routes: Routes = [
             m => m.AbstractMultiStepFormModule,
           ),
       },
+      {
+        path: 'component-factory-directive',
+        loadChildren: () =>
+          import('./components/component-factory-directive/component-factory-directive.module').then(
+            m => m.ComponentFactoryDirectiveModule,
+          ),
+      },
     ],
     data: {
-      pages: [{ label: 'Abstract Multi Step Form', url: 'abstract-multi-step-form/contact', icon: 'library_books' }],
+      pages: [
+        { label: 'Abstract Multi Step Form', url: 'abstract-multi-step-form/contact', icon: 'library_books' },
+        { label: 'Component Factory Directive', url: 'component-factory-directive', icon: 'settings_applications' },
+      ],
     },
   },
 ];

@@ -4,6 +4,8 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "outDir": "../../out-tsc/spec",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "types": ["jest", "node"]
   },
   "files": [],
