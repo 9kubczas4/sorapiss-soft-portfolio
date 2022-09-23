@@ -8,6 +8,7 @@ import { TriangleComponent } from './components/triangle/triangle.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentFactoryDirectiveRoutingModule } from './component-factory-directive-routing.module';
 import { SamplePageModule } from '@common-ui';
+import { materialModules } from './material';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,13 @@ import { SamplePageModule } from '@common-ui';
     SquareComponent,
     TriangleComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, ComponentFactoryDirectiveRoutingModule, SamplePageModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ComponentFactoryDirectiveRoutingModule,
+    SamplePageModule,
+    ...materialModules,
+  ],
 })
 export class ComponentFactoryDirectiveModule {}
