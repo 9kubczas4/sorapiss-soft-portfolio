@@ -29,12 +29,20 @@ const routes: Routes = [
         loadChildren: () =>
           import('./components/sample-type-guards/sample-type-guards.module').then(m => m.SampleTypeGuardsModule),
       },
+      {
+        path: 'rxjs',
+        loadChildren: () =>
+          import('./components/sample-rxjs-operators/sample-rxjs-operators.module').then(
+            m => m.SampleRxjsOperatorsModule,
+          ),
+      },
     ],
     data: {
       pages: [
         { label: 'Providers', url: 'providers', icon: '360' },
         { label: 'Feature Toggle', url: 'feature-toggle', icon: 'check_box' },
         { label: 'Type Guards', url: 'type-guards', icon: 'block' },
+        { label: 'RxJs', url: 'rxjs', icon: 'cached' },
       ],
     },
   },
