@@ -24,11 +24,17 @@ const routes: Routes = [
             m => m.SampleFeatureToggleModule,
           ),
       },
+      {
+        path: 'type-guards',
+        loadChildren: () =>
+          import('./components/sample-type-guards/sample-type-guards.module').then(m => m.SampleTypeGuardsModule),
+      },
     ],
     data: {
       pages: [
         { label: 'Providers', url: 'providers', icon: '360' },
         { label: 'Feature Toggle', url: 'feature-toggle', icon: 'check_box' },
+        { label: 'Type Guards', url: 'type-guards', icon: 'block' },
       ],
     },
   },

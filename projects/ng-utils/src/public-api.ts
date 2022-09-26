@@ -4,3 +4,5 @@
 export * from './lib/feature-toggle';
 export * from './lib/forms-utils';
 export * from './lib/providers';
+export * from './lib/type-guards';
+export * from './lib/types';
