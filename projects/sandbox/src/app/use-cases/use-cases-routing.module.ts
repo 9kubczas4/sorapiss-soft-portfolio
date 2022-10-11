@@ -20,6 +20,11 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'advanced-directives',
+        loadChildren: () =>
+          import('./components/advanced-directives/advanced-directives.module').then(m => m.AdvancedDirectivesModule),
+      },
+      {
         path: 'component-factory-directive',
         loadChildren: () =>
           import('./components/component-factory-directive/component-factory-directive.module').then(
@@ -30,6 +35,7 @@ const routes: Routes = [
     data: {
       pages: [
         { label: 'Abstract Multi Step Form', url: 'abstract-multi-step-form/contact', icon: 'library_books' },
+        { label: 'Advanced Directives', url: 'advanced-directives', icon: 'switch_access_shortcut_add' },
         { label: 'Component Factory Directive', url: 'component-factory-directive', icon: 'settings_applications' },
       ],
     },
