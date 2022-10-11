@@ -10,11 +10,18 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'providers',
+        redirectTo: 'disabled-interactive-elements',
+      },
+      {
+        path: 'disabled-interactive-elements',
+        loadChildren: () =>
+          import(
+            `./components/sample-disable-interactive-elements-directive/sample-disable-interactive-elements-directive.module`
+          ).then(m => m.SampleDisableInteractiveElementsDirectiveModule),
       },
     ],
     data: {
-      pages: [],
+      pages: [{ label: 'Disable Interactive Elements', url: 'disabled-interactive-elements', icon: 'block' }],
     },
   },
 ];

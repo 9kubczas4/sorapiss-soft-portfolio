@@ -1,0 +1,11 @@
+<lib-sample-page [readmeImport]="readmeImport">
+  <mat-slide-toggle color="primary" [checked]="disabled" (toggleChange)="toggleChange()"> Disabled </mat-slide-toggle>
+  <form libDisableInteractiveElements [disabledFlag]="disabled">
+    <input type="text" name="input" id="input" />
+    <select name="select" id="select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <button type="button">Button</button>
+  </form>
+</lib-sample-page>
