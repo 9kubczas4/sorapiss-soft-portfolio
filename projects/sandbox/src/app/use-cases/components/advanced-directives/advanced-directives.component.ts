@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdvancedDirectivesComponent implements OnInit {
   readmeImport = import('./readme.md');
+  displayedColumns = ['firstName', 'lastName', 'role'];
 
   constructor() {}
 

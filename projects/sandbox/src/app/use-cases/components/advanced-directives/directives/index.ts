@@ -1,1 +1,3 @@
-export const directives = [];
+import { UsersDirective } from './users.directive';
+
+export const directives = [UsersDirective];
