@@ -10,7 +10,12 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'disabled-interactive-elements',
+        redirectTo: 'context-menu',
+      },
+      {
+        path: 'context-menu',
+        loadChildren: () =>
+          import(`./components/sample-context-menu/sample-context-menu.module`).then(m => m.SampleContextMenuModule),
       },
       {
         path: 'disabled-interactive-elements',
@@ -21,7 +26,10 @@ const routes: Routes = [
       },
     ],
     data: {
-      pages: [{ label: 'Disable Interactive Elements', url: 'disabled-interactive-elements', icon: 'block' }],
+      pages: [
+        { label: 'Context Menu', url: 'context-menu', icon: 'menu' },
+        { label: 'Disable Interactive Elements', url: 'disabled-interactive-elements', icon: 'block' },
+      ],
     },
   },
 ];
