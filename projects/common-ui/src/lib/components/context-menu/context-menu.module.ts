@@ -7,5 +7,6 @@ import { ContextMenuTriggerDirective } from './context-menu-trigger/context-menu
 @NgModule({
   declarations: [ContextMenuComponent, ContextMenuItemComponent, ContextMenuTriggerDirective],
   imports: [CommonModule],
+  exports: [ContextMenuComponent, ContextMenuItemComponent, ContextMenuTriggerDirective],
 })
 export class ContextMenuModule {}
