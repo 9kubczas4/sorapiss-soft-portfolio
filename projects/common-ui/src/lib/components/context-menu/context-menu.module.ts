@@ -1,3 +1,4 @@
+import { OverlayModule } from './../overlay/overlay.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContextMenuComponent } from './context-menu.component';
@@ -12,7 +13,7 @@ import { ContextMenuContentDirective } from './context-menu-content/context-menu
     ContextMenuItemComponent,
     ContextMenuTriggerDirective,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, OverlayModule],
   exports: [ContextMenuComponent, ContextMenuContentDirective, ContextMenuItemComponent, ContextMenuTriggerDirective],
 })
 export class ContextMenuModule {}

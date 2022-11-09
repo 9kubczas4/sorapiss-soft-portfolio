@@ -1,5 +1,17 @@
+import { OverlayService } from './../../overlay/overlay.service';
 import { ContextMenuComponent } from './../context-menu.component';
-import { Directive, ElementRef, EventEmitter, Input, Output, ViewContainerRef } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Directive,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output,
+  ViewContainerRef,
+  OnInit,
+} from '@angular/core';
+import { skip, Subscription, filter } from 'rxjs';
 
 @Directive({
   selector: '[libContextMenuTriggerFor]',
@@ -8,7 +20,7 @@ import { Directive, ElementRef, EventEmitter, Input, Output, ViewContainerRef } 
     '(click)': 'handleClick($event)',
   },
 })
-export class ContextMenuTriggerDirective {
+export class ContextMenuTriggerDirective implements OnDestroy, OnInit {
   @Input('libContextMenuTriggerFor') menu: ContextMenuComponent | null = null;
   @Input() libContextMenuTriggerData: any;
 
@@ -16,14 +28,36 @@ export class ContextMenuTriggerDirective {
   @Output() readonly menuClosed: EventEmitter<void> = new EventEmitter<void>();
 
   private menuOpen = false;
+  private closingActionsSubscription = Subscription.EMPTY;
 
-  constructor(private readonly element: ElementRef<HTMLElement>, private readonly viewContainerRef: ViewContainerRef) {}
+  constructor(
+    private readonly element: ElementRef<HTMLElement>,
+    private readonly viewContainerRef: ViewContainerRef,
+    private readonly overlayService: OverlayService,
+    private readonly changeDetectorRef: ChangeDetectorRef,
+  ) {}
+
+  ngOnInit(): void {
+    this.closingActionsSubscription = this.overlayService.isDisplayed
+      .pipe(
+        skip(1),
+        filter(isDisplayed => !isDisplayed),
+      )
+      .subscribe(() => {
+        this.closeMenu();
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.closingActionsSubscription.unsubscribe();
+  }
 
   handleClick(event: MouseEvent): void {
     return this.menuOpen ? this.closeMenu() : this.openMenu();
   }
 
   closeMenu(): void {
+    this.menu?.resetAnimation();
     this.#setIsMenuOpen(false);
     this.menu?.lazyContent?.detach();
     this.viewContainerRef.clear();
@@ -44,7 +78,12 @@ export class ContextMenuTriggerDirective {
       this.menu.startAnimation();
 
       if (this.menu.templateRef) {
-        this.viewContainerRef.createEmbeddedView(this.menu.templateRef);
+        this.overlayService.displayOverlay(
+          this.viewContainerRef,
+          this.element,
+          this.menu.templateRef,
+          this.changeDetectorRef,
+        );
       }
     }
   }
