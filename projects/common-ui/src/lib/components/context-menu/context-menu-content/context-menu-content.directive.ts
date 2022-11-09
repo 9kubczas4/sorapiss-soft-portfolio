@@ -12,4 +12,8 @@ export class ContextMenuContentDirective {
   attach(context: any): void {
     this.viewContainerRef.createEmbeddedView(this.template, context);
   }
+
+  detach(): void {
+    this.viewContainerRef.clear();
+  }
 }

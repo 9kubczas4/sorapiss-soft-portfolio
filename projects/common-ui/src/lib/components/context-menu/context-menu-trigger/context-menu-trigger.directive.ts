@@ -25,27 +25,26 @@ export class ContextMenuTriggerDirective {
 
   closeMenu(): void {
     this.#setIsMenuOpen(false);
+    this.menu?.lazyContent?.detach();
     this.viewContainerRef.clear();
   }
 
   openMenu(): void {
-    const menu = this.menu;
-
-    if (this.menuOpen || !menu) {
+    if (this.menuOpen || !this.menu) {
       return;
     }
 
-    if (menu.lazyContent) {
-      menu.lazyContent.attach(this.libContextMenuTriggerData);
+    if (this.menu.lazyContent) {
+      this.menu.lazyContent.attach(this.libContextMenuTriggerData);
     }
 
-    this.#initMenu(menu);
+    this.#initMenu(this.menu);
 
-    if (menu instanceof ContextMenuComponent) {
-      menu.startAnimation();
+    if (this.menu instanceof ContextMenuComponent) {
+      this.menu.startAnimation();
 
-      if (menu.templateRef) {
-        this.viewContainerRef.createEmbeddedView(menu.templateRef);
+      if (this.menu.templateRef) {
+        this.viewContainerRef.createEmbeddedView(this.menu.templateRef);
       }
     }
   }
