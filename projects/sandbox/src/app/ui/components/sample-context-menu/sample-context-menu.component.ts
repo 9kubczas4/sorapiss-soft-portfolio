@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SampleContextMenuComponent implements OnInit {
   readmeImport = import('./readme.md');
+  sampleData = { id: 1 };
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  displayAlert(sampleDataId: number, text: string): void {
+    alert(`Called ${text} with ${sampleDataId}`);
+  }
 }

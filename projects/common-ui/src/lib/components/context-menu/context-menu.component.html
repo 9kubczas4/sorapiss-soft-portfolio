@@ -1,1 +1,7 @@
-<p>context-menu works!</p>
+<ng-template>
+  <div [id]="menuId" class="context-menu" (click)="closed.emit()" tabindex="-1" role="menu">
+    <div class="context-menu-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</ng-template>
