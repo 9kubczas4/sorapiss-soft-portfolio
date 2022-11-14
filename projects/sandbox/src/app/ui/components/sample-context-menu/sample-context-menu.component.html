@@ -1,0 +1,11 @@
+<lib-sample-page [readmeImport]="readmeImport">
+  <button [libContextMenuTriggerFor]="menu" [libContextMenuTriggerData]="sampleData">Test</button>
+  <lib-context-menu #menu="libMenu">
+    <ng-template libContextMenuContent let-id="id">
+      <lib-context-menu-item (click)="displayAlert(id, '1')">Item 1</lib-context-menu-item>
+      <lib-context-menu-item (click)="displayAlert(id, '2')">Item 2</lib-context-menu-item>
+      <lib-context-menu-item (click)="displayAlert(id, '3')">Item 3</lib-context-menu-item>
+      <lib-context-menu-item (click)="displayAlert(id, '4')">Item 4</lib-context-menu-item>
+    </ng-template>
+  </lib-context-menu>
+</lib-sample-page>

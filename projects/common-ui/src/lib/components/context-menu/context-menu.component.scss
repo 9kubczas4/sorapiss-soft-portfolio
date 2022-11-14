@@ -1,0 +1,15 @@
+.context-menu-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 8rem;
+  max-width: 18rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 3rem);
+  border-radius: 0.25rem;
+  min-height: 4rem;
+  position: relative;
+  background: white;
+  box-shadow: 0 2px 4px -1px #0003, 0 4px 5px #00000024, 0 1px 10px #0000001f;
+  padding: 0.25rem 0;
+}

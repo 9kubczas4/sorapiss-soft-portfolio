@@ -8,6 +8,7 @@ mat-drawer-container {
 
   mat-drawer {
     width: max(25%, 18rem);
+    z-index: 1;
 
     a {
       display: flex;
