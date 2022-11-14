@@ -1,5 +1,7 @@
-<div class="overlay" (click)="hide()">
+<div class="overlay" (click)="hide.emit()">
   <ng-container *ngIf="content">
-    <ng-template *ngTemplateOutlet="content"></ng-template>
+    <div class="overlay__container" [ngStyle]="{ 'top.px': position?.top, 'left.px': position?.left }">
+      <ng-template *ngTemplateOutlet="content"></ng-template>
+    </div>
   </ng-container>
 </div>

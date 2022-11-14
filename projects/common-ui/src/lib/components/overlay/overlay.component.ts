@@ -1,5 +1,5 @@
-import { OverlayService } from './overlay.service';
-import { Component, TemplateRef, Input, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
+import { Position } from './../../interfaces/position';
+import { Component, TemplateRef, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'lib-overlay',
@@ -9,10 +9,6 @@ import { Component, TemplateRef, Input, ChangeDetectionStrategy, EventEmitter } 
 })
 export class OverlayComponent {
   @Input() content?: TemplateRef<any>;
-
-  constructor(private readonly overlayService: OverlayService) {}
-
-  hide(): void {
-    this.overlayService.closeOverlay();
-  }
+  @Input() position?: Position;
+  @Output() hide = new EventEmitter<void>();
 }
