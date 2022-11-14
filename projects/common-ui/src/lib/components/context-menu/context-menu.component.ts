@@ -1,5 +1,4 @@
 import {
-  AfterContentInit,
   ChangeDetectionStrategy,
   Component,
   ContentChild,
@@ -21,7 +20,7 @@ import { menuAnimations } from './context-menu.animations';
   animations: [menuAnimations.transformMenu, menuAnimations.fadeInItems],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContextMenuComponent implements AfterContentInit {
+export class ContextMenuComponent {
   @ContentChildren(ContextMenuItemComponent, { descendants: false })
   items: QueryList<ContextMenuItemComponent> | null = null;
 
@@ -33,10 +32,6 @@ export class ContextMenuComponent implements AfterContentInit {
   isAnimating = false;
 
   readonly animationDone = new Subject<AnimationEvent>();
-
-  constructor() {}
-
-  ngAfterContentInit(): void {}
 
   startAnimation() {
     this.panelAnimationState = 'enter';
