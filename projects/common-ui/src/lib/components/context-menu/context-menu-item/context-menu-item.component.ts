@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'lib-context-menu-item',
@@ -7,8 +7,4 @@ import { ChangeDetectionStrategy, Component, ElementRef, OnInit } from '@angular
   styleUrls: ['./context-menu-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContextMenuItemComponent implements OnInit {
-  constructor(private readonly elementRef: ElementRef<HTMLElement>) {}
-
-  ngOnInit(): void {}
-}
+export class ContextMenuItemComponent {}

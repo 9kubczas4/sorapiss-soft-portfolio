@@ -92,10 +92,13 @@ export class ContextMenuTriggerDirective implements OnDestroy, OnInit {
     this.#setIsMenuOpen(true);
   }
 
-  // probably I don't need it
   #setIsMenuOpen(isOpen: boolean): void {
     this.menuOpen = isOpen;
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    this.menuOpen ? this.menuOpened.emit() : this.menuClosed.emit();
+
+    if (this.menuOpen) {
+      this.menuOpened.emit();
+    } else {
+      this.menuClosed.emit();
+    }
   }
 }

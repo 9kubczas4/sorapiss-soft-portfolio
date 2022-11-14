@@ -4,9 +4,6 @@ import {
   Component,
   ContentChild,
   ContentChildren,
-  EventEmitter,
-  Input,
-  Output,
   QueryList,
   TemplateRef,
   ViewChild,
@@ -29,10 +26,6 @@ export class ContextMenuComponent implements AfterContentInit {
   items: QueryList<ContextMenuItemComponent> | null = null;
 
   @ViewChild(TemplateRef) templateRef: TemplateRef<any> | null = null;
-
-  @Input() menuId = 'contextMenu';
-
-  @Output() readonly closed: EventEmitter<void> = new EventEmitter<void>();
 
   @ContentChild(MENU_CONTENT) lazyContent?: ContextMenuContentDirective;
 
