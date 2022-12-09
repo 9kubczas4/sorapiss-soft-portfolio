@@ -17,14 +17,14 @@ export class AbstractMultiStepFormComponent extends FormProvider implements OnIn
   }
 
   ngOnInit(): void {
-    this.#initForm();
+    this.initForm();
   }
 
   getForm(): FormGroup | null {
     return this.registrationForm ?? null;
   }
 
-  #initForm(): void {
+  private initForm(): void {
     this.registrationForm = this.formBuilder.group({
       contact: this.formBuilder.group({
         firstName: this.formBuilder.control('', [
