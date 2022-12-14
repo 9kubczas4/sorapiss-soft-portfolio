@@ -1,0 +1,3 @@
+<button *ngFor="let action of actions$ | async" (click)="onClick(action)">
+  {{ action.label }}
+</button>
