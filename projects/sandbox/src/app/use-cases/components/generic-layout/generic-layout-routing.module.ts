@@ -45,8 +45,18 @@ const routes: Routes = [
               action: FeatureActions.Edit,
             },
           ],
+          columns: [
+            {
+              label: 'ID',
+              property: 'id',
+            },
+            {
+              label: 'First',
+              property: 'first',
+            },
+          ],
         },
-        providers: [{ provide: FEATURE_SERVICE, useExisting: FirstService }, SelectionService],
+        providers: [{ provide: FEATURE_SERVICE, useClass: FirstService }, SelectionService],
       },
       {
         path: 'second',
@@ -69,8 +79,18 @@ const routes: Routes = [
               action: FeatureActions.Edit,
             },
           ],
+          columns: [
+            {
+              label: 'ID',
+              property: 'id',
+            },
+            {
+              label: 'Second',
+              property: 'second',
+            },
+          ],
         },
-        providers: [{ provide: FEATURE_SERVICE, useExisting: SecondService }, SelectionService],
+        providers: [{ provide: FEATURE_SERVICE, useClass: SecondService }, SelectionService],
       },
       {
         path: 'third',
@@ -93,8 +113,18 @@ const routes: Routes = [
               action: FeatureActions.Refresh,
             },
           ],
+          columns: [
+            {
+              label: 'ID',
+              property: 'id',
+            },
+            {
+              label: 'Third',
+              property: 'third',
+            },
+          ],
         },
-        providers: [{ provide: FEATURE_SERVICE, useExisting: ThirdService }, SelectionService],
+        providers: [{ provide: FEATURE_SERVICE, useClass: ThirdService }, SelectionService],
       },
     ],
   },
