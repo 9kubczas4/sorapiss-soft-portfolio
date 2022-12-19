@@ -1,50 +1,58 @@
-import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { FormGroup, FormBuilder, FormControl, AbstractControl } from '@angular/forms';
-import { Injectable } from '@angular/core';
+import { BehaviorSubject, combineLatest, map, Observable, ReplaySubject, Subject, takeUntil } from 'rxjs';
+import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Item } from '../interfaces/item';
 
 @Injectable()
-export class SelectionService {
+export class SelectionService implements OnDestroy {
   readonly formGroup: FormGroup;
 
-  private readonly ALL = 'ALL';
   private readonly selection$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
-  private allFormControl?: FormControl;
+  private readonly itemsCount$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  private readonly destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  readonly allSelected$: Observable<boolean> = combineLatest([this.selection$, this.itemsCount$]).pipe(
+    map(([selection, itemsCount]) => itemsCount === selection.length),
+  );
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  readonly indeterminate$: Observable<boolean> = combineLatest([this.selection$, this.itemsCount$]).pipe(
+    map(([selection, itemsCount]) => itemsCount > 0 && selection.length > 0 && selection.length < itemsCount),
+  );
 
   constructor(private readonly formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({});
-    this.formGroup.valueChanges.subscribe(c => {
+    this.formGroup.valueChanges.pipe(takeUntil(this.destroyed$)).subscribe(_ => {
       const controls: { [key: string]: AbstractControl<any, any> } = this.formGroup.controls;
-      const keysToCheck = Object.keys(controls).filter(key => key !== this.ALL);
-      // const temp = Object.values(controls)
-      console.log(Object.values(controls));
-      console.log(this.formGroup.controls);
+      this.selection$.next(
+        Object.keys(controls)
+          .map(key => ({ selected: controls[key].value, id: Number(key) }))
+          .filter(item => item.selected)
+          .map(item => item.id),
+      );
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
   }
 
   selection(): Observable<number[]> {
     return this.selection$.asObservable();
   }
 
-  setFormGroupItems(items: Item[]): void {
-    this.allFormControl = this.formBuilder.control({ value: false, disabled: false });
+  toggle(selectAll: boolean): void {
+    const controls: { [key: string]: AbstractControl<any, any> } = this.formGroup.controls;
+    Object.keys(controls).forEach(key => {
+      controls[key].patchValue(selectAll);
+    });
+  }
 
-    this.formGroup?.addControl(this.ALL, this.allFormControl);
+  setFormGroupItems(items: Item[]): void {
+    this.itemsCount$.next(items.length);
     items.forEach(item => {
       this.formGroup?.addControl(item.id.toString(), this.formBuilder.control({ value: false, disabled: false }));
     });
-
-    this.allFormControl.valueChanges
-      .pipe(
-        tap(value => {
-          const controls: { [key: string]: AbstractControl<any, any> } = this.formGroup.controls;
-          const keysToUpdate = Object.keys(controls).filter(key => key !== this.ALL);
-          keysToUpdate.forEach(key => {
-            controls[key].patchValue(value);
-          });
-          console.log();
-        }),
-      )
-      .subscribe();
   }
 }

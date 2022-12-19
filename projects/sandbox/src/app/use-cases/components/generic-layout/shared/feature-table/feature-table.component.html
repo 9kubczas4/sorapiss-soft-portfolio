@@ -3,7 +3,12 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="select">
         <th mat-header-cell *matHeaderCellDef>
-          <mat-checkbox formControlName="ALL"></mat-checkbox>
+          <mat-checkbox
+            #selectAll
+            [checked]="selectionService.allSelected$ | async"
+            [indeterminate]="selectionService.indeterminate$ | async"
+            (click)="selectionService.toggle(selectAll.checked)"
+          ></mat-checkbox>
         </th>
         <td mat-cell *matCellDef="let row">
           <mat-checkbox [formControlName]="row.id"></mat-checkbox>

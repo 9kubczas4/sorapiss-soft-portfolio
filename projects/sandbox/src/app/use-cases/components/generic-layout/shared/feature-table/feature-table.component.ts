@@ -6,10 +6,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Item } from '../../interfaces/item';
 import { AsyncPipe, JsonPipe, NgFor, NgIf } from '@angular/common';
-import { filter, map, startWith, tap } from 'rxjs';
+import { filter, map, startWith } from 'rxjs';
 import { Column } from '../../interfaces/column';
-import { SelectionModel } from '@angular/cdk/collections';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-feature-table',
@@ -33,7 +32,6 @@ export class FeatureTableComponent implements OnInit {
   columns$ = this.router.events.pipe(
     filter(event => event instanceof NavigationEnd),
     map(_ => this.getColumns()),
-    tap(columns => console.log(columns)),
     startWith(this.getColumns()),
   );
   displayedColumns$ = this.columns$.pipe(map(column => ['select', ...column.map(c => c.property)]));
@@ -44,28 +42,11 @@ export class FeatureTableComponent implements OnInit {
     @Inject(FEATURE_SERVICE) private readonly service: FeatureService<Item>,
     private readonly activatedRoute: ActivatedRoute,
     private readonly router: Router,
-    private readonly selectionService: SelectionService,
+    readonly selectionService: SelectionService,
   ) {}
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-  }
-
-  /** Whether the number of selected elements matches the total number of rows. */
-  isAllSelected() {
-    const numSelected = 0; //this.selection.selected.length;
-    const numRows = 100; //this.dataSource.data.length;
-    return false; //numSelected === numRows;
-  }
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  toggleAllRows() {
-    if (this.isAllSelected()) {
-      // this.selection.clear();
-      return;
-    }
-
-    // this.selection.select(...this.dataSource.data);
   }
 
   private getColumns(): Column[] {
