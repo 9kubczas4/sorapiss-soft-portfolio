@@ -6,9 +6,9 @@ import { Second } from '../interfaces/second';
 @Injectable()
 export class SecondService implements FeatureService<Second> {
   constructor() {}
-  fetchData(): Observable<Second> {
+  fetchData(): Observable<Second[]> {
     console.log('fetch data - 2');
-    return of({ second: '2' });
+    return of([{ id: 2, second: '2' }]);
   }
   delete(item: Partial<Second>): Observable<void> {
     throw new Error('Method not implemented.');

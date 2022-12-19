@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { map } from 'rxjs';
 
 @Component({
@@ -7,7 +7,7 @@ import { map } from 'rxjs';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
   tabs$ = this.activatedRoute.url.pipe(
     map(_ =>
       this.activatedRoute.routeConfig?.children?.map(item => ({
@@ -18,8 +18,4 @@ export class NavigationComponent implements OnInit {
   );
 
   constructor(private readonly activatedRoute: ActivatedRoute) {}
-
-  ngOnInit(): void {
-    console.log(this.activatedRoute.routeConfig?.children);
-  }
 }

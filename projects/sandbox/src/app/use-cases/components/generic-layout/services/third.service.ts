@@ -6,9 +6,9 @@ import { Observable, of } from 'rxjs';
 @Injectable()
 export class ThirdService implements FeatureService<Third> {
   constructor() {}
-  fetchData(): Observable<Third> {
+  fetchData(): Observable<Third[]> {
     console.log('fetch data - 3');
-    return of({ third: '1' });
+    return of([{ id: 3, third: '1' }]);
   }
   delete(item: Partial<Third>): Observable<void> {
     throw new Error('Method not implemented.');

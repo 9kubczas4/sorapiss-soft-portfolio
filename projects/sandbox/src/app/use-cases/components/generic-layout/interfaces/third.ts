@@ -1,3 +1,5 @@
-export type Third = {
+import { Item } from './item';
+
+export interface Third extends Item {
   third: string;
-};
+}

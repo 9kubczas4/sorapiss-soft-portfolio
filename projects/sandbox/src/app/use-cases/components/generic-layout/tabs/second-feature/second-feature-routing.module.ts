@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SecondFeatureComponent } from './second-feature.component';
+import { FeatureTableComponent } from '../../shared/feature-table/feature-table.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SecondFeatureComponent,
+    component: FeatureTableComponent,
   },
 ];
 

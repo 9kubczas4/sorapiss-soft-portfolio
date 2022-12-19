@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, startWith } from 'rxjs/operators';
+import { Action } from '../../interfaces/action';
 import { FEATURE_SERVICE, FeatureService } from '../../interfaces/feature.service';
 
 @Component({
@@ -10,9 +11,9 @@ import { FEATURE_SERVICE, FeatureService } from '../../interfaces/feature.servic
 })
 export class FeatureTabHeaderComponent {
   actions$ = this.router.events.pipe(
-    filter(e => e instanceof NavigationEnd),
-    map(_ => this.activatedRoute.routeConfig?.data?.['actions'] ?? []),
-    startWith(this.activatedRoute.routeConfig?.data?.['actions'] ?? []),
+    filter(event => event instanceof NavigationEnd),
+    map(_ => this.getActions()),
+    startWith(this.getActions()),
   );
 
   constructor(
@@ -26,5 +27,9 @@ export class FeatureTabHeaderComponent {
   onClick(action: any) {
     console.log(action);
     this.featureService.fetchData();
+  }
+
+  private getActions(): Action[] {
+    return this.activatedRoute.parent?.routeConfig?.data?.['actions'] ?? [];
   }
 }

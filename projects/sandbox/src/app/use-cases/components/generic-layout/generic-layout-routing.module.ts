@@ -7,6 +7,8 @@ import { GenericLayoutComponent } from './generic-layout.component';
 import { FEATURE_SERVICE } from './interfaces/feature.service';
 import { FirstService } from './services/first.service';
 import { SecondService } from './services/second.service';
+import { ThirdService } from './services/third.service';
+import { SelectionService } from './services/selection.service';
 
 const routes: Routes = [
   {
@@ -28,25 +30,23 @@ const routes: Routes = [
           {
             path: '',
             component: FeatureTabHeaderComponent,
-            data: {
-              actions: [
-                {
-                  label: 'Delete',
-                  action: FeatureActions.Delete,
-                },
-                {
-                  label: 'Edit',
-                  action: FeatureActions.Edit,
-                },
-              ],
-            },
             outlet: 'tab-header',
           },
         ],
         data: {
           label: SampleFeatures.Feature1,
+          actions: [
+            {
+              label: 'Delete',
+              action: FeatureActions.Delete,
+            },
+            {
+              label: 'Edit Feature 1',
+              action: FeatureActions.Edit,
+            },
+          ],
         },
-        providers: [{ provide: FEATURE_SERVICE, useExisting: FirstService }],
+        providers: [{ provide: FEATURE_SERVICE, useExisting: FirstService }, SelectionService],
       },
       {
         path: 'second',
@@ -58,21 +58,43 @@ const routes: Routes = [
           {
             path: '',
             component: FeatureTabHeaderComponent,
-            data: {
-              actions: [
-                {
-                  label: 'Edit',
-                  action: FeatureActions.Edit,
-                },
-              ],
-            },
             outlet: 'tab-header',
           },
         ],
         data: {
           label: SampleFeatures.Feature2,
+          actions: [
+            {
+              label: 'Edit Feature 2',
+              action: FeatureActions.Edit,
+            },
+          ],
         },
-        providers: [{ provide: FEATURE_SERVICE, useExisting: SecondService }],
+        providers: [{ provide: FEATURE_SERVICE, useExisting: SecondService }, SelectionService],
+      },
+      {
+        path: 'third',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./tabs/third-feature/third-feature.module').then(m => m.ThirdFeatureModule),
+          },
+          {
+            path: '',
+            component: FeatureTabHeaderComponent,
+            outlet: 'tab-header',
+          },
+        ],
+        data: {
+          label: SampleFeatures.Feature3,
+          actions: [
+            {
+              label: 'Edit Feature 3',
+              action: FeatureActions.Refresh,
+            },
+          ],
+        },
+        providers: [{ provide: FEATURE_SERVICE, useExisting: ThirdService }, SelectionService],
       },
     ],
   },
