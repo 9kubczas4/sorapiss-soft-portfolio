@@ -5,8 +5,9 @@ import { GenericLayoutRoutingModule } from './generic-layout-routing.module';
 import { SamplePageModule } from '@common-ui';
 import { GenericLayoutComponent } from './generic-layout.component';
 import { NavigationModule } from './shared/navigation/navigation.module';
-import { FeatureTabHeaderModule } from './shared/feature-tab-header/feature-tab-header.module';
 import { FeatureTableComponent } from './shared/feature-table/feature-table.component';
+import { FeatureTabHeaderComponent } from './shared/feature-tab-header/feature-tab-header.component';
+import { UiService } from './services/ui.service';
 
 @NgModule({
   declarations: [GenericLayoutComponent],
@@ -14,9 +15,12 @@ import { FeatureTableComponent } from './shared/feature-table/feature-table.comp
     CommonModule,
     GenericLayoutRoutingModule,
     SamplePageModule,
-    FeatureTabHeaderModule,
     NavigationModule,
+
+    // standalone components
+    FeatureTabHeaderComponent,
     FeatureTableComponent,
   ],
+  providers: [UiService],
 })
 export class GenericLayoutModule {}

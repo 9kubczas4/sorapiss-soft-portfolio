@@ -1,4 +1,14 @@
 .content {
   display: flex;
-  gap: 1rem;
+
+  .tabs {
+    width: 12rem;
+    transition: all 0.75s ease-in-out;
+    margin-right: 1rem;
+
+    &--hidden {
+      width: 0px;
+      margin-right: 0;
+    }
+  }
 }

@@ -9,6 +9,7 @@ import { AsyncPipe, JsonPipe, NgFor, NgIf } from '@angular/common';
 import { filter, map, startWith } from 'rxjs';
 import { Column } from '../../interfaces/column';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-feature-table',

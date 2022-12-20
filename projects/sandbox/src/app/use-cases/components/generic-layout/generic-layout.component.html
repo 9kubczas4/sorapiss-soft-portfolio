@@ -1,5 +1,5 @@
 <router-outlet name="tab-header"></router-outlet>
 <section class="content">
-  <app-navigation></app-navigation>
+  <app-navigation class="tabs" [class.tabs--hidden]="areTabsHidden$ | async"></app-navigation>
   <router-outlet></router-outlet>
 </section>

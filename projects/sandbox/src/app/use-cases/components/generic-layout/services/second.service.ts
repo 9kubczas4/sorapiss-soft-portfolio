@@ -22,7 +22,8 @@ export class SecondService extends FeatureServiceBase<Second> {
     ]).pipe(tap(items => this.selectionService.setFormGroupItems(items)));
   }
   delete(item: Partial<Second>): Observable<void> {
-    throw new Error('Method not implemented.');
+    alert(`Delete ${item.id}`);
+    return of();
   }
   edit(item: Partial<Second>): Observable<void> {
     throw new Error('Method not implemented.');
