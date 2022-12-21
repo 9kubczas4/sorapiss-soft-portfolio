@@ -1,19 +1,32 @@
+import { ApiUser } from './../interfaces/api/api-user';
+import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import { delay, Observable, of, tap } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { User } from '../interfaces/ui/user';
 import { FeatureServiceBase } from './feature-service.base';
 
 @Injectable()
 export class UsersService extends FeatureServiceBase<User> implements OnDestroy {
-  constructor() {
+  constructor(private readonly httpClient: HttpClient) {
     super();
   }
 
-  // https://jsonplaceholder.typicode.com/users
   fetch(): Observable<User[]> {
-    this.isLoading$.next(true);
     console.log('fetch data - 1');
-    return of([]);
+    return this.httpClient.get<ApiUser[]>(`https://jsonplaceholder.typicode.com/users`).pipe(
+      map(users =>
+        users.map(user => ({
+          id: user.id,
+          name: user.name,
+          username: user.username,
+          email: user.email,
+          phone: user.phone,
+          website: user.website,
+          city: user.address.city,
+          company: user.company.name,
+        })),
+      ),
+    );
   }
 
   delete(itemsIds: number[]): Observable<void> {

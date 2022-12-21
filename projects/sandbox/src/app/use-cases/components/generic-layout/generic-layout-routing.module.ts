@@ -27,7 +27,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./tabs/first-feature/first-feature.module').then(m => m.FirstFeatureModule),
+            loadChildren: () => import('./tabs/users/users.module').then(m => m.UsersModule),
           },
           {
             path: '',
@@ -43,7 +43,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./tabs/second-feature/second-feature.module').then(m => m.SecondFeatureModule),
+            loadChildren: () => import('./tabs/albums/albums.module').then(m => m.AlbumsModule),
           },
           {
             path: '',
@@ -59,7 +59,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./tabs/third-feature/third-feature.module').then(m => m.ThirdFeatureModule),
+            loadChildren: () => import('./tabs/posts/posts.module').then(m => m.PostsModule),
           },
           {
             path: '',
