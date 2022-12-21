@@ -1,6 +1,6 @@
 import { SelectionService } from './selection.service';
 import { OnDestroy, inject, Injectable } from '@angular/core';
-import { Observable, ReplaySubject, BehaviorSubject, switchMap, of, takeUntil, first } from 'rxjs';
+import { Observable, ReplaySubject, BehaviorSubject, switchMap, of, takeUntil, first, delay, tap } from 'rxjs';
 import { FeatureActions } from '../enums/feature-actions';
 import { FeatureService } from '../interfaces/feature.service';
 import { Item } from '../interfaces/item';
@@ -64,7 +64,18 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
     return this.isDeleting$.asObservable();
   }
 
-  abstract fetchData(): Observable<T[]>;
+  fetchData(): Observable<T[]> {
+    this.isLoading$.next(true);
+    console.log('fetch data - 2');
+    return this.fetch().pipe(
+      delay(2000),
+      tap(items => this.selectionService.setFormGroupItems(items)),
+      tap(items => this.dataSource$.next(items)),
+      tap(_ => this.isLoading$.next(false)),
+    );
+  }
+
+  abstract fetch(): Observable<T[]>;
   abstract delete(itemsIds: number[]): Observable<void>;
   abstract edit(item: Partial<T>): Observable<void>;
   abstract create(item: Partial<T>): Observable<void>;

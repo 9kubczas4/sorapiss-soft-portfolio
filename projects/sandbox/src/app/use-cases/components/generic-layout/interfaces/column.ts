@@ -1,4 +1,4 @@
-export interface Column {
+export interface Column<T> {
   label: string;
-  property: string;
+  property: keyof T;
 }

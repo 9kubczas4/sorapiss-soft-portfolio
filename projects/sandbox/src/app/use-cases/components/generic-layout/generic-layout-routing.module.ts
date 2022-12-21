@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GenericLayoutComponent } from './generic-layout.component';
 import { FEATURE_SERVICE } from './interfaces/feature.service';
-import { FirstService } from './services/first.service';
-import { SecondService } from './services/second.service';
-import { ThirdService } from './services/third.service';
+import { UsersService } from './services/users.service';
+import { AlbumsService } from './services/albums.service';
+import { PostsService } from './services/posts.service';
 import { SelectionService } from './services/selection.service';
 import { ActionsService } from './services/actions.service';
-import { firstConfig } from './config/first.config';
-import { secondConfig } from './config/second.config';
-import { thirdConfig } from './config/third.config';
+import { usersConfig } from './config/users.config';
+import { albumsConfig } from './config/albums.config';
+import { postsConfig } from './config/posts.config';
 
 const routes: Routes = [
   {
@@ -19,11 +19,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'first',
+        redirectTo: 'users',
         pathMatch: 'full',
       },
       {
-        path: 'first',
+        path: 'users',
         children: [
           {
             path: '',
@@ -35,11 +35,11 @@ const routes: Routes = [
             outlet: 'tab-header',
           },
         ],
-        data: firstConfig,
-        providers: [{ provide: FEATURE_SERVICE, useClass: FirstService }, SelectionService, ActionsService],
+        data: usersConfig,
+        providers: [{ provide: FEATURE_SERVICE, useClass: UsersService }, SelectionService, ActionsService],
       },
       {
-        path: 'second',
+        path: 'albums',
         children: [
           {
             path: '',
@@ -51,11 +51,11 @@ const routes: Routes = [
             outlet: 'tab-header',
           },
         ],
-        data: secondConfig,
-        providers: [{ provide: FEATURE_SERVICE, useClass: SecondService }, SelectionService, ActionsService],
+        data: albumsConfig,
+        providers: [{ provide: FEATURE_SERVICE, useClass: AlbumsService }, SelectionService, ActionsService],
       },
       {
-        path: 'third',
+        path: 'posts',
         children: [
           {
             path: '',
@@ -67,8 +67,8 @@ const routes: Routes = [
             outlet: 'tab-header',
           },
         ],
-        data: thirdConfig,
-        providers: [{ provide: FEATURE_SERVICE, useClass: ThirdService }, SelectionService, ActionsService],
+        data: postsConfig,
+        providers: [{ provide: FEATURE_SERVICE, useClass: PostsService }, SelectionService, ActionsService],
       },
     ],
   },

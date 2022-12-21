@@ -1,9 +1,10 @@
 import { FeatureActions } from '../enums/feature-actions';
-import { SampleFeatures } from '../enums/sample-features';
+import { Tabs } from '../enums/tabs';
 import { RouteConfig } from '../interfaces/route-config';
+import { Post } from '../interfaces/ui/post';
 
-export const thirdConfig: RouteConfig = {
-  label: SampleFeatures.Feature3,
+export const postsConfig: RouteConfig<Post> = {
+  label: Tabs.Posts,
   actions: [
     {
       label: 'Edit Feature 3',
@@ -16,8 +17,12 @@ export const thirdConfig: RouteConfig = {
       property: 'id',
     },
     {
-      label: 'Third',
-      property: 'third',
+      label: 'Title',
+      property: 'title',
+    },
+    {
+      label: 'Body',
+      property: 'body',
     },
   ],
 };

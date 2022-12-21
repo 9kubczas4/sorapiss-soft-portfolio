@@ -51,7 +51,7 @@ export class FeatureTableComponent implements OnInit {
     this.service.fetchData().pipe(first()).subscribe();
   }
 
-  private getColumns(): Column[] {
+  private getColumns(): Array<Column<Item>> {
     return this.activatedRoute.parent?.parent?.routeConfig?.data?.['columns'] ?? [];
   }
 }

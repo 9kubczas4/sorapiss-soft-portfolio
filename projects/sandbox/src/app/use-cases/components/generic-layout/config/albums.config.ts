@@ -1,9 +1,10 @@
 import { FeatureActions } from '../enums/feature-actions';
-import { SampleFeatures } from '../enums/sample-features';
+import { Tabs } from '../enums/tabs';
 import { RouteConfig } from '../interfaces/route-config';
+import { Album } from '../interfaces/ui/album';
 
-export const secondConfig: RouteConfig = {
-  label: SampleFeatures.Feature2,
+export const albumsConfig: RouteConfig<Album> = {
+  label: Tabs.Albums,
   actions: [
     {
       label: 'Edit Feature 2',
@@ -16,8 +17,8 @@ export const secondConfig: RouteConfig = {
       property: 'id',
     },
     {
-      label: 'Second',
-      property: 'second',
+      label: 'Title',
+      property: 'title',
     },
   ],
 };
