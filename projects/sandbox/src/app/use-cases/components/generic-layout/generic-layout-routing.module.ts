@@ -9,6 +9,7 @@ import { FirstService } from './services/first.service';
 import { SecondService } from './services/second.service';
 import { ThirdService } from './services/third.service';
 import { SelectionService } from './services/selection.service';
+import { ActionsService } from './services/actions.service';
 
 const routes: Routes = [
   {
@@ -56,7 +57,7 @@ const routes: Routes = [
             },
           ],
         },
-        providers: [{ provide: FEATURE_SERVICE, useClass: FirstService }, SelectionService],
+        providers: [{ provide: FEATURE_SERVICE, useClass: FirstService }, SelectionService, ActionsService],
       },
       {
         path: 'second',
@@ -90,7 +91,7 @@ const routes: Routes = [
             },
           ],
         },
-        providers: [{ provide: FEATURE_SERVICE, useClass: SecondService }, SelectionService],
+        providers: [{ provide: FEATURE_SERVICE, useClass: SecondService }, SelectionService, ActionsService],
       },
       {
         path: 'third',
@@ -124,7 +125,7 @@ const routes: Routes = [
             },
           ],
         },
-        providers: [{ provide: FEATURE_SERVICE, useClass: ThirdService }, SelectionService],
+        providers: [{ provide: FEATURE_SERVICE, useClass: ThirdService }, SelectionService, ActionsService],
       },
     ],
   },

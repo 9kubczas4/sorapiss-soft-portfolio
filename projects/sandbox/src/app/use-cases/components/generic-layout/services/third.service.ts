@@ -1,12 +1,11 @@
 import { Third } from './../interfaces/third';
 import { Injectable } from '@angular/core';
 import { Observable, of, tap } from 'rxjs';
-import { SelectionService } from './selection.service';
 import { FeatureServiceBase } from './feature-service.base';
 
 @Injectable()
 export class ThirdService extends FeatureServiceBase<Third> {
-  constructor(private readonly selectionService: SelectionService) {
+  constructor() {
     super();
   }
 
@@ -17,13 +16,16 @@ export class ThirdService extends FeatureServiceBase<Third> {
       { id: 4, third: 'Dog' },
     ]).pipe(tap(items => this.selectionService.setFormGroupItems(items)));
   }
-  delete(item: Partial<Third>): Observable<void> {
-    alert(`Delete ${item.id}`);
+
+  delete(itemsIds: number[]): Observable<void> {
+    alert(`Delete ${JSON.stringify(itemsIds)}`);
     return of();
   }
+
   edit(item: Partial<Third>): Observable<void> {
     throw new Error('Method not implemented.');
   }
+
   create(item: Partial<Third>): Observable<void> {
     throw new Error('Method not implemented.');
   }

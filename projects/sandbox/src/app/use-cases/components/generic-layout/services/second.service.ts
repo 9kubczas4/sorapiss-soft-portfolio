@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable, of, tap } from 'rxjs';
 import { Second } from '../interfaces/second';
 import { FeatureServiceBase } from './feature-service.base';
-import { SelectionService } from './selection.service';
 
 @Injectable()
 export class SecondService extends FeatureServiceBase<Second> {
-  constructor(private readonly selectionService: SelectionService) {
+  constructor() {
     super();
   }
 
@@ -21,13 +20,16 @@ export class SecondService extends FeatureServiceBase<Second> {
       { id: 7, second: 'Sochaczew' },
     ]).pipe(tap(items => this.selectionService.setFormGroupItems(items)));
   }
-  delete(item: Partial<Second>): Observable<void> {
-    alert(`Delete ${item.id}`);
+
+  delete(itemsIds: number[]): Observable<void> {
+    alert(`Delete ${JSON.stringify(itemsIds)}`);
     return of();
   }
+
   edit(item: Partial<Second>): Observable<void> {
     throw new Error('Method not implemented.');
   }
+
   create(item: Partial<Second>): Observable<void> {
     throw new Error('Method not implemented.');
   }

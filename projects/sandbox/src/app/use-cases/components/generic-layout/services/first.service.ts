@@ -1,12 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Observable, of, tap } from 'rxjs';
 import { First } from '../interfaces/first';
 import { FeatureServiceBase } from './feature-service.base';
-import { SelectionService } from './selection.service';
 
 @Injectable()
-export class FirstService extends FeatureServiceBase<First> {
-  constructor(private readonly selectionService: SelectionService) {
+export class FirstService extends FeatureServiceBase<First> implements OnDestroy {
+  constructor() {
     super();
   }
 
@@ -18,13 +17,16 @@ export class FirstService extends FeatureServiceBase<First> {
       { id: 3, first: 'Litwo ojczyzno moja' },
     ]).pipe(tap(items => this.selectionService.setFormGroupItems(items)));
   }
-  delete(item: Partial<First>): Observable<void> {
-    alert(`Delete ${item.id}`);
+
+  delete(itemsIds: number[]): Observable<void> {
+    alert(`Delete ${JSON.stringify(itemsIds)}`);
     return of();
   }
+
   edit(item: Partial<First>): Observable<void> {
     throw new Error('Method not implemented.');
   }
+
   create(item: Partial<First>): Observable<void> {
     throw new Error('Method not implemented.');
   }

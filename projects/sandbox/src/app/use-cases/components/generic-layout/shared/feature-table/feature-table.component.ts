@@ -2,14 +2,13 @@ import { SelectionService } from './../../services/selection.service';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { FeatureService, FEATURE_SERVICE } from './../../interfaces/feature.service';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, inject } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Item } from '../../interfaces/item';
 import { AsyncPipe, JsonPipe, NgFor, NgIf } from '@angular/common';
 import { filter, map, startWith } from 'rxjs';
 import { Column } from '../../interfaces/column';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-feature-table',
@@ -38,6 +37,8 @@ export class FeatureTableComponent implements OnInit {
   displayedColumns$ = this.columns$.pipe(map(column => ['select', ...column.map(c => c.property)]));
 
   formGroup = this.selectionService.formGroup;
+
+  private temp = inject(FEATURE_SERVICE);
 
   constructor(
     @Inject(FEATURE_SERVICE) private readonly service: FeatureService<Item>,
