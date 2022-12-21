@@ -1,8 +1,6 @@
 import { FeatureTabHeaderComponent } from './shared/feature-tab-header/feature-tab-header.component';
-import { FeatureActions } from './enums/feature-actions';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SampleFeatures } from './enums/sample-features';
 import { GenericLayoutComponent } from './generic-layout.component';
 import { FEATURE_SERVICE } from './interfaces/feature.service';
 import { FirstService } from './services/first.service';
@@ -10,6 +8,9 @@ import { SecondService } from './services/second.service';
 import { ThirdService } from './services/third.service';
 import { SelectionService } from './services/selection.service';
 import { ActionsService } from './services/actions.service';
+import { firstConfig } from './config/first.config';
+import { secondConfig } from './config/second.config';
+import { thirdConfig } from './config/third.config';
 
 const routes: Routes = [
   {
@@ -34,29 +35,7 @@ const routes: Routes = [
             outlet: 'tab-header',
           },
         ],
-        data: {
-          label: SampleFeatures.Feature1,
-          actions: [
-            {
-              label: 'Delete',
-              action: FeatureActions.Delete,
-            },
-            {
-              label: 'Edit Feature 1',
-              action: FeatureActions.Edit,
-            },
-          ],
-          columns: [
-            {
-              label: 'ID',
-              property: 'id',
-            },
-            {
-              label: 'First',
-              property: 'first',
-            },
-          ],
-        },
+        data: firstConfig,
         providers: [{ provide: FEATURE_SERVICE, useClass: FirstService }, SelectionService, ActionsService],
       },
       {
@@ -72,25 +51,7 @@ const routes: Routes = [
             outlet: 'tab-header',
           },
         ],
-        data: {
-          label: SampleFeatures.Feature2,
-          actions: [
-            {
-              label: 'Edit Feature 2',
-              action: FeatureActions.Edit,
-            },
-          ],
-          columns: [
-            {
-              label: 'ID',
-              property: 'id',
-            },
-            {
-              label: 'Second',
-              property: 'second',
-            },
-          ],
-        },
+        data: secondConfig,
         providers: [{ provide: FEATURE_SERVICE, useClass: SecondService }, SelectionService, ActionsService],
       },
       {
@@ -106,25 +67,7 @@ const routes: Routes = [
             outlet: 'tab-header',
           },
         ],
-        data: {
-          label: SampleFeatures.Feature3,
-          actions: [
-            {
-              label: 'Edit Feature 3',
-              action: FeatureActions.Refresh,
-            },
-          ],
-          columns: [
-            {
-              label: 'ID',
-              property: 'id',
-            },
-            {
-              label: 'Third',
-              property: 'third',
-            },
-          ],
-        },
+        data: thirdConfig,
         providers: [{ provide: FEATURE_SERVICE, useClass: ThirdService }, SelectionService, ActionsService],
       },
     ],
