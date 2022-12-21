@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, map, Observable, of, tap } from 'rxjs';
-import { ApiPost } from '../interfaces/api/api-post';
-import { Post } from '../interfaces/ui/post';
-import { FeatureServiceBase } from './feature-service.base';
+import { map, Observable, of } from 'rxjs';
+import { ApiPost } from '../../interfaces/api/api-post';
+import { Post } from '../../interfaces/ui/post';
+import { FeatureServiceBase } from '../feature-service.base';
 
-// https://jsonplaceholder.typicode.com/posts
 @Injectable()
 export class PostsService extends FeatureServiceBase<Post> {
   constructor(private readonly httpClient: HttpClient) {
