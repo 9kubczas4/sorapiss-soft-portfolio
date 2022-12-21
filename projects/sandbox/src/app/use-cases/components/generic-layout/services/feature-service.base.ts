@@ -1,6 +1,6 @@
 import { SelectionService } from './selection.service';
 import { OnDestroy, inject, Injectable } from '@angular/core';
-import { Observable, ReplaySubject, BehaviorSubject, switchMap, of, takeUntil, filter, first } from 'rxjs';
+import { Observable, ReplaySubject, BehaviorSubject, switchMap, of, takeUntil, first } from 'rxjs';
 import { FeatureActions } from '../enums/feature-actions';
 import { FeatureService } from '../interfaces/feature.service';
 import { Item } from '../interfaces/item';

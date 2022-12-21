@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, tap } from 'rxjs';
+import { delay, Observable, of, tap } from 'rxjs';
 import { Second } from '../interfaces/second';
 import { FeatureServiceBase } from './feature-service.base';
 
@@ -10,6 +10,7 @@ export class SecondService extends FeatureServiceBase<Second> {
   }
 
   fetchData(): Observable<Second[]> {
+    this.isLoading$.next(true);
     console.log('fetch data - 2');
     return of([
       { id: 2, second: 'Warszawa' },
@@ -18,7 +19,12 @@ export class SecondService extends FeatureServiceBase<Second> {
       { id: 5, second: 'Gdansk' },
       { id: 6, second: 'Krakow' },
       { id: 7, second: 'Sochaczew' },
-    ]).pipe(tap(items => this.selectionService.setFormGroupItems(items)));
+    ]).pipe(
+      delay(2000),
+      tap(items => this.selectionService.setFormGroupItems(items)),
+      tap(items => this.dataSource$.next(items)),
+      tap(_ => this.isLoading$.next(false)),
+    );
   }
 
   delete(itemsIds: number[]): Observable<void> {

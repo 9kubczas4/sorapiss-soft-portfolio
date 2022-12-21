@@ -1,5 +1,5 @@
 import { FeatureActions } from './../enums/feature-actions';
-import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable()

@@ -9,4 +9,8 @@ export interface FeatureService<T extends Item> {
   delete(itemsIds: number[]): Observable<void>;
   edit(item: Partial<T>): Observable<void>;
   create(item: Partial<T>): Observable<void>;
+
+  dataSource(): Observable<T[] | null>;
+  isLoading(): Observable<boolean>;
+  isDeleting(): Observable<boolean>;
 }

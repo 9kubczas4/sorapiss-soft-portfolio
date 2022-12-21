@@ -6,7 +6,7 @@ import { Component, Inject, OnInit, inject } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Item } from '../../interfaces/item';
 import { AsyncPipe, JsonPipe, NgFor, NgIf } from '@angular/common';
-import { filter, map, startWith } from 'rxjs';
+import { filter, first, map, startWith } from 'rxjs';
 import { Column } from '../../interfaces/column';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -28,17 +28,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
 })
 export class FeatureTableComponent implements OnInit {
-  dataSource$ = this.service.fetchData();
+  dataSource$ = this.service.dataSource().pipe(map(items => items ?? []));
+
   columns$ = this.router.events.pipe(
     filter(event => event instanceof NavigationEnd),
     map(_ => this.getColumns()),
     startWith(this.getColumns()),
   );
+
   displayedColumns$ = this.columns$.pipe(map(column => ['select', ...column.map(c => c.property)]));
 
   formGroup = this.selectionService.formGroup;
-
-  private temp = inject(FEATURE_SERVICE);
 
   constructor(
     @Inject(FEATURE_SERVICE) private readonly service: FeatureService<Item>,
@@ -48,7 +48,7 @@ export class FeatureTableComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    this.service.fetchData().pipe(first()).subscribe();
   }
 
   private getColumns(): Column[] {
