@@ -33,9 +33,11 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
               return this.fetchData();
             }
             case FeatureActions.AddNew: {
+              // redirect to add form, maybe rename it to OpenCreateForm
               return of();
             }
             case FeatureActions.Edit: {
+              // redirect to edit form, maybe rename it to OpenEditForm
               return of();
             }
             default: {

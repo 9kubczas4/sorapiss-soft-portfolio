@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { ApiAlbum } from '../../interfaces/api/api-album';
 import { Album } from '../../interfaces/ui/album';
-import { FeatureServiceBase } from '../feature-service.base';
+import { FeatureServiceBase } from '../../services/feature-service.base';
 
 @Injectable()
 export class AlbumsService extends FeatureServiceBase<Album> {

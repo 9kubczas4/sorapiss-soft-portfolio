@@ -6,6 +6,13 @@ const routes: Routes = [
   {
     path: '',
     component: FeatureTableComponent,
+    // TODO:
+    // children: [
+    //   {
+    //     path: ':id/edit',
+    //     // component: EditComponent,
+    //   }
+    // ]
   },
 ];
 

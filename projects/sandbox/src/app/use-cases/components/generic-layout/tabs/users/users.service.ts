@@ -3,7 +3,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { ApiUser } from '../../interfaces/api/api-user';
 import { User } from '../../interfaces/ui/user';
-import { FeatureServiceBase } from '../feature-service.base';
+import { FeatureServiceBase } from '../../services/feature-service.base';
 
 @Injectable()
 export class UsersService extends FeatureServiceBase<User> implements OnDestroy {

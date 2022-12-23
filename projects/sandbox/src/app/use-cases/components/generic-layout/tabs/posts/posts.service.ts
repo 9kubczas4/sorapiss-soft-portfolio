@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { ApiPost } from '../../interfaces/api/api-post';
 import { Post } from '../../interfaces/ui/post';
-import { FeatureServiceBase } from '../feature-service.base';
+import { FeatureServiceBase } from '../../services/feature-service.base';
 
 @Injectable()
 export class PostsService extends FeatureServiceBase<Post> {
