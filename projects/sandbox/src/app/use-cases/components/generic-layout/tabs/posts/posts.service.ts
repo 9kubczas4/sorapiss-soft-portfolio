@@ -11,7 +11,7 @@ export class PostsService extends FeatureServiceBase<Post> {
     super();
   }
 
-  fetch(): Observable<Post[]> {
+  fetchItems(): Observable<Post[]> {
     this.isLoading$.next(true);
     console.log('fetch data - 3');
     return this.httpClient
@@ -19,16 +19,16 @@ export class PostsService extends FeatureServiceBase<Post> {
       .pipe(map(albums => albums as Post[]));
   }
 
-  delete(itemsIds: number[]): Observable<void> {
+  deleteItems(itemsIds: number[]): Observable<void> {
     alert(`Delete ${JSON.stringify(itemsIds)}`);
     return of();
   }
 
-  edit(item: Partial<Post>): Observable<void> {
+  editItem(item: Partial<Post>): Observable<void> {
     throw new Error('Method not implemented.');
   }
 
-  create(item: Partial<Post>): Observable<void> {
+  createItem(item: Partial<Post>): Observable<void> {
     throw new Error('Method not implemented.');
   }
 }

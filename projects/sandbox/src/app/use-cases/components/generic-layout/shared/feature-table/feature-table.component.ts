@@ -48,7 +48,7 @@ export class FeatureTableComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.service.fetchData().pipe(first()).subscribe();
+    this.service.fetch().pipe(first()).subscribe();
   }
 
   private getColumns(): Array<Column<Item>> {

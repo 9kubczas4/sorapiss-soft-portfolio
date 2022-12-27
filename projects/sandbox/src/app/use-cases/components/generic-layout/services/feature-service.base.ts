@@ -1,6 +1,20 @@
+import { Router } from '@angular/router';
 import { SelectionService } from './selection.service';
 import { OnDestroy, inject, Injectable } from '@angular/core';
-import { Observable, ReplaySubject, BehaviorSubject, switchMap, of, takeUntil, first, delay, tap } from 'rxjs';
+import {
+  Observable,
+  ReplaySubject,
+  BehaviorSubject,
+  switchMap,
+  of,
+  takeUntil,
+  first,
+  delay,
+  tap,
+  concatMap,
+  map,
+  empty,
+} from 'rxjs';
 import { FeatureActions } from '../enums/feature-actions';
 import { FeatureService } from '../interfaces/feature.service';
 import { Item } from '../interfaces/item';
@@ -15,6 +29,7 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
 
   protected readonly actionsService = inject(ActionsService);
   protected readonly selectionService = inject(SelectionService);
+  protected readonly router = inject(Router);
 
   constructor() {
     this.actionsService
@@ -30,7 +45,7 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
               );
             }
             case FeatureActions.Refresh: {
-              return this.fetchData();
+              return this.fetch();
             }
             case FeatureActions.AddNew: {
               // redirect to add form, maybe rename it to OpenCreateForm
@@ -66,19 +81,42 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
     return this.isDeleting$.asObservable();
   }
 
-  fetchData(): Observable<T[]> {
+  fetch(): Observable<void> {
     this.isLoading$.next(true);
-    console.log('fetch data - 2');
-    return this.fetch().pipe(
+    return this.fetchItems().pipe(
+      first(),
       delay(2000),
       tap(items => this.selectionService.setFormGroupItems(items)),
       tap(items => this.dataSource$.next(items)),
       tap(_ => this.isLoading$.next(false)),
+      map(_ => undefined),
     );
   }
 
-  abstract fetch(): Observable<T[]>;
-  abstract delete(itemsIds: number[]): Observable<void>;
-  abstract edit(item: Partial<T>): Observable<void>;
-  abstract create(item: Partial<T>): Observable<void>;
+  delete(itemsIds: number[]): Observable<void> {
+    this.isDeleting$.next(true);
+    return this.deleteItems(itemsIds).pipe(
+      delay(2000),
+      switchMap(_ => this.fetch()),
+    );
+  }
+
+  edit(item: Partial<T>): Observable<void> {
+    return this.editItem(item).pipe(
+      delay(2000),
+      switchMap(_ => this.fetch()),
+    );
+  }
+
+  create(item: Partial<T>): Observable<void> {
+    return this.createItem(item).pipe(
+      delay(2000),
+      switchMap(_ => this.fetch()),
+    );
+  }
+
+  abstract fetchItems(): Observable<T[]>;
+  abstract deleteItems(itemsIds: number[]): Observable<void>;
+  abstract editItem(item: Partial<T>): Observable<void>;
+  abstract createItem(item: Partial<T>): Observable<void>;
 }

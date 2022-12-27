@@ -11,23 +11,23 @@ export class AlbumsService extends FeatureServiceBase<Album> {
     super();
   }
 
-  fetch(): Observable<Album[]> {
+  fetchItems(): Observable<Album[]> {
     console.log('fetch data - 2');
     return this.httpClient
       .get<ApiAlbum[]>(`https://jsonplaceholder.typicode.com/albums`)
       .pipe(map(albums => albums as Album[]));
   }
 
-  delete(itemsIds: number[]): Observable<void> {
+  deleteItems(itemsIds: number[]): Observable<void> {
     alert(`Delete ${JSON.stringify(itemsIds)}`);
     return of();
   }
 
-  edit(item: Partial<Album>): Observable<void> {
+  editItem(item: Partial<Album>): Observable<void> {
     throw new Error('Method not implemented.');
   }
 
-  create(item: Partial<Album>): Observable<void> {
+  createItem(item: Partial<Album>): Observable<void> {
     throw new Error('Method not implemented.');
   }
 }

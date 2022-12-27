@@ -11,7 +11,7 @@ export class UsersService extends FeatureServiceBase<User> implements OnDestroy 
     super();
   }
 
-  fetch(): Observable<User[]> {
+  fetchItems(): Observable<User[]> {
     console.log('fetch data - 1');
     return this.httpClient.get<ApiUser[]>(`https://jsonplaceholder.typicode.com/users`).pipe(
       map(users =>
@@ -29,16 +29,18 @@ export class UsersService extends FeatureServiceBase<User> implements OnDestroy 
     );
   }
 
-  delete(itemsIds: number[]): Observable<void> {
+  deleteItems(itemsIds: number[]): Observable<void> {
     alert(`Delete ${JSON.stringify(itemsIds)}`);
     return of();
   }
 
-  edit(item: Partial<User>): Observable<void> {
-    throw new Error('Method not implemented.');
+  editItem(item: Partial<User>): Observable<void> {
+    alert(`Edit ${JSON.stringify(item)}`);
+    return of();
   }
 
-  create(item: Partial<User>): Observable<void> {
-    throw new Error('Method not implemented.');
+  createItem(item: Partial<User>): Observable<void> {
+    alert(`Create ${JSON.stringify(item)}`);
+    return of();
   }
 }
