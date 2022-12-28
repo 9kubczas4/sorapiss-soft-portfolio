@@ -1,7 +1,8 @@
+import { UrlService } from './../../services/url.service';
 import { UiService } from './../../services/ui.service';
 import { MatButtonModule } from '@angular/material/button';
 import { NgFor, AsyncPipe } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, startWith } from 'rxjs/operators';
 import { Action } from '../../interfaces/action';
@@ -16,7 +17,7 @@ import { ActionsService } from '../../services/actions.service';
   imports: [NgFor, AsyncPipe, MatButtonModule, HamburgerComponent],
   standalone: true,
 })
-export class FeatureTabHeaderComponent {
+export class FeatureTabHeaderComponent implements OnInit {
   actions$ = this.router.events.pipe(
     filter(event => event instanceof NavigationEnd),
     map(_ => this.getActions()),
@@ -30,9 +31,14 @@ export class FeatureTabHeaderComponent {
     private readonly router: Router,
     private readonly uiService: UiService,
     private readonly actionsService: ActionsService,
+    private readonly urlService: UrlService,
     @Inject(FEATURE_SERVICE) private featureService: FeatureService<any>,
   ) {
     console.log(this.activatedRoute);
+  }
+
+  ngOnInit(): void {
+    this.urlService.setPath(this.activatedRoute.snapshot.data?.['label']);
   }
 
   onClick(event: Action) {

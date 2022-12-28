@@ -1,5 +1,5 @@
 export enum Tabs {
-  Users = 'Users',
-  Albums = 'Albums',
-  Posts = 'Posts',
+  Users = 'users',
+  Albums = 'albums',
+  Posts = 'posts',
 }

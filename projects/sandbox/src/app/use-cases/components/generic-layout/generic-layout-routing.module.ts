@@ -11,6 +11,8 @@ import { ActionsService } from './services/actions.service';
 import { usersConfig } from './config/users.config';
 import { albumsConfig } from './config/albums.config';
 import { postsConfig } from './config/posts.config';
+import { Tabs } from './enums/tabs';
+import { UrlService } from './services/url.service';
 
 const routes: Routes = [
   {
@@ -19,11 +21,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'users',
+        redirectTo: Tabs.Users,
         pathMatch: 'full',
       },
       {
-        path: 'users',
+        path: Tabs.Users,
         children: [
           {
             path: '',
@@ -39,7 +41,7 @@ const routes: Routes = [
         providers: [{ provide: FEATURE_SERVICE, useClass: UsersService }, SelectionService, ActionsService],
       },
       {
-        path: 'albums',
+        path: Tabs.Albums,
         children: [
           {
             path: '',
@@ -55,7 +57,7 @@ const routes: Routes = [
         providers: [{ provide: FEATURE_SERVICE, useClass: AlbumsService }, SelectionService, ActionsService],
       },
       {
-        path: 'posts',
+        path: Tabs.Posts,
         children: [
           {
             path: '',
@@ -77,5 +79,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [UrlService],
 })
 export class GenericLayoutRoutingModule {}

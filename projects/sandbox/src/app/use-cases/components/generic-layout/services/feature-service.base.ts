@@ -1,20 +1,7 @@
-import { Router } from '@angular/router';
+import { UrlService } from './url.service';
 import { SelectionService } from './selection.service';
 import { OnDestroy, inject, Injectable } from '@angular/core';
-import {
-  Observable,
-  ReplaySubject,
-  BehaviorSubject,
-  switchMap,
-  of,
-  takeUntil,
-  first,
-  delay,
-  tap,
-  concatMap,
-  map,
-  empty,
-} from 'rxjs';
+import { Observable, ReplaySubject, BehaviorSubject, switchMap, of, takeUntil, first, delay, tap, map } from 'rxjs';
 import { FeatureActions } from '../enums/feature-actions';
 import { FeatureService } from '../interfaces/feature.service';
 import { Item } from '../interfaces/item';
@@ -29,7 +16,7 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
 
   protected readonly actionsService = inject(ActionsService);
   protected readonly selectionService = inject(SelectionService);
-  protected readonly router = inject(Router);
+  protected readonly urlService = inject(UrlService);
 
   constructor() {
     this.actionsService
@@ -49,10 +36,14 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
             }
             case FeatureActions.AddNew: {
               // redirect to add form, maybe rename it to OpenCreateForm
+              // this.router.navigateByUrl(`1/edit`);
+              this.urlService.navigateToCreateSlideout();
               return of();
             }
             case FeatureActions.Edit: {
               // redirect to edit form, maybe rename it to OpenEditForm
+              // this.router.navigate([`/1/edit`]);
+              this.urlService.navigateToCreateSlideout();
               return of();
             }
             default: {

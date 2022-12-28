@@ -6,13 +6,18 @@ const routes: Routes = [
   {
     path: '',
     component: FeatureTableComponent,
-    // TODO:
-    // children: [
-    //   {
-    //     path: ':id/edit',
-    //     // component: EditComponent,
-    //   }
-    // ]
+    children: [
+      {
+        path: ':id/edit',
+        loadComponent: () =>
+          import('./containers/edit-slideout/edit-slideout.component').then(c => c.EditSlideoutComponent),
+      },
+      {
+        path: 'create',
+        loadComponent: () =>
+          import('./containers/create-slideout/create-slideout.component').then(c => c.CreateSlideoutComponent),
+      },
+    ],
   },
 ];
 

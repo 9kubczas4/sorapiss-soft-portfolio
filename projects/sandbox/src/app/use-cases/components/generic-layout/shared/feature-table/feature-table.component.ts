@@ -2,13 +2,14 @@ import { SelectionService } from './../../services/selection.service';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { FeatureService, FEATURE_SERVICE } from './../../interfaces/feature.service';
-import { Component, Inject, OnInit, inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Item } from '../../interfaces/item';
 import { AsyncPipe, JsonPipe, NgFor, NgIf } from '@angular/common';
 import { filter, first, map, startWith } from 'rxjs';
 import { Column } from '../../interfaces/column';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-feature-table',
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgIf,
     NgFor,
     MatCheckboxModule,
+    MatSidenavModule,
     MatTableModule,
     RouterModule,
     FormsModule,

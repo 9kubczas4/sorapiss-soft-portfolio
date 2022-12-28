@@ -9,6 +9,8 @@ import { FeatureTableComponent } from './shared/feature-table/feature-table.comp
 import { FeatureTabHeaderComponent } from './shared/feature-tab-header/feature-tab-header.component';
 import { UiService } from './services/ui.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SlideoutService } from './services/slideout.service';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [GenericLayoutComponent],
@@ -22,7 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
     // standalone components
     FeatureTabHeaderComponent,
     FeatureTableComponent,
+
+    // material
+    MatSidenavModule,
   ],
-  providers: [UiService],
+  providers: [SlideoutService, UiService],
 })
 export class GenericLayoutModule {}
