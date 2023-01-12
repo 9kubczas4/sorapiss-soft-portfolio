@@ -1,0 +1,8 @@
+<header class="feature-header">
+  <button hamburger [opened]="areTabsVisible$ | async" (tabsVisibilityChange)="tabsVisibilityChange()"></button>
+  <section class="feature-header__actions">
+    <button mat-raised-button *ngFor="let action of actions$ | async" (click)="onClick(action)">
+      {{ action.label }}
+    </button>
+  </section>
+</header>

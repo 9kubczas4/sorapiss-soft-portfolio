@@ -31,12 +31,18 @@ const routes: Routes = [
             m => m.ComponentFactoryDirectiveModule,
           ),
       },
+      {
+        path: 'generic-layout',
+        loadChildren: () =>
+          import('./components/generic-layout/generic-layout.module').then(m => m.GenericLayoutModule),
+      },
     ],
     data: {
       pages: [
         { label: 'Abstract Multi Step Form', url: 'abstract-multi-step-form/contact', icon: 'library_books' },
         { label: 'Advanced Directives', url: 'advanced-directives', icon: 'switch_access_shortcut_add' },
         { label: 'Component Factory Directive', url: 'component-factory-directive', icon: 'settings_applications' },
+        { label: 'Generic Layout', url: 'generic-layout', icon: 'settings_applications' },
       ],
     },
   },
