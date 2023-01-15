@@ -36,6 +36,11 @@ const routes: Routes = [
             m => m.SampleRxjsOperatorsModule,
           ),
       },
+      {
+        path: 'functions',
+        loadChildren: () =>
+          import('./components/sample-functions/sample-functions.module').then(m => m.SampleFunctionsModule),
+      },
     ],
     data: {
       pages: [
@@ -43,6 +48,7 @@ const routes: Routes = [
         { label: 'Feature Toggle', url: 'feature-toggle', icon: 'check_box' },
         { label: 'Type Guards', url: 'type-guards', icon: 'block' },
         { label: 'RxJs', url: 'rxjs', icon: 'cached' },
+        { label: 'Functions', url: 'functions', icon: 'functions' },
       ],
     },
   },

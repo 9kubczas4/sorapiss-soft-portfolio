@@ -1,0 +1,15 @@
+<lib-sample-page [readmeImport]="readmeImport">
+  <h2>Memo</h2>
+  <section>
+    <h4>Working sample</h4>
+    <div>{{ plusOne(count1) }}</div>
+    <button mat-raised-button (click)="count1 = count1 + 1">Increase</button>
+  </section>
+  <section>
+    <h4>Not working sample</h4>
+    <div>isOdd(count2): {{ isOdd(count2) }}</div>
+    <div>isOdd(count2 + 1): {{ isOdd(count2 + 1) }}</div>
+    <div>isOdd(count2 + 2): {{ isOdd(count2 + 2) }}</div>
+    <button mat-raised-button (click)="count2 = count2 + 1">Increase</button>
+  </section>
+</lib-sample-page>
