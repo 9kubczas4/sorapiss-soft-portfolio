@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 
 import { SampleFunctionsRoutingModule } from './sample-functions-routing.module';
 import { SampleFunctionsComponent } from './sample-functions.component';
+import { materialModules } from './material';
 
 @NgModule({
   declarations: [SampleFunctionsComponent],
-  imports: [CommonModule, SampleFunctionsRoutingModule, SamplePageModule],
+  imports: [CommonModule, SampleFunctionsRoutingModule, SamplePageModule, ...materialModules],
 })
 export class SampleFunctionsModule {}

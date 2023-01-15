@@ -48,7 +48,7 @@ const routes: Routes = [
         { label: 'Feature Toggle', url: 'feature-toggle', icon: 'check_box' },
         { label: 'Type Guards', url: 'type-guards', icon: 'block' },
         { label: 'RxJs', url: 'rxjs', icon: 'cached' },
-        { label: 'Functions', url: 'functions', icon: 'cached' },
+        { label: 'Functions', url: 'functions', icon: 'functions' },
       ],
     },
   },
