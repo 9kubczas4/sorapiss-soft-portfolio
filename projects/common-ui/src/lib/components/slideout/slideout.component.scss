@@ -1,0 +1,9 @@
+.slideout-wrapper {
+  width: 0;
+
+  &--opened {
+    width: 20rem;
+    height: 100vh;
+    background: white;
+  }
+}

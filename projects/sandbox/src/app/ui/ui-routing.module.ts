@@ -24,11 +24,17 @@ const routes: Routes = [
             `./components/sample-disable-interactive-elements-directive/sample-disable-interactive-elements-directive.module`
           ).then(m => m.SampleDisableInteractiveElementsDirectiveModule),
       },
+      {
+        path: 'slideout',
+        loadChildren: () =>
+          import(`./components/sample-slideout/sample-slideout.module`).then(m => m.SampleSlideoutModule),
+      },
     ],
     data: {
       pages: [
         { label: 'Context Menu', url: 'context-menu', icon: 'menu' },
         { label: 'Disable Interactive Elements', url: 'disabled-interactive-elements', icon: 'block' },
+        { label: 'Slideout', url: 'slideout', icon: 'flip' },
       ],
     },
   },
