@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Position } from '../../interfaces';
-import { SlideoutPosition } from './slideout.enums';
+import { SlideoutPosition } from './slideout.enum';
 
 @Pipe({
   name: 'slideoutPosition',
