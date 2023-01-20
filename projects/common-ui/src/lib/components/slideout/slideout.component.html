@@ -1,12 +1,13 @@
-<lib-overlay [content]="slideoutContent" [position]="position | slideoutPosition"> </lib-overlay>
+<lib-overlay
+  *ngIf="opened"
+  [content]="slideoutContent"
+  [hasBackdrop]="true"
+  [position]="position | slideoutPosition"
+  (outsideClicked)="hide()"
+></lib-overlay>
 
 <ng-template #slideoutContent>
-  <section
-    *ngIf="opened"
-    class="slideout-wrapper"
-    [@slideInOut]
-    [class.slideout-wrapper--large]="size === SlideoutSize.LARGE"
-  >
+  <section class="slideout-wrapper" [@slideInOut] [class.slideout-wrapper--large]="size === SlideoutSize.LARGE">
     <ng-content></ng-content>
   </section>
 </ng-template>

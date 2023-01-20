@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OverlayModule } from '../overlay';
 import { SlideoutPosition, SlideoutSize } from './slideout.enum';
@@ -15,16 +15,26 @@ import { trigger, transition, style, animate } from '@angular/animations';
     trigger('slideInOut', [
       transition(':enter', [
         style({ transform: 'translateX(100%)' }),
-        animate('1000ms ease-in', style({ transform: 'translateX(0%)' })),
+        animate('750ms ease-in', style({ transform: 'translateX(0%)' })),
       ]),
-      transition(':leave', [animate('1000ms ease-in', style({ transform: 'translateX(100%)' }))]),
+      transition(':leave', [animate('750ms ease-in', style({ transform: 'translateX(100%)' }))]),
     ]),
   ],
 })
 export class SlideoutComponent {
   @Input() opened = true;
-  @Input() position = SlideoutPosition.RIGHT;
   @Input() size = SlideoutSize.STANDARD;
 
+  @Output() openedChanged = new EventEmitter<boolean>();
+  @Output() closed = new EventEmitter<void>();
+
+  position = SlideoutPosition.RIGHT;
   SlideoutSize = SlideoutSize;
+
+  hide(): void {
+    this.opened = !this.opened;
+    if (!this.opened) {
+      this.closed.emit();
+    }
+  }
 }

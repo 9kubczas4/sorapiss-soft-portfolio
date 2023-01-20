@@ -1,4 +1,4 @@
-<div class="overlay" (click)="hide.emit()">
+<div class="overlay" [class.overlay--backdrop]="hasBackdrop" (click)="outsideClicked.emit()">
   <ng-container *ngIf="content">
     <div
       class="overlay__container"
@@ -6,6 +6,7 @@
       [style.bottom.px]="position?.bottom"
       [style.left.px]="position?.left"
       [style.right.px]="position?.right"
+      (click)="$event.stopPropagation()"
     >
       <ng-template *ngTemplateOutlet="content"></ng-template>
     </div>
