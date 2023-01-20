@@ -1,6 +1,5 @@
 export enum SlideoutPosition {
-  LEFT = 1,
-  RIGHT,
+  RIGHT = 1,
 }
 
 export enum SlideoutSize {

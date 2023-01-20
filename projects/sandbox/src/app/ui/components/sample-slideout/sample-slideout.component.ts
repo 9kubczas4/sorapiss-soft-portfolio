@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SlideoutSize } from '@common-ui';
 
 @Component({
   selector: 'app-sample-slideout',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SampleSlideoutComponent implements OnInit {
   readmeImport = import('./readme.md');
-  sampleData = { id: 1 };
+  slideoutOpened = false;
+  selectedSize = SlideoutSize.STANDARD;
+  SlideoutSize = SlideoutSize;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  slideoutVisibilityChanged() {
+    this.slideoutOpened = !this.slideoutOpened;
+  }
 }

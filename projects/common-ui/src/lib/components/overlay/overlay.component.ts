@@ -10,5 +10,6 @@ import { Component, TemplateRef, Input, ChangeDetectionStrategy, EventEmitter, O
 export class OverlayComponent {
   @Input() content?: TemplateRef<any>;
   @Input() position?: Position;
-  @Output() hide = new EventEmitter<void>();
+  @Input() hasBackdrop = false;
+  @Output() outsideClicked = new EventEmitter<void>();
 }
