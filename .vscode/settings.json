@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
     "Slideout"
-  ]
+  ],
+  "jest.autoRun": "off"
 }
