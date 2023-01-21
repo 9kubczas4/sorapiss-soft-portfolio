@@ -1,11 +1,11 @@
-import { AdvancedDirectivesComponent } from './advanced-directives.component';
+import { ClientReadonlyComponent } from './client-readonly.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: AdvancedDirectivesComponent,
+    component: ClientReadonlyComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AdvancedDirectivesRoutingModule {}
+export class ClientReadonlyRoutingModule {}
