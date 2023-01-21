@@ -1,0 +1,9 @@
+<lib-sample-page [readmeImport]="readmeImport">
+  <mat-slide-toggle color="primary" [checked]="isClientReadonly" (change)="userRoleChanged()">
+    Client Readonly
+  </mat-slide-toggle>
+  <mat-list *ngIf="(userService.isClientReadonly$ | async) === false" role="list">
+    <mat-list-item role="listitem">Setting 1</mat-list-item>
+    <mat-list-item role="listitem">Setting 2</mat-list-item>
+  </mat-list>
+</lib-sample-page>
