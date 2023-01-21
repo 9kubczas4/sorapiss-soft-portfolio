@@ -1,3 +1,4 @@
-import { MatTableModule } from '@angular/material/table';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatListModule } from '@angular/material/list';
 
-export const materialModules = [MatTableModule];
+export const materialModules = [MatListModule, MatSlideToggleModule];

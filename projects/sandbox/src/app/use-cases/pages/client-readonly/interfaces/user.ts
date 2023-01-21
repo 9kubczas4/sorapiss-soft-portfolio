@@ -1,4 +1,7 @@
-export type UserRole = 'admin' | 'user';
+export const enum UserRole {
+  User = 'user',
+  ClientReadonly = 'client-readonly',
+}
 
 export interface User {
   id: number;
