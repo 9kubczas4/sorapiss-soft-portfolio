@@ -15,26 +15,25 @@ const routes: Routes = [
       {
         path: 'abstract-multi-step-form',
         loadChildren: () =>
-          import('./components/abstract-multi-step-form/abstract-multi-step-form.module').then(
+          import('./pages/abstract-multi-step-form/abstract-multi-step-form.module').then(
             m => m.AbstractMultiStepFormModule,
           ),
       },
       {
         path: 'advanced-directives',
         loadChildren: () =>
-          import('./components/advanced-directives/advanced-directives.module').then(m => m.AdvancedDirectivesModule),
+          import('./pages/advanced-directives/advanced-directives.module').then(m => m.AdvancedDirectivesModule),
       },
       {
         path: 'component-factory-directive',
         loadChildren: () =>
-          import('./components/component-factory-directive/component-factory-directive.module').then(
+          import('./pages/component-factory-directive/component-factory-directive.module').then(
             m => m.ComponentFactoryDirectiveModule,
           ),
       },
       {
         path: 'generic-layout',
-        loadChildren: () =>
-          import('./components/generic-layout/generic-layout.module').then(m => m.GenericLayoutModule),
+        loadChildren: () => import('./pages/generic-layout/generic-layout.module').then(m => m.GenericLayoutModule),
       },
     ],
     data: {
