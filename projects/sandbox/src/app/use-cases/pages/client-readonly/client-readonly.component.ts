@@ -10,7 +10,7 @@ import { UserService } from './services/user.service';
 export class ClientReadonlyComponent implements OnInit {
   readmeImport = import('./readme.md');
 
-  isClientReadonly = true;
+  isUserReadonly = true;
 
   constructor(readonly userService: UserService) {}
 
@@ -19,7 +19,7 @@ export class ClientReadonlyComponent implements OnInit {
   }
 
   userRoleChanged(): void {
-    this.isClientReadonly = !this.isClientReadonly;
+    this.isUserReadonly = !this.isUserReadonly;
     this.setCurrentUser();
   }
 
@@ -28,7 +28,7 @@ export class ClientReadonlyComponent implements OnInit {
       id: 1,
       firstName: 'John',
       lastName: 'Doe',
-      role: this.isClientReadonly ? UserRole.ClientReadonly : UserRole.User,
+      role: this.isUserReadonly ? UserRole.Viewer : UserRole.Editor,
     });
   }
 }

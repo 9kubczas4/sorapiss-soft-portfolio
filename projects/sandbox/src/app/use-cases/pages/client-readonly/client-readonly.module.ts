@@ -8,7 +8,7 @@ import { directives } from './directives';
 import { materialModules } from './material';
 
 @NgModule({
-  declarations: [ClientReadonlyComponent, ...directives],
-  imports: [CommonModule, ClientReadonlyRoutingModule, SamplePageModule, ...materialModules],
+  declarations: [ClientReadonlyComponent],
+  imports: [CommonModule, ClientReadonlyRoutingModule, SamplePageModule, ...materialModules, ...directives],
 })
 export class ClientReadonlyModule {}
