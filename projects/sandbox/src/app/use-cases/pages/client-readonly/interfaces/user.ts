@@ -1,6 +1,6 @@
 export const enum UserRole {
-  User = 'user',
-  ClientReadonly = 'client-readonly',
+  Editor = 'editor',
+  Viewer = 'viewer',
 }
 
 export interface User {

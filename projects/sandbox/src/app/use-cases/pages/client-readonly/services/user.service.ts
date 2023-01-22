@@ -7,8 +7,8 @@ import { User, UserRole } from '../interfaces/user';
 })
 export class UserService {
   readonly #currentUser$ = new Subject<User>();
-  readonly isClientReadonly$ = this.#currentUser$.pipe(
-    map(user => user.role === UserRole.ClientReadonly),
+  readonly isViewer$ = this.#currentUser$.pipe(
+    map(user => user.role === UserRole.Viewer),
     startWith(true),
   );
 
