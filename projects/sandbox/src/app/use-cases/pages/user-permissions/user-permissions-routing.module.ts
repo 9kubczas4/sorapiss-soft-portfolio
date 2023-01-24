@@ -1,11 +1,11 @@
-import { ClientReadonlyComponent } from './client-readonly.component';
+import { UserPermissionsComponent } from './user-permissions.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: ClientReadonlyComponent,
+    component: UserPermissionsComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ClientReadonlyRoutingModule {}
+export class UserPermissionsRoutingModule {}

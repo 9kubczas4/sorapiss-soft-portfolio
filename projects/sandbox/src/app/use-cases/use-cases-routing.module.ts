@@ -25,15 +25,16 @@ const routes: Routes = [
           import('./pages/advanced-directives/advanced-directives.module').then(m => m.AdvancedDirectivesModule),
       },
       {
-        path: 'client-readonly',
-        loadChildren: () => import('./pages/client-readonly/client-readonly.module').then(m => m.ClientReadonlyModule),
-      },
-      {
         path: 'component-factory-directive',
         loadChildren: () =>
           import('./pages/component-factory-directive/component-factory-directive.module').then(
             m => m.ComponentFactoryDirectiveModule,
           ),
+      },
+      {
+        path: 'user-permissions',
+        loadChildren: () =>
+          import('./pages/user-permissions/user-permissions.module').then(m => m.UserPermissionsModule),
       },
       {
         path: 'generic-layout',
@@ -44,9 +45,9 @@ const routes: Routes = [
       pages: [
         { label: 'Abstract Multi Step Form', url: 'abstract-multi-step-form/contact', icon: 'library_books' },
         { label: 'Advanced Directives', url: 'advanced-directives', icon: 'switch_access_shortcut_add' },
-        { label: 'Client Readonly', url: 'client-readonly', icon: 'person_outline' },
         { label: 'Component Factory Directive', url: 'component-factory-directive', icon: 'settings_applications' },
         { label: 'Generic Layout', url: 'generic-layout', icon: 'view_column' },
+        { label: 'User Permissions', url: 'user-permissions', icon: 'person_outline' },
       ],
     },
   },
