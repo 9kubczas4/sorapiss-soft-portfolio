@@ -3,11 +3,11 @@ import { UserRole } from './interfaces/user';
 import { UserService } from './services/user.service';
 
 @Component({
-  selector: 'app-client-readonly',
-  templateUrl: './client-readonly.component.html',
-  styleUrls: ['./client-readonly.component.scss'],
+  selector: 'app-user-permissions',
+  templateUrl: './user-permissions.component.html',
+  styleUrls: ['./user-permissions.component.scss'],
 })
-export class ClientReadonlyComponent implements OnInit {
+export class UserPermissionsComponent implements OnInit {
   readmeImport = import('./readme.md');
 
   isUserReadonly = true;
