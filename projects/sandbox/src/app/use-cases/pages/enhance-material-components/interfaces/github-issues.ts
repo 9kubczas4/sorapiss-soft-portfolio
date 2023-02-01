@@ -10,3 +10,8 @@ export interface GithubIssue {
   state: string;
   title: string;
 }
+
+export interface GetRepoIssuesMetadata {
+  isLoading: boolean;
+  isRateLimitReached: boolean;
+}

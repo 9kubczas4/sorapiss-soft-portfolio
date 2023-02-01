@@ -1,18 +1,10 @@
 <lib-sample-page [readmeImport]="readmeImport">
   <section class="enhance-material-components-sample">
-    <div class="example-loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
-      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-      <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
-        GitHub's API rate limit has been reached. It will be reset in one minute.
-      </div>
-    </div>
-
     <div class="example-table-container">
       <table
         mat-table
         githubIssuesTable
         [paginator]="paginator"
-        class="example-table"
         matSort
         matSortActive="created"
         matSortDisableClear
@@ -48,5 +40,17 @@
     </div>
 
     <mat-paginator #paginator pageSize="30" aria-label="Select page of GitHub search results"></mat-paginator>
+
+    <ng-container *ngIf="githubIssuesService.getRepoIssuesMetadata$ | async as getRepoIssuesMetadata">
+      <div
+        class="example-loading-shade"
+        *ngIf="getRepoIssuesMetadata.isLoading || getRepoIssuesMetadata.isRateLimitReached"
+      >
+        <mat-spinner *ngIf="getRepoIssuesMetadata.isLoading"></mat-spinner>
+        <div class="example-rate-limit-reached" *ngIf="getRepoIssuesMetadata.isRateLimitReached">
+          GitHub's API rate limit has been reached. It will be reset in one minute.
+        </div>
+      </div>
+    </ng-container>
   </section>
 </lib-sample-page>
