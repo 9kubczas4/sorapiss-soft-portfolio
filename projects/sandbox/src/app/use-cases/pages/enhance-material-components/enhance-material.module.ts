@@ -7,10 +7,18 @@ import { materialModules } from './material';
 import { EnhanceMaterialComponent } from './enhance-material.component';
 import { EnhanceMaterialRoutingModule } from './enhance-material-routing.module';
 import { GithubIssuesService } from './services/github-issues.service';
+import { directives } from './directives';
 
 @NgModule({
   declarations: [EnhanceMaterialComponent],
-  imports: [CommonModule, HttpClientModule, EnhanceMaterialRoutingModule, SamplePageModule, ...materialModules],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    EnhanceMaterialRoutingModule,
+    SamplePageModule,
+    ...materialModules,
+    ...directives,
+  ],
   providers: [GithubIssuesService],
 })
 export class EnhanceMaterialModule {}
