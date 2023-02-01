@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GithubIssuesService } from './services/github-issues.service';
 
 @Component({
   selector: 'app-enhance-material',
@@ -8,6 +9,6 @@ import { Component } from '@angular/core';
 export class EnhanceMaterialComponent {
   readmeImport = import('./readme.md');
   displayedColumns: string[] = ['created', 'state', 'number', 'title'];
-  isLoadingResults = true;
-  isRateLimitReached = false;
+
+  constructor(readonly githubIssuesService: GithubIssuesService) {}
 }
