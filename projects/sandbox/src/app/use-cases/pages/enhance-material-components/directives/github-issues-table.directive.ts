@@ -16,13 +16,10 @@ import { DestroyedDirective } from '@ng-utils';
 export class GithubIssuesTableDirective implements OnInit {
   @Input() paginator!: MatPaginator;
 
+  @Self() private readonly table = inject(MatTable<GithubIssue>);
+  @Self() private readonly sort = inject(MatSort);
+  private readonly service = inject(GithubIssuesService);
   private readonly destroyed$ = inject(DestroyedDirective).destroyed$;
-
-  constructor(
-    @Self() private readonly table: MatTable<GithubIssue>,
-    @Self() private readonly sort: MatSort,
-    private readonly service: GithubIssuesService,
-  ) {}
 
   ngOnInit(): void {
     this.sort?.sortChange.pipe(takeUntil(this.destroyed$)).subscribe(() => (this.paginator.pageIndex = 0));
