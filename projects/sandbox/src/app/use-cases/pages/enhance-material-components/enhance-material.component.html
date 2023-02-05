@@ -41,7 +41,7 @@
 
     <mat-paginator #paginator pageSize="30" aria-label="Select page of GitHub search results"></mat-paginator>
 
-    <ng-container *ngIf="githubIssuesService.getRepoIssuesMetadata$ | async as getRepoIssuesMetadata">
+    <ng-container *ngIf="getRepoIssuesMetadata$ | async as getRepoIssuesMetadata">
       <div
         class="example-loading-shade"
         *ngIf="getRepoIssuesMetadata.isLoading || getRepoIssuesMetadata.isRateLimitReached"
