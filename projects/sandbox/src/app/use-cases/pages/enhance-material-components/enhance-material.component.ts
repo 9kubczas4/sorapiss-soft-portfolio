@@ -9,6 +9,7 @@ import { GithubIssuesService } from './services/github-issues.service';
 export class EnhanceMaterialComponent {
   readmeImport = import('./readme.md');
   displayedColumns: string[] = ['created', 'state', 'number', 'title'];
+  getRepoIssuesMetadata$ = this.githubIssuesService.getRepoIssuesMetadata$;
 
-  constructor(readonly githubIssuesService: GithubIssuesService) {}
+  constructor(private readonly githubIssuesService: GithubIssuesService) {}
 }
