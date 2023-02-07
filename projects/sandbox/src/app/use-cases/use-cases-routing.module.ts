@@ -20,6 +20,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'advanced-dependency-injection',
+        loadChildren: () =>
+          import('./pages/advanced-dependency-injection/advanced-dependency-injection.module').then(
+            m => m.AdvancedDependencyInjectionModule,
+          ),
+      },
+      {
         path: 'advanced-directives',
         loadChildren: () =>
           import('./pages/advanced-directives/advanced-directives.module').then(m => m.AdvancedDirectivesModule),
@@ -49,6 +56,7 @@ const routes: Routes = [
     data: {
       pages: [
         { label: 'Abstract Multi Step Form', url: 'abstract-multi-step-form/contact', icon: 'library_books' },
+        { label: 'Advanced Dependency Injection', url: 'advanced-dependency-injection', icon: 'jump_to_element' },
         { label: 'Advanced Directives', url: 'advanced-directives', icon: 'switch_access_shortcut_add' },
         { label: 'Component Factory Directive', url: 'component-factory-directive', icon: 'settings_applications' },
         { label: 'Enhance Material Components', url: 'enhance-material', icon: 'switch_access_shortcut_add' },
