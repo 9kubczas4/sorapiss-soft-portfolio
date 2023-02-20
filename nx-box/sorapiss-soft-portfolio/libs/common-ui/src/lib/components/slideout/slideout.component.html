@@ -1,0 +1,13 @@
+<ssp-overlay
+  *ngIf="opened"
+  [content]="slideoutContent"
+  [hasBackdrop]="true"
+  [position]="position | slideoutPosition"
+  (outsideClicked)="hide()"
+></ssp-overlay>
+
+<ng-template #slideoutContent>
+  <section class="slideout-wrapper" [@slideInOut] [class.slideout-wrapper--large]="size === SlideoutSize.LARGE">
+    <ng-content></ng-content>
+  </section>
+</ng-template>
