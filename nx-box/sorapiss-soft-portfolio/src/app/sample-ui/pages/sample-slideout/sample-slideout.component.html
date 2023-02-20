@@ -1,0 +1,17 @@
+<ssp-sample-page [readmeImport]="readmeImport">
+  <ssp-slideout [opened]="slideoutOpened" [size]="selectedSize">Content</ssp-slideout>
+  <section class="sample-slideout__config">
+    <mat-select class="sample-slideout__config-size" [(value)]="selectedSize">
+      <mat-option [value]="SlideoutSize.STANDARD">Standard</mat-option>
+      <mat-option [value]="SlideoutSize.LARGE">Large</mat-option>
+    </mat-select>
+    <mat-slide-toggle
+      class="sample-slideout__config-open-toggle"
+      color="primary"
+      [checked]="slideoutOpened"
+      (toggleChange)="slideoutVisibilityChanged()"
+    >
+      Open slideout!
+    </mat-slide-toggle>
+  </section>
+</ssp-sample-page>

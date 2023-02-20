@@ -9,7 +9,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "sorapissSoftPortfolio",
+            "prefix": "ssp",
             "style": "camelCase"
           }
         ],
