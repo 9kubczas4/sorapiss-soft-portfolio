@@ -1,0 +1,32 @@
+<ng-container *ngIf="dataSource$ | async as dataSource">
+  <form [formGroup]="formGroup">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox
+            #selectAll
+            [checked]="selectionService.allSelected$ | async"
+            [indeterminate]="selectionService.indeterminate$ | async"
+            (click)="selectionService.toggle(selectAll.checked)"
+          ></mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox [formControlName]="row.id"></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container *ngIf="columns$ | async as columns">
+        <ng-container *ngFor="let column of columns" [matColumnDef]="column.property">
+          <th mat-header-cell *matHeaderCellDef>{{ column.label }}</th>
+          <td mat-cell *matCellDef="let element">{{ element[column.property] }}</td>
+        </ng-container>
+
+        <ng-container *ngIf="displayedColumns$ | async as displayedColumns">
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </ng-container>
+      </ng-container>
+    </table></form
+></ng-container>
+
+<router-outlet></router-outlet>
