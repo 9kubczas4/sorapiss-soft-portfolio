@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { map, Observable, startWith } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { Observable, filter, switchMap, of } from 'rxjs';
+import { map, startWith, tap } from 'rxjs/operators';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Page } from '../interfaces/page';
 
 @Component({
@@ -10,8 +11,15 @@ import { Page } from '../interfaces/page';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainLayoutComponent {
-  pages$: Observable<Page[]> | undefined = inject(ActivatedRoute).firstChild?.firstChild?.firstChild?.data.pipe(
-    map(data => data['pages']),
-    startWith([])
+  private readonly routeChange$ = inject(Router).events.pipe(filter(e => e instanceof NavigationEnd), startWith(null));
+
+  pages$: Observable<Page[]> | undefined = this.routeChange$
+  .pipe(
+    tap(_ => console.log('route')),
+    switchMap(() => this.activatedRoute?.firstChild?.firstChild?.firstChild?.data ?? of()),
+    map(data => 'pages' in data ? data['pages'] : []),
   );
+
+
+  constructor(private readonly activatedRoute: ActivatedRoute) {}
 }
