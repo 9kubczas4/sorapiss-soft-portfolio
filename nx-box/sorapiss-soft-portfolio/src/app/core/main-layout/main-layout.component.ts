@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Observable, filter, switchMap, of } from 'rxjs';
-import { map, startWith, tap } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Page } from '../interfaces/page';
 
@@ -15,7 +15,6 @@ export class MainLayoutComponent {
 
   pages$: Observable<Page[]> | undefined = this.routeChange$
   .pipe(
-    tap(_ => console.log('route')),
     switchMap(() => this.activatedRoute?.firstChild?.firstChild?.firstChild?.data ?? of()),
     map(data => 'pages' in data ? data['pages'] : []),
   );
