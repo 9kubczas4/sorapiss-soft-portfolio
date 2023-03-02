@@ -1,0 +1,20 @@
+{
+  "features": [
+    {
+      "key": "Feature 1",
+      "enabled": true
+    },
+    {
+      "key": "Feature 2",
+      "enabled": false
+    },
+    {
+      "key": "Feature 3",
+      "enabled": true
+    },
+    {
+      "key": "Feature 4",
+      "enabled": true
+    }
+  ]
+}
