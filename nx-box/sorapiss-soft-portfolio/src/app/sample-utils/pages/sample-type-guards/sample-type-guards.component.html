@@ -1,0 +1,11 @@
+<ssp-sample-page [readmeImport]="readmeImport">
+  <mat-list *ngFor="let function of dataSource">
+    <div mat-subheader>{{ function.functionName }}</div>
+    <mat-list-item *ngFor="let result of function.results">
+      <mat-icon mat-list-icon>{{ result.value ? 'check' : 'close' }}</mat-icon>
+      <div mat-line>{{ result.key | value }}</div>
+      <div mat-line>{{ result.value }}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</ssp-sample-page>
