@@ -1,4 +1,4 @@
-.vscode
-dist
-node_modules
-src/assets/i18n
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
