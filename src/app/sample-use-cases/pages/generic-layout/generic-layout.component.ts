@@ -8,7 +8,9 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./generic-layout.component.scss'],
 })
 export class GenericLayoutComponent {
-  areTabsHidden$ = this.uiService.areTabsVisible().pipe(map(areTabsVisible => !areTabsVisible));
+  areTabsHidden$ = this.uiService
+    .areTabsVisible()
+    .pipe(map((areTabsVisible) => !areTabsVisible));
 
   constructor(private readonly uiService: UiService) {}
 }

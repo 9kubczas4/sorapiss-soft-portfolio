@@ -21,7 +21,7 @@ export const materialModules = [MatButtonModule, MatInputModule];
     AccountRoutingModule,
 
     // material
-    ...materialModules
+    ...materialModules,
   ],
 })
 export class AccountModule {}

@@ -23,7 +23,7 @@ export const materialModules = [MatIconModule, MatListModule];
     ...materialModules,
 
     // common
-    SamplePageComponent
+    SamplePageComponent,
   ],
 })
 export class SampleTypeGuardsModule {}

@@ -8,7 +8,9 @@ import { map, Observable } from 'rxjs';
   styleUrls: ['./sample-page.component.scss'],
 })
 export class SamplePageComponent {
-  content$: Observable<string> = this.activatedRoute.data.pipe(map(data => data['content']));
+  content$: Observable<string> = this.activatedRoute.data.pipe(
+    map((data) => data['content'])
+  );
 
   constructor(private readonly activatedRoute: ActivatedRoute) {}
 }

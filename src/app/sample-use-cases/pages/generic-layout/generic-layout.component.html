@@ -1,5 +1,8 @@
 <router-outlet name="tab-header"></router-outlet>
 <section class="content">
-  <ssp-navigation class="tabs" [class.tabs--hidden]="areTabsHidden$ | async"></ssp-navigation>
+  <ssp-navigation
+    class="tabs"
+    [class.tabs--hidden]="areTabsHidden$ | async"
+  ></ssp-navigation>
   <router-outlet></router-outlet>
 </section>

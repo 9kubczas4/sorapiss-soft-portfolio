@@ -1,5 +1,9 @@
 <ssp-sample-page [readmeImport]="readmeImport">
-  <form class="component-form" [formGroup]="form" (ngSubmit)="addDynamicComponent()">
+  <form
+    class="component-form"
+    [formGroup]="form"
+    (ngSubmit)="addDynamicComponent()"
+  >
     <mat-form-field appearance="fill">
       <mat-label>Component Type:</mat-label>
       <mat-select formControlName="componentType">
@@ -18,12 +22,21 @@
         <mat-option value="black">Black</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-raised-button type="submit" [disabled]="!form.valid">Add Component</button>
+    <button mat-raised-button type="submit" [disabled]="!form.valid">
+      Add Component
+    </button>
   </form>
 
-  <div *ngFor="let component of dynamicComponents; let i = index" class="dynamic-component-container">
+  <div
+    *ngFor="let component of dynamicComponents; let i = index"
+    class="dynamic-component-container"
+  >
     {{ i + 1 }}.
     <!-- The magic happens here: -->
-    <ng-template [sspComponentFactory] [color]="component.color" [type]="component.type"></ng-template>
+    <ng-template
+      [sspComponentFactory]
+      [color]="component.color"
+      [type]="component.type"
+    ></ng-template>
   </div>
 </ssp-sample-page>

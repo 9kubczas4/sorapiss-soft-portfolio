@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { isArray, isNil, isNull, isString, KeyValuePair } from '@sorapiss-soft-portfolio/utils';
+import {
+  isArray,
+  isNil,
+  isNull,
+  isString,
+  KeyValuePair,
+} from '@sorapiss-soft-portfolio/utils';
 import { TypeGuardResult } from './sample-type-guards.interface';
 
 @Component({
@@ -34,10 +40,10 @@ export class SampleTypeGuardsComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.#functions.forEach(fn => {
+    this.#functions.forEach((fn) => {
       const item: TypeGuardResult = {
         functionName: fn.key,
-        results: this.#values.map(value => ({
+        results: this.#values.map((value) => ({
           key: value,
           value: fn.value(value),
         })),

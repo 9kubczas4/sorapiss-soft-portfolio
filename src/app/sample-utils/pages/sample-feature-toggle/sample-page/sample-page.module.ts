@@ -11,7 +11,7 @@ import { SamplePageComponent } from './sample-page.component';
     CommonModule,
 
     // routing
-    SamplePageRoutingModule
+    SamplePageRoutingModule,
   ],
 })
 export class SamplePageModule {}

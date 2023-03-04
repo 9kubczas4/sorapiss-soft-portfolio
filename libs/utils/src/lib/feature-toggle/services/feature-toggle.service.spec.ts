@@ -1,16 +1,21 @@
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { FeatureToggleService } from './feature-toggle.service';
-import { setupFakeFeatureToggles, TestFeatureFlag } from './feature-toggle.fixture';
+import {
+  setupFakeFeatureToggles,
+  TestFeatureFlag,
+} from './feature-toggle.fixture';
 
 describe('FeatureToggleService', () => {
   let spectator: SpectatorService<FeatureToggleService<TestFeatureFlag>>;
   let service: FeatureToggleService<TestFeatureFlag>;
 
-  const createService = createServiceFactory<FeatureToggleService<TestFeatureFlag>>({
+  const createService = createServiceFactory<
+    FeatureToggleService<TestFeatureFlag>
+  >({
     service: FeatureToggleService,
   });
 
-  beforeEach(done => {
+  beforeEach((done) => {
     spectator = createService();
     service = spectator.service;
 

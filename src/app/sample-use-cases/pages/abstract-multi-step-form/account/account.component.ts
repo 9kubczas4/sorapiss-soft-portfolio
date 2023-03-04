@@ -2,7 +2,10 @@ import { FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
-import { ControlErrorStateMatcher, FormProvider } from '@sorapiss-soft-portfolio/utils';
+import {
+  ControlErrorStateMatcher,
+  FormProvider,
+} from '@sorapiss-soft-portfolio/utils';
 
 @Component({
   selector: 'ssp-account',
@@ -13,7 +16,10 @@ export class AccountComponent implements OnInit {
   form: FormGroup | null = null;
   matcher = new ControlErrorStateMatcher();
 
-  constructor(private readonly formProvider: FormProvider, private readonly location: Location) {}
+  constructor(
+    private readonly formProvider: FormProvider,
+    private readonly location: Location
+  ) {}
 
   get emailFormControl(): FormControl {
     return this.form?.get('email') as FormControl;

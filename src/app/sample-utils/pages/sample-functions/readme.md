@@ -38,17 +38,22 @@ isOdd = memo((count: number) => {
 In this case, the “isOdd called” will show up 6 times every time we click on the button.
 
 ```html
-isOdd called: 1 isOdd called: 2 isOdd called: 3 isOdd called: 1 isOdd called: 2 isOdd called: 3
+isOdd called: 1 isOdd called: 2 isOdd called: 3 isOdd called: 1 isOdd called: 2
+isOdd called: 3
 ```
 
 **logParametersAndReturnValue**
 To write a TypeScript decorator that logs all parameters of a method and its return value, you can use the following code:
 
 ```ts
-export const logParametersAndReturnValue = (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+export const logParametersAndReturnValue = (
+  target: any,
+  propertyKey: string,
+  descriptor: PropertyDescriptor
+) => {
   const originalMethod = descriptor.value;
   descriptor.value = (...args: any[]) => {
-    const argList = args.map(arg => JSON.stringify(arg)).join(';');
+    const argList = args.map((arg) => JSON.stringify(arg)).join(';');
     const result = originalMethod.apply(this, args);
     const resultString = JSON.stringify(result);
     console.log(`Method ${propertyKey} called with: ${argList}`);

@@ -13,6 +13,11 @@ import { ContextMenuContentDirective } from './context-menu-content/context-menu
     ContextMenuTriggerDirective,
   ],
   imports: [CommonModule],
-  exports: [ContextMenuComponent, ContextMenuContentDirective, ContextMenuItemComponent, ContextMenuTriggerDirective],
+  exports: [
+    ContextMenuComponent,
+    ContextMenuContentDirective,
+    ContextMenuItemComponent,
+    ContextMenuTriggerDirective,
+  ],
 })
 export class ContextMenuModule {}

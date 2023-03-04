@@ -11,14 +11,18 @@ import { Page } from '../interfaces/page';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainLayoutComponent {
-  private readonly routeChange$ = inject(Router).events.pipe(filter(e => e instanceof NavigationEnd), startWith(null));
-
-  pages$: Observable<Page[]> | undefined = this.routeChange$
-  .pipe(
-    switchMap(() => this.activatedRoute?.firstChild?.firstChild?.firstChild?.data ?? of()),
-    map(data => 'pages' in data ? data['pages'] : []),
+  private readonly routeChange$ = inject(Router).events.pipe(
+    filter((e) => e instanceof NavigationEnd),
+    startWith(null)
   );
 
+  pages$: Observable<Page[]> | undefined = this.routeChange$.pipe(
+    switchMap(
+      () =>
+        this.activatedRoute?.firstChild?.firstChild?.firstChild?.data ?? of()
+    ),
+    map((data) => ('pages' in data ? data['pages'] : []))
+  );
 
   constructor(private readonly activatedRoute: ActivatedRoute) {}
 }

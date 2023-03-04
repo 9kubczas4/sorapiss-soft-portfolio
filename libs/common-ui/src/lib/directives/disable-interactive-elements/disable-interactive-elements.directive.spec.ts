@@ -8,8 +8,11 @@ import { DisableInteractiveElementsDirective } from './disable-interactive-eleme
 
 const directiveFactory = (
   spectator: SpectatorDirective<DisableInteractiveElementsDirective>,
-  createDirective: SpectatorDirectiveFactory<DisableInteractiveElementsDirective, HostComponent>,
-  disabledFlag: boolean,
+  createDirective: SpectatorDirectiveFactory<
+    DisableInteractiveElementsDirective,
+    HostComponent
+  >,
+  disabledFlag: boolean
 ) => {
   spectator = createDirective(
     `<div [sspDisableInteractiveElements]>
@@ -24,7 +27,7 @@ const directiveFactory = (
       props: {
         disabledFlag,
       },
-    },
+    }
   );
 
   const input = spectator.query('input') as HTMLInputElement;

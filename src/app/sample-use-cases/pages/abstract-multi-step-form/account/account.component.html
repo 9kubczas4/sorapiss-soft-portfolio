@@ -8,10 +8,17 @@
       placeholder="Ex. pat@example.com"
       autocomplete="on"
     />
-    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+    <mat-error
+      *ngIf="
+        emailFormControl.hasError('email') &&
+        !emailFormControl.hasError('required')
+      "
+    >
       Please enter a valid email address
     </mat-error>
-    <mat-error *ngIf="emailFormControl.hasError('required')"> Email is <strong>required</strong> </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
   <div class="amsf-form__group" formGroupName="password">
     <mat-form-field appearance="fill">
@@ -25,7 +32,9 @@
         minlength="2"
         maxlength="20"
       />
-      <mat-error *ngIf="passwordFormControl.hasError('required')"> Password is <strong>required</strong> </mat-error>
+      <mat-error *ngIf="passwordFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
       <mat-error *ngIf="passwordFormControl.hasError('minlength')">
         Password needs to have at least <strong>2 characters</strong>
       </mat-error>
@@ -33,7 +42,8 @@
         Password needs to have max <strong>20 characters</strong>
       </mat-error>
       <mat-error *ngIf="passwordFormControl.hasError('strong')">
-        Password needs to contain at least one <strong>number, lower letter and upper letter</strong>
+        Password needs to contain at least one
+        <strong>number, lower letter and upper letter</strong>
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
@@ -62,7 +72,9 @@
     </mat-error>
   </div>
   <div class="amsf-form__actions">
-    <button mat-raised-button (click)="previous()" type="button">Previous</button>
+    <button mat-raised-button (click)="previous()" type="button">
+      Previous
+    </button>
     <button mat-raised-button type="submit" color="primary">Submit</button>
   </div>
 </form>

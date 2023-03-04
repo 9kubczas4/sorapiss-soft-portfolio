@@ -14,15 +14,22 @@ const routes: Routes = [
       },
       {
         path: 'ui',
-        loadChildren: () => import('./sample-ui/sample-ui.module').then(m => m.SampleUiModule),
+        loadChildren: () =>
+          import('./sample-ui/sample-ui.module').then((m) => m.SampleUiModule),
       },
       {
         path: 'use-cases',
-        loadChildren: () => import('./sample-use-cases/sample-use-cases.module').then(m => m.SampleUseCasesModule),
+        loadChildren: () =>
+          import('./sample-use-cases/sample-use-cases.module').then(
+            (m) => m.SampleUseCasesModule
+          ),
       },
       {
         path: 'utils',
-        loadChildren: () => import('./sample-utils/sample-utils.module').then(m => m.SampleUtilsModule),
+        loadChildren: () =>
+          import('./sample-utils/sample-utils.module').then(
+            (m) => m.SampleUtilsModule
+          ),
       },
     ],
   },

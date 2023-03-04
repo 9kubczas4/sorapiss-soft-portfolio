@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SampleContextMenuComponent } from './sample-context-menu.component';
 import { SampleContextMenuRoutingModule } from './sample-context-menu-routing.module';
-import { ContextMenuModule, SamplePageComponent } from '@sorapiss-soft-portfolio/common-ui';
+import {
+  ContextMenuModule,
+  SamplePageComponent,
+} from '@sorapiss-soft-portfolio/common-ui';
 
 @NgModule({
   declarations: [SampleContextMenuComponent],
@@ -15,7 +18,7 @@ import { ContextMenuModule, SamplePageComponent } from '@sorapiss-soft-portfolio
 
     // common
     ContextMenuModule,
-    SamplePageComponent
+    SamplePageComponent,
   ],
 })
 export class SampleContextMenuModule {}

@@ -38,20 +38,29 @@ export class GithubIssuesTableDirective implements OnInit {
   private readonly destroyed$ = inject(DestroyedDirective).destroyed$;
 
   ngOnInit(): void {
-    this.sort?.sortChange.pipe(takeUntil(this.destroyed$)).subscribe(() => (this.paginator.pageIndex = 0));
+    this.sort?.sortChange
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(() => (this.paginator.pageIndex = 0));
 
-    const dataSource: Observable<GithubIssue[]> = merge(this.sort.sortChange, this.paginator.page).pipe(
+    const dataSource: Observable<GithubIssue[]> = merge(
+      this.sort.sortChange,
+      this.paginator.page
+    ).pipe(
       startWith([]),
       switchMap(() =>
         this.service
-          .getRepoIssues(this.sort.active, this.sort.direction, this.paginator.pageIndex)
-          .pipe(catchError(() => of(null))),
+          .getRepoIssues(
+            this.sort.active,
+            this.sort.direction,
+            this.paginator.pageIndex
+          )
+          .pipe(catchError(() => of(null)))
       ),
       map((data: ApiGithubIssueResponse | null) => {
         this.paginator.length = data?.total_count ?? 0;
         return data === null ? [] : data?.items;
       }),
-      takeUntil(this.destroyed$),
+      takeUntil(this.destroyed$)
     );
 
     this.table.dataSource = dataSource;
@@ -84,7 +93,9 @@ Below you can see the use of the directive in the component template.
   >
     <!-- Created Column -->
     <ng-container matColumnDef="created">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>Created</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+        Created
+      </th>
       <td mat-cell *matCellDef="let row">{{ row.created_at | date }}</td>
     </ng-container>
 
@@ -95,7 +106,11 @@ Below you can see the use of the directive in the component template.
   </table>
 </div>
 
-<mat-paginator #paginator pageSize="30" aria-label="Select page of GitHub search results"></mat-paginator>
+<mat-paginator
+  #paginator
+  pageSize="30"
+  aria-label="Select page of GitHub search results"
+></mat-paginator>
 
 <ng-container *ngIf="getRepoIssuesMetadata$ | async as getRepoIssuesMetadata">
   <div
@@ -103,7 +118,10 @@ Below you can see the use of the directive in the component template.
     *ngIf="getRepoIssuesMetadata.isLoading || getRepoIssuesMetadata.isRateLimitReached"
   >
     <mat-spinner *ngIf="getRepoIssuesMetadata.isLoading"></mat-spinner>
-    <div class="example-rate-limit-reached" *ngIf="getRepoIssuesMetadata.isRateLimitReached">
+    <div
+      class="example-rate-limit-reached"
+      *ngIf="getRepoIssuesMetadata.isRateLimitReached"
+    >
       GitHub's API rate limit has been reached. It will be reset in one minute.
     </div>
   </div>

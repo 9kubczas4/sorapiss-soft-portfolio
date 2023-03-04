@@ -7,7 +7,11 @@
 ></ssp-overlay>
 
 <ng-template #slideoutContent>
-  <section class="slideout-wrapper" [@slideInOut] [class.slideout-wrapper--large]="size === SlideoutSize.LARGE">
+  <section
+    class="slideout-wrapper"
+    [@slideInOut]
+    [class.slideout-wrapper--large]="size === SlideoutSize.LARGE"
+  >
     <ng-content></ng-content>
   </section>
 </ng-template>

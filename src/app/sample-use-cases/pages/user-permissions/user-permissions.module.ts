@@ -10,8 +10,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 
-export const materialModules = [MatButtonModule, MatListModule, MatSelectModule, MatSlideToggleModule];
-
+export const materialModules = [
+  MatButtonModule,
+  MatListModule,
+  MatSelectModule,
+  MatSlideToggleModule,
+];
 
 @NgModule({
   declarations: [UserPermissionsComponent],
@@ -29,6 +33,7 @@ export const materialModules = [MatButtonModule, MatListModule, MatSelectModule,
     ...materialModules,
 
     // feature
-    ...directives],
+    ...directives,
+  ],
 })
 export class UserPermissionsModule {}

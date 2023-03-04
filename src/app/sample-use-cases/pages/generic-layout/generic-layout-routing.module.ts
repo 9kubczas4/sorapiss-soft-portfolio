@@ -29,7 +29,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./tabs/users/users.module').then(m => m.UsersModule),
+            loadChildren: () =>
+              import('./tabs/users/users.module').then((m) => m.UsersModule),
           },
           {
             path: '',
@@ -38,14 +39,19 @@ const routes: Routes = [
           },
         ],
         data: usersConfig,
-        providers: [{ provide: FEATURE_SERVICE, useClass: UsersService }, SelectionService, ActionsService],
+        providers: [
+          { provide: FEATURE_SERVICE, useClass: UsersService },
+          SelectionService,
+          ActionsService,
+        ],
       },
       {
         path: Tabs.Albums,
         children: [
           {
             path: '',
-            loadChildren: () => import('./tabs/albums/albums.module').then(m => m.AlbumsModule),
+            loadChildren: () =>
+              import('./tabs/albums/albums.module').then((m) => m.AlbumsModule),
           },
           {
             path: '',
@@ -54,14 +60,19 @@ const routes: Routes = [
           },
         ],
         data: albumsConfig,
-        providers: [{ provide: FEATURE_SERVICE, useClass: AlbumsService }, SelectionService, ActionsService],
+        providers: [
+          { provide: FEATURE_SERVICE, useClass: AlbumsService },
+          SelectionService,
+          ActionsService,
+        ],
       },
       {
         path: Tabs.Posts,
         children: [
           {
             path: '',
-            loadChildren: () => import('./tabs/posts/posts.module').then(m => m.PostsModule),
+            loadChildren: () =>
+              import('./tabs/posts/posts.module').then((m) => m.PostsModule),
           },
           {
             path: '',
@@ -70,7 +81,11 @@ const routes: Routes = [
           },
         ],
         data: postsConfig,
-        providers: [{ provide: FEATURE_SERVICE, useClass: PostsService }, SelectionService, ActionsService],
+        providers: [
+          { provide: FEATURE_SERVICE, useClass: PostsService },
+          SelectionService,
+          ActionsService,
+        ],
       },
     ],
   },

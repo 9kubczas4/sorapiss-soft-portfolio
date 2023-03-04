@@ -1,5 +1,11 @@
 <ssp-sample-page [readmeImport]="readmeImport">
-  <mat-slide-toggle color="primary" [checked]="disabled" (toggleChange)="toggleChange()"> Disabled </mat-slide-toggle>
+  <mat-slide-toggle
+    color="primary"
+    [checked]="disabled"
+    (toggleChange)="toggleChange()"
+  >
+    Disabled
+  </mat-slide-toggle>
   <form sspDisableInteractiveElements [disabledFlag]="disabled">
     <input type="text" name="input" id="input" />
     <select name="select" id="select">

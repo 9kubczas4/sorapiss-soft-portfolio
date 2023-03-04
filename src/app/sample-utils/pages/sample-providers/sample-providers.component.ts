@@ -7,7 +7,14 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { LocalStorageProvider, LOCAL_STORAGE, LOCATION, LocationProvider, WINDOW, WindowProvider } from '@sorapiss-soft-portfolio/utils';
+import {
+  LocalStorageProvider,
+  LOCAL_STORAGE,
+  LOCATION,
+  LocationProvider,
+  WINDOW,
+  WindowProvider,
+} from '@sorapiss-soft-portfolio/utils';
 
 const LOCAL_SAMPLE_STORAGE_KEY = 'LOCAL_SAMPLE_STORAGE_KEY';
 
@@ -29,7 +36,7 @@ export class SampleProvidersComponent implements OnInit {
     @Inject(LOCAL_STORAGE) private readonly localStorage: Storage,
     @Inject(LOCATION) private readonly location: Location,
     @Inject(WINDOW) private readonly window: Window,
-    private cdRef: ChangeDetectorRef,
+    private cdRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -38,11 +45,15 @@ export class SampleProvidersComponent implements OnInit {
   }
 
   loadLocalStorage(): void {
-    this.localStorageSavedValue = this.localStorage.getItem(LOCAL_SAMPLE_STORAGE_KEY) ?? '';
+    this.localStorageSavedValue =
+      this.localStorage.getItem(LOCAL_SAMPLE_STORAGE_KEY) ?? '';
   }
 
   writeToLocalStorage(): void {
-    this.localStorage.setItem(LOCAL_SAMPLE_STORAGE_KEY, this.localStorageValue?.nativeElement.value);
+    this.localStorage.setItem(
+      LOCAL_SAMPLE_STORAGE_KEY,
+      this.localStorageValue?.nativeElement.value
+    );
   }
 
   displayWindowHistoryState(): void {

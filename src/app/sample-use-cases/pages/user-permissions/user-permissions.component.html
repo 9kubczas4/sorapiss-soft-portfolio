@@ -1,10 +1,16 @@
 <ssp-sample-page [readmeImport]="readmeImport">
   <section class="user-roles-sample">
-    <mat-slide-toggle color="primary" [checked]="isUserReadonly" (change)="userRoleChanged()">
+    <mat-slide-toggle
+      color="primary"
+      [checked]="isUserReadonly"
+      (change)="userRoleChanged()"
+    >
       Client Readonly
     </mat-slide-toggle>
 
-    <button sspDisableIfViewer mat-button mat-raised-button color="primary">Click me!</button>
+    <button sspDisableIfViewer mat-button mat-raised-button color="primary">
+      Click me!
+    </button>
 
     <mat-select sspDisableIfViewer placeholder="Settings">
       <mat-option value="'setting1'">Setting 1</mat-option>

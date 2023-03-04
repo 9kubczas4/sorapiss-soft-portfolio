@@ -9,7 +9,9 @@
       [errorStateMatcher]="matcher"
       [formControl]="firstNameFormControl"
     />
-    <mat-error *ngIf="firstNameFormControl.hasError('required')"> First Name is <strong>required</strong> </mat-error>
+    <mat-error *ngIf="firstNameFormControl.hasError('required')">
+      First Name is <strong>required</strong>
+    </mat-error>
     <mat-error *ngIf="firstNameFormControl.hasError('minlength')">
       First Name needs to have at least <strong>2 characters</strong>
     </mat-error>
@@ -27,7 +29,9 @@
       [errorStateMatcher]="matcher"
       [formControl]="lastNameFormControl"
     />
-    <mat-error *ngIf="lastNameFormControl.hasError('required')"> Last Name is <strong>required</strong> </mat-error>
+    <mat-error *ngIf="lastNameFormControl.hasError('required')">
+      Last Name is <strong>required</strong>
+    </mat-error>
     <mat-error *ngIf="lastNameFormControl.hasError('minlength')">
       Last Name needs to have at least <strong>2 characters</strong>
     </mat-error>
@@ -36,6 +40,14 @@
     </mat-error>
   </mat-form-field>
   <div class="amsf-form__actions amsf-form__actions--flex-end">
-    <button color="primary" mat-raised-button type="button" [disabled]="form.invalid" (click)="next()">Next</button>
+    <button
+      color="primary"
+      mat-raised-button
+      type="button"
+      [disabled]="form.invalid"
+      (click)="next()"
+    >
+      Next
+    </button>
   </div>
 </form>

@@ -6,7 +6,9 @@ import { FormStrategy } from './form-strategy';
 
 @Injectable()
 export class ContactDetailsEditFormService implements FormStrategy {
-  private readonly contactDetailsFormService = inject(ContactDetailsFormService);
+  private readonly contactDetailsFormService = inject(
+    ContactDetailsFormService
+  );
   private readonly formGroup$$ = new Subject<FormGroup<any>>();
 
   private formGroup?: FormGroup<any>;
@@ -17,7 +19,7 @@ export class ContactDetailsEditFormService implements FormStrategy {
 
   init(): void {
     this.formGroup = this.contactDetailsFormService.formGroup;
-  };
+  }
 
   submit(): Observable<void> {
     console.log(`submit: ${this.form}`);

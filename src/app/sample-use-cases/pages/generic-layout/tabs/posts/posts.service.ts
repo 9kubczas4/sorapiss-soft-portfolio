@@ -16,7 +16,7 @@ export class PostsService extends FeatureServiceBase<Post> {
     console.log('fetch data - 3');
     return this.httpClient
       .get<ApiPost[]>(`https://jsonplaceholder.typicode.com/albums`)
-      .pipe(map(albums => albums as Post[]));
+      .pipe(map((albums) => albums as Post[]));
   }
 
   deleteItems(itemsIds: number[]): Observable<void> {

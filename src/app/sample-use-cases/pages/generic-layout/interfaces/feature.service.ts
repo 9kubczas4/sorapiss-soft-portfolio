@@ -2,7 +2,9 @@ import { InjectionToken } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Item } from './item';
 
-export const FEATURE_SERVICE = new InjectionToken<FeatureService<Item>>('FEATURE_SERVICE');
+export const FEATURE_SERVICE = new InjectionToken<FeatureService<Item>>(
+  'FEATURE_SERVICE'
+);
 
 export interface FeatureService<T extends Item> {
   fetch(): Observable<void>;

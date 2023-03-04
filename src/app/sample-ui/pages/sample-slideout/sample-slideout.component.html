@@ -1,5 +1,7 @@
 <ssp-sample-page [readmeImport]="readmeImport">
-  <ssp-slideout [opened]="slideoutOpened" [size]="selectedSize">Content</ssp-slideout>
+  <ssp-slideout [opened]="slideoutOpened" [size]="selectedSize"
+    >Content</ssp-slideout
+  >
   <section class="sample-slideout__config">
     <mat-select class="sample-slideout__config-size" [(value)]="selectedSize">
       <mat-option [value]="SlideoutSize.STANDARD">Standard</mat-option>

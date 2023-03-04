@@ -9,15 +9,24 @@ const routes: Routes = [
     children: [
       {
         path: 'contact',
-        loadChildren: () => import('./contact-details/contact-details.module').then(m => m.ContactDetailsModule),
+        loadChildren: () =>
+          import('./contact-details/contact-details.module').then(
+            (m) => m.ContactDetailsModule
+          ),
       },
       {
         path: 'contact/:id',
-        loadChildren: () => import('./contact-details/contact-details.module').then(m => m.ContactDetailsModule),
+        loadChildren: () =>
+          import('./contact-details/contact-details.module').then(
+            (m) => m.ContactDetailsModule
+          ),
       },
       {
         path: 'contact/:id/preview',
-        loadChildren: () => import('./contact-details/contact-details.module').then(m => m.ContactDetailsModule),
+        loadChildren: () =>
+          import('./contact-details/contact-details.module').then(
+            (m) => m.ContactDetailsModule
+          ),
       },
     ],
   },

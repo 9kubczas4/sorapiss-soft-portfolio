@@ -1,6 +1,15 @@
-import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 
-type InteractiveElement = HTMLInputElement | HTMLSelectElement | HTMLButtonElement;
+type InteractiveElement =
+  | HTMLInputElement
+  | HTMLSelectElement
+  | HTMLButtonElement;
 
 @Directive({
   selector: '[sspDisableInteractiveElements]',
@@ -20,10 +29,11 @@ export class DisableInteractiveElementsDirective implements OnChanges {
     }
   }
 
-  #getElements = (): InteractiveElement[] => this.element.nativeElement.querySelectorAll(this.#elementTypes);
+  #getElements = (): InteractiveElement[] =>
+    this.element.nativeElement.querySelectorAll(this.#elementTypes);
 
   #doReadOnly(elements: InteractiveElement[]) {
-    elements.forEach(element => {
+    elements.forEach((element) => {
       element.disabled = this.disabledFlag;
     });
   }

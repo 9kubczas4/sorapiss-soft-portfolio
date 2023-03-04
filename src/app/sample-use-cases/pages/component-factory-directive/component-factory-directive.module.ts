@@ -13,7 +13,6 @@ import { MatSelectModule } from '@angular/material/select';
 
 export const materialModules = [MatButtonModule, MatSelectModule];
 
-
 @NgModule({
   declarations: [
     ComponentFactoryDirectiveComponent,

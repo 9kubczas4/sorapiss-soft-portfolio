@@ -9,9 +9,16 @@ const routes: Routes = [
     children: [
       {
         path: 'contact',
-        loadChildren: () => import('./contact-details/contact-details.module').then(m => m.ContactDetailsModule),
+        loadChildren: () =>
+          import('./contact-details/contact-details.module').then(
+            (m) => m.ContactDetailsModule
+          ),
       },
-      { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
+      {
+        path: 'account',
+        loadChildren: () =>
+          import('./account/account.module').then((m) => m.AccountModule),
+      },
     ],
   },
 ];

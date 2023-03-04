@@ -15,7 +15,7 @@ export class AlbumsService extends FeatureServiceBase<Album> {
     console.log('fetch data - 2');
     return this.httpClient
       .get<ApiAlbum[]>(`https://jsonplaceholder.typicode.com/albums`)
-      .pipe(map(albums => albums as Album[]));
+      .pipe(map((albums) => albums as Album[]));
   }
 
   deleteItems(itemsIds: number[]): Observable<void> {

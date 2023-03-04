@@ -16,8 +16,10 @@ export class IfNotViewerDirective implements OnInit {
   constructor(private readonly userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.isViewer$.pipe(takeUntil(this.destroyed$)).subscribe(isViewer => {
-      this.ngIfDirective.ngIf = !isViewer;
-    });
+    this.userService.isViewer$
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe((isViewer) => {
+        this.ngIfDirective.ngIf = !isViewer;
+      });
   }
 }

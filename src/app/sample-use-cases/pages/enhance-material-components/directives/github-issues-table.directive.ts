@@ -2,7 +2,10 @@ import { GithubIssuesService } from './../services/github-issues.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTable } from '@angular/material/table';
 import { Directive, Self, Input, inject, OnInit } from '@angular/core';
-import { ApiGithubIssueResponse, GithubIssue } from '../interfaces/github-issues';
+import {
+  ApiGithubIssueResponse,
+  GithubIssue,
+} from '../interfaces/github-issues';
 import { MatSort } from '@angular/material/sort';
 import { catchError, map, startWith, switchMap } from 'rxjs/operators';
 import { merge, of, Observable, takeUntil } from 'rxjs';
@@ -22,20 +25,29 @@ export class GithubIssuesTableDirective implements OnInit {
   private readonly destroyed$ = inject(DestroyedDirective).destroyed$;
 
   ngOnInit(): void {
-    this.sort?.sortChange.pipe(takeUntil(this.destroyed$)).subscribe(() => (this.paginator.pageIndex = 0));
+    this.sort?.sortChange
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(() => (this.paginator.pageIndex = 0));
 
-    const dataSource: Observable<GithubIssue[]> = merge(this.sort.sortChange, this.paginator.page).pipe(
+    const dataSource: Observable<GithubIssue[]> = merge(
+      this.sort.sortChange,
+      this.paginator.page
+    ).pipe(
       startWith([]),
       switchMap(() =>
         this.service
-          .getRepoIssues(this.sort.active, this.sort.direction, this.paginator.pageIndex)
-          .pipe(catchError(() => of(null))),
+          .getRepoIssues(
+            this.sort.active,
+            this.sort.direction,
+            this.paginator.pageIndex
+          )
+          .pipe(catchError(() => of(null)))
       ),
       map((data: ApiGithubIssueResponse | null) => {
         this.paginator.length = data?.total_count ?? 0;
         return data === null ? [] : data?.items;
       }),
-      takeUntil(this.destroyed$),
+      takeUntil(this.destroyed$)
     );
 
     this.table.dataSource = dataSource;

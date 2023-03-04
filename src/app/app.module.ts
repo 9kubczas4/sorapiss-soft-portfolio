@@ -13,16 +13,12 @@ const materialModules = [MatButtonModule, MatIconModule, MatToolbarModule];
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    AppRoutingModule,
-    CoreModule,
-
-    ...materialModules
-  ],
+  imports: [AppRoutingModule, CoreModule, ...materialModules],
   providers: [
     {
       provide: APP_INITIALIZER,
-      useFactory: (featureToggleService: FeatureToggleService<string>) => initializeApp(featureToggleService),
+      useFactory: (featureToggleService: FeatureToggleService<string>) =>
+        initializeApp(featureToggleService),
       multi: true,
       deps: [FeatureToggleService],
     },
@@ -31,7 +27,8 @@ const materialModules = [MatButtonModule, MatIconModule, MatToolbarModule];
 })
 export class AppModule {}
 
-export function initializeApp(featureToggleService: FeatureToggleService<string>) {
+export function initializeApp(
+  featureToggleService: FeatureToggleService<string>
+) {
   return () => featureToggleService.loadFeatureFlags();
 }
-

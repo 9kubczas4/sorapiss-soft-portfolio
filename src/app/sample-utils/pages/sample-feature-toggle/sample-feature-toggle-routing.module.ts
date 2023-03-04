@@ -16,7 +16,10 @@ const routes: Routes = [
       },
       {
         path: 'feature1',
-        loadChildren: () => import('./sample-page/sample-page.module').then(m => m.SamplePageModule),
+        loadChildren: () =>
+          import('./sample-page/sample-page.module').then(
+            (m) => m.SamplePageModule
+          ),
         data: {
           content: 'Feature 1 Content',
           featureFlag: FeatureToggleKey.Feature1,
@@ -26,7 +29,10 @@ const routes: Routes = [
       },
       {
         path: 'feature2',
-        loadChildren: () => import('./sample-page/sample-page.module').then(m => m.SamplePageModule),
+        loadChildren: () =>
+          import('./sample-page/sample-page.module').then(
+            (m) => m.SamplePageModule
+          ),
         data: {
           content: 'Feature 2 Content',
           featureFlag: FeatureToggleKey.Feature2,
@@ -36,7 +42,10 @@ const routes: Routes = [
       },
       {
         path: 'feature3',
-        loadChildren: () => import('./sample-page/sample-page.module').then(m => m.SamplePageModule),
+        loadChildren: () =>
+          import('./sample-page/sample-page.module').then(
+            (m) => m.SamplePageModule
+          ),
         data: {
           content: 'Feature 3 Content',
           featureFlag: FeatureToggleKey.Feature3,
@@ -46,7 +55,10 @@ const routes: Routes = [
       },
       {
         path: 'feature4',
-        loadChildren: () => import('./sample-page/sample-page.module').then(m => m.SamplePageModule),
+        loadChildren: () =>
+          import('./sample-page/sample-page.module').then(
+            (m) => m.SamplePageModule
+          ),
         data: {
           content: 'Feature 4 Content',
           featureFlag: FeatureToggleKey.Feature4,
