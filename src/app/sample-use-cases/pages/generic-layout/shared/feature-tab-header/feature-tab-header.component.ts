@@ -6,7 +6,10 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, startWith } from 'rxjs/operators';
 import { Action } from '../../interfaces/action';
-import { FEATURE_SERVICE, FeatureService } from '../../interfaces/feature.service';
+import {
+  FEATURE_SERVICE,
+  FeatureService,
+} from '../../interfaces/feature.service';
 import { HamburgerComponent } from '../hamburger/hamburger.component';
 import { ActionsService } from '../../services/actions.service';
 
@@ -19,9 +22,9 @@ import { ActionsService } from '../../services/actions.service';
 })
 export class FeatureTabHeaderComponent implements OnInit {
   actions$ = this.router.events.pipe(
-    filter(event => event instanceof NavigationEnd),
-    map(_ => this.getActions()),
-    startWith(this.getActions()),
+    filter((event) => event instanceof NavigationEnd),
+    map((_) => this.getActions()),
+    startWith(this.getActions())
   );
 
   areTabsVisible$ = this.uiService.areTabsVisible();
@@ -32,7 +35,7 @@ export class FeatureTabHeaderComponent implements OnInit {
     private readonly uiService: UiService,
     private readonly actionsService: ActionsService,
     private readonly urlService: UrlService,
-    @Inject(FEATURE_SERVICE) private featureService: FeatureService<any>,
+    @Inject(FEATURE_SERVICE) private featureService: FeatureService<any>
   ) {
     console.log(this.activatedRoute);
   }

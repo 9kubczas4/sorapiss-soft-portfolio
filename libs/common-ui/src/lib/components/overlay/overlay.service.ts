@@ -30,21 +30,26 @@ export class OverlayService implements OnDestroy {
     viewContainerRef: ViewContainerRef,
     element: ElementRef<HTMLElement>,
     templateRef: TemplateRef<any>,
-    changeDetectorRef: ChangeDetectorRef,
+    changeDetectorRef: ChangeDetectorRef
   ): void {
     this.#isDisplayed.next(true);
     const clientRect = element.nativeElement.getBoundingClientRect();
 
     this.overlayRef = viewContainerRef.createComponent(OverlayComponent);
     this.overlayRef.instance.position = {
-      top: clientRect.top + element.nativeElement.offsetHeight + this.PADDING_BOTTOM,
+      top:
+        clientRect.top +
+        element.nativeElement.offsetHeight +
+        this.PADDING_BOTTOM,
       left: clientRect.left,
     };
     this.overlayRef.instance.content = templateRef;
 
-    this.#hideOverlay$ = this.overlayRef.instance.outsideClicked.subscribe(() => {
-      this.#isDisplayed.next(false);
-    });
+    this.#hideOverlay$ = this.overlayRef.instance.outsideClicked.subscribe(
+      () => {
+        this.#isDisplayed.next(false);
+      }
+    );
 
     changeDetectorRef.detectChanges();
   }

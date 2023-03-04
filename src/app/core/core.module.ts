@@ -8,15 +8,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 
-export const materialModules = [MatButtonModule, MatIconModule, MatSidenavModule];
+export const materialModules = [
+  MatButtonModule,
+  MatIconModule,
+  MatSidenavModule,
+];
 
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    MainLayoutComponent
-  ],
+  declarations: [MainLayoutComponent],
   imports: [
     // vendor
     BrowserModule,
@@ -30,8 +32,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     // 3rd party
     MarkdownModule.forRoot({ loader: HttpClient }),
   ],
-  exports: [
-    MainLayoutComponent
-  ]
+  exports: [MainLayoutComponent],
 })
-export class CoreModule { }
+export class CoreModule {}

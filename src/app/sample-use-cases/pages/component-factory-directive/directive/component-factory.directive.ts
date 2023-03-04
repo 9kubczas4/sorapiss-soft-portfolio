@@ -1,4 +1,12 @@
-import { ComponentRef, Directive, Input, OnChanges, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
+import {
+  ComponentRef,
+  Directive,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewContainerRef,
+} from '@angular/core';
 import { componentsMap } from '../config/config';
 import { ComponentTypes } from '../enums/component-type';
 import { IComponent } from '../interfaces/component-factory-directive.interfaces';

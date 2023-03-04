@@ -21,7 +21,6 @@ export const materialModules = [
   MatTableModule,
 ];
 
-
 @NgModule({
   declarations: [EnhanceMaterialComponent],
   imports: [

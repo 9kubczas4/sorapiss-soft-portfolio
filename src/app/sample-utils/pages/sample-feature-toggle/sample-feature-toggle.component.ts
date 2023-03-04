@@ -33,6 +33,8 @@ export class SampleFeatureToggleComponent implements OnInit {
   }
 
   selectedTabChange($event: MatTabChangeEvent): void {
-    this.router.navigateByUrl(`/utils/feature-toggle/feature${$event.index + 1}`);
+    this.router.navigateByUrl(
+      `/utils/feature-toggle/feature${$event.index + 1}`
+    );
   }
 }

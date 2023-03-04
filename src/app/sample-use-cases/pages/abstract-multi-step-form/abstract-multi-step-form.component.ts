@@ -1,14 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { checkPasswords, strengthPassword, FormProvider } from '@sorapiss-soft-portfolio/utils';
+import {
+  checkPasswords,
+  strengthPassword,
+  FormProvider,
+} from '@sorapiss-soft-portfolio/utils';
 
 @Component({
   selector: 'ssp-abstract-multi-step-form',
   templateUrl: './abstract-multi-step-form.component.html',
   styleUrls: ['./abstract-multi-step-form.component.scss'],
-  providers: [{ provide: FormProvider, useExisting: AbstractMultiStepFormComponent }],
+  providers: [
+    { provide: FormProvider, useExisting: AbstractMultiStepFormComponent },
+  ],
 })
-export class AbstractMultiStepFormComponent extends FormProvider implements OnInit {
+export class AbstractMultiStepFormComponent
+  extends FormProvider
+  implements OnInit
+{
   registrationForm?: FormGroup;
   readmeImport = import('raw-loader!./readme.md');
 
@@ -39,7 +48,10 @@ export class AbstractMultiStepFormComponent extends FormProvider implements OnIn
         ]),
       }),
       account: this.formBuilder.group({
-        email: this.formBuilder.control('', [Validators.required, Validators.email]),
+        email: this.formBuilder.control('', [
+          Validators.required,
+          Validators.email,
+        ]),
         password: this.formBuilder.group(
           {
             password: this.formBuilder.control('', [
@@ -54,7 +66,7 @@ export class AbstractMultiStepFormComponent extends FormProvider implements OnIn
               Validators.maxLength(20),
             ]),
           },
-          { validators: [checkPasswords] },
+          { validators: [checkPasswords] }
         ),
       }),
     });

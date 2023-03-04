@@ -15,7 +15,7 @@ import { SamplePageComponent } from '@sorapiss-soft-portfolio/common-ui';
     SampleRxjsOperatorsRoutingModule,
 
     // common
-    SamplePageComponent
+    SamplePageComponent,
   ],
 })
 export class SampleRxjsOperatorsModule {}

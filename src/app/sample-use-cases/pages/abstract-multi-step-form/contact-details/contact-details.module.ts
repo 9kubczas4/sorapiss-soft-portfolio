@@ -21,7 +21,7 @@ export const materialModules = [MatButtonModule, MatInputModule];
     ContactDetailsRoutingModule,
 
     // material
-    ...materialModules
+    ...materialModules,
   ],
 })
 export class ContactDetailsModule {}

@@ -16,7 +16,8 @@ import { SamplePageComponent } from '@sorapiss-soft-portfolio/common-ui';
     AdvancedDependencyInjectionRoutingModule,
 
     // common
-    SamplePageComponent],
+    SamplePageComponent,
+  ],
   providers: [
     {
       provide: SAMPLE_TOKEN,

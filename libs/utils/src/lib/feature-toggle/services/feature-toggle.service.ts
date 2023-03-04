@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { FeatureFlag, FeatureFlagApiResponse } from '../models/feature-toggle.model';
+import {
+  FeatureFlag,
+  FeatureFlagApiResponse,
+} from '../models/feature-toggle.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +19,10 @@ export class FeatureToggleService<T extends string> {
   }
 
   isFlagEnabled(flag: T): boolean {
-    return this.#features.find(featureFlag => featureFlag.key === flag)?.enabled ?? false;
+    return (
+      this.#features.find((featureFlag) => featureFlag.key === flag)?.enabled ??
+      false
+    );
   }
 
   isFlagDisabled(flag: T): boolean {

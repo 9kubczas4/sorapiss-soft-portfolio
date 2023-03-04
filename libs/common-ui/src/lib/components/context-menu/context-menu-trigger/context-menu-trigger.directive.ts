@@ -34,14 +34,14 @@ export class ContextMenuTriggerDirective implements OnDestroy, OnInit {
     private readonly element: ElementRef<HTMLElement>,
     private readonly viewContainerRef: ViewContainerRef,
     private readonly overlayService: OverlayService,
-    private readonly changeDetectorRef: ChangeDetectorRef,
+    private readonly changeDetectorRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
     this.closingActionsSubscription = this.overlayService.isDisplayed
       .pipe(
         skip(1),
-        filter(isDisplayed => !isDisplayed),
+        filter((isDisplayed) => !isDisplayed)
       )
       .subscribe(() => {
         this.closeMenu();
@@ -82,7 +82,7 @@ export class ContextMenuTriggerDirective implements OnDestroy, OnInit {
           this.viewContainerRef,
           this.element,
           this.menu.templateRef,
-          this.changeDetectorRef,
+          this.changeDetectorRef
         );
       }
     }

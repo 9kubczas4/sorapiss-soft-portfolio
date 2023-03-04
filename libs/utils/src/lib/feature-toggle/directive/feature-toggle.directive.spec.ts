@@ -1,4 +1,8 @@
-import { createDirectiveFactory, mockProvider, SpectatorDirective } from '@ngneat/spectator/jest';
+import {
+  createDirectiveFactory,
+  mockProvider,
+  SpectatorDirective,
+} from '@ngneat/spectator/jest';
 import { TestFeatureFlag } from '../services/feature-toggle.fixture';
 import { FeatureToggleService } from '../services/feature-toggle.service';
 import { FeatureToggleDirective } from './feature-toggle.directive';
@@ -7,7 +11,9 @@ describe('FeatureToggleDirective', () => {
   describe('FeatureToggleDirective - enabled', () => {
     let spectator: SpectatorDirective<FeatureToggleDirective<TestFeatureFlag>>;
 
-    const createHost = createDirectiveFactory<FeatureToggleDirective<TestFeatureFlag>>({
+    const createHost = createDirectiveFactory<
+      FeatureToggleDirective<TestFeatureFlag>
+    >({
       directive: FeatureToggleDirective,
       providers: [
         mockProvider(FeatureToggleService, {
@@ -17,17 +23,23 @@ describe('FeatureToggleDirective', () => {
     });
 
     it('should display element when feature enabled', () => {
-      spectator = createHost(`<div *sspFeatureToggle="'enabledFeature'" id="enabled">Enabled</div>`);
+      spectator = createHost(
+        `<div *sspFeatureToggle="'enabledFeature'" id="enabled">Enabled</div>`
+      );
 
       expect(spectator.element.querySelector('#enabled')).toExist();
-      expect(spectator.element.querySelector('#enabled')).toHaveExactText('Enabled');
+      expect(spectator.element.querySelector('#enabled')).toHaveExactText(
+        'Enabled'
+      );
     });
   });
 
   describe('FeatureToggleDirective - disabled', () => {
     let spectator: SpectatorDirective<FeatureToggleDirective<TestFeatureFlag>>;
 
-    const createHost = createDirectiveFactory<FeatureToggleDirective<TestFeatureFlag>>({
+    const createHost = createDirectiveFactory<
+      FeatureToggleDirective<TestFeatureFlag>
+    >({
       directive: FeatureToggleDirective,
       providers: [
         mockProvider(FeatureToggleService, {
@@ -37,7 +49,9 @@ describe('FeatureToggleDirective', () => {
     });
 
     it('should not display element when feature disabled', () => {
-      spectator = createHost(`<div *sspFeatureToggle="'disabledFeature'" id="disabled">Disabled</div>`);
+      spectator = createHost(
+        `<div *sspFeatureToggle="'disabledFeature'" id="disabled">Disabled</div>`
+      );
 
       expect(spectator.element.querySelector('#disabled')).not.toExist();
     });

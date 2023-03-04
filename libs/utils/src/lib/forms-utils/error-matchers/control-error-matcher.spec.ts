@@ -12,7 +12,10 @@ describe('ControlErrorMatcher', () => {
     const formControl = null;
     const formGroup = new NgForm([], []);
 
-    const result = controlErrorStateMatcher.isErrorState(formControl, formGroup);
+    const result = controlErrorStateMatcher.isErrorState(
+      formControl,
+      formGroup
+    );
 
     expect(result).toBe(false);
   });

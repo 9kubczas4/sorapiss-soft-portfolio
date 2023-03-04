@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { logParametersAndReturnValue, memo } from '@sorapiss-soft-portfolio/utils';
+import {
+  logParametersAndReturnValue,
+  memo,
+} from '@sorapiss-soft-portfolio/utils';
 
 @Component({
   selector: 'ssp-sample-functions',

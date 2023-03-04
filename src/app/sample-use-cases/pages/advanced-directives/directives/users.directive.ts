@@ -8,7 +8,10 @@ import { User } from '../interfaces/user';
   selector: '[users]',
 })
 export class UsersDirective implements OnInit {
-  constructor(@Self() private readonly table: MatTable<User>, private readonly userService: UserService) {}
+  constructor(
+    @Self() private readonly table: MatTable<User>,
+    private readonly userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.table.dataSource = this.userService.users$;

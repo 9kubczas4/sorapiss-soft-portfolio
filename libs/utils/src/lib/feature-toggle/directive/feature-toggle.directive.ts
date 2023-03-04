@@ -1,4 +1,10 @@
-import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import {
+  Directive,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewContainerRef,
+} from '@angular/core';
 import { FeatureToggleService } from '../services/feature-toggle.service';
 
 @Directive({
@@ -11,11 +17,14 @@ export class FeatureToggleDirective<T extends string> implements OnInit {
   constructor(
     private readonly featureToggleService: FeatureToggleService<T>,
     private readonly templateRef: TemplateRef<unknown>,
-    private readonly viewContainer: ViewContainerRef,
+    private readonly viewContainer: ViewContainerRef
   ) {}
 
   ngOnInit(): void {
-    if (this.featureToggleKey && this.featureToggleService.isFlagEnabled(this.featureToggleKey)) {
+    if (
+      this.featureToggleKey &&
+      this.featureToggleService.isFlagEnabled(this.featureToggleKey)
+    ) {
       this.viewContainer.createEmbeddedView(this.templateRef);
     } else if (this.sspFeatureToggleElse) {
       this.viewContainer.createEmbeddedView(this.sspFeatureToggleElse);

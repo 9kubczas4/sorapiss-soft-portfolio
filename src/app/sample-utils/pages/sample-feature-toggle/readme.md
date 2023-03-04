@@ -69,6 +69,10 @@ In sample below div element will be displayed when feature toggle with key equal
 Sample below will show div element when `disabledFeature` would be enabled, otherwise `disabledTemplate` will be displayed.
 
 ```html
-<div *sspFeatureToggle="'disabledFeature' else disabledTemplate" id="disabled">Disabled</div>
-<ng-template #disabledTemplate><div id="elseDisabled">Else disabled</div></ng-template>
+<div *sspFeatureToggle="'disabledFeature' else disabledTemplate" id="disabled">
+  Disabled
+</div>
+<ng-template #disabledTemplate
+  ><div id="elseDisabled">Else disabled</div></ng-template
+>
 ```

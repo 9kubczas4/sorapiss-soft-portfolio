@@ -10,7 +10,7 @@ import { SampleUtilsRoutingModule } from './sample-utils-routing.module';
     CommonModule,
 
     // routing
-    SampleUtilsRoutingModule
-  ]
+    SampleUtilsRoutingModule,
+  ],
 })
-export class SampleUtilsModule { }
+export class SampleUtilsModule {}

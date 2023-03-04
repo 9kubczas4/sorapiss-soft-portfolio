@@ -1,11 +1,18 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Output,
+} from '@angular/core';
 
 @Directive({
-  selector: 'clickOutside',
+  selector: '[sspClickOutside]',
   standalone: true,
 })
 export class ClickOutsideDirective {
-  @Output('clickOutside') public clickOutside = new EventEmitter<HTMLElement>();
+  @Output('sspClickOutside') public clickOutside =
+    new EventEmitter<HTMLElement>();
 
   constructor(private readonly elementRef: ElementRef<HTMLElement>) {}
 

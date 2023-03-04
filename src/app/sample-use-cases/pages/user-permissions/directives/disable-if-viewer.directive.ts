@@ -16,16 +16,18 @@ export class DisableIfViewerDirective implements OnInit {
   constructor(
     private readonly userService: UserService,
     @Optional() @Self() private readonly button: MatButton,
-    @Optional() @Self() private readonly select: MatSelect,
+    @Optional() @Self() private readonly select: MatSelect
   ) {}
 
   ngOnInit(): void {
-    this.userService.isViewer$.pipe(takeUntil(this.destroyed$)).subscribe(isViewer => {
-      if (this.button) {
-        this.button.disabled = isViewer;
-      } else if (this.select) {
-        this.select.disabled = isViewer;
-      }
-    });
+    this.userService.isViewer$
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe((isViewer) => {
+        if (this.button) {
+          this.button.disabled = isViewer;
+        } else if (this.select) {
+          this.select.disabled = isViewer;
+        }
+      });
   }
 }

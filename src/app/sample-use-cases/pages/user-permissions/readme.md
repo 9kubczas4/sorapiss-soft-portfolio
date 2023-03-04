@@ -48,8 +48,8 @@ export interface User {
 export class UserService {
   readonly #currentUser$ = new Subject<User>();
   readonly isViewer$ = this.#currentUser$.pipe(
-    map(user => user.role === UserRole.Viewer),
-    startWith(true),
+    map((user) => user.role === UserRole.Viewer),
+    startWith(true)
   );
 
   getCurrentUser = (): Observable<User> => this.#currentUser$.asObservable();
@@ -97,9 +97,11 @@ export class IfNotViewerDirective implements OnInit {
   constructor(private readonly userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.isViewer$.pipe(takeUntil(this.destroyed$)).subscribe(isViewer => {
-      this.ngIfDirective.ngIf = !isViewer;
-    });
+    this.userService.isViewer$
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe((isViewer) => {
+        this.ngIfDirective.ngIf = !isViewer;
+      });
   }
 }
 ```
@@ -143,17 +145,19 @@ export class DisableIfViewerDirective implements OnInit {
   constructor(
     private readonly userService: UserService,
     @Optional() @Self() private readonly button: MatButton,
-    @Optional() @Self() private readonly select: MatSelect,
+    @Optional() @Self() private readonly select: MatSelect
   ) {}
 
   ngOnInit(): void {
-    this.userService.isViewer$.pipe(takeUntil(this.destroyed$)).subscribe(isViewer => {
-      if (this.button) {
-        this.button.disabled = isViewer;
-      } else if (this.select) {
-        this.select.disabled = isViewer;
-      }
-    });
+    this.userService.isViewer$
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe((isViewer) => {
+        if (this.button) {
+          this.button.disabled = isViewer;
+        } else if (this.select) {
+          this.select.disabled = isViewer;
+        }
+      });
   }
 }
 ```
@@ -167,7 +171,9 @@ Below there is a sample of usage, disabled for viewers will be the second button
   selector: 'ssp-sample',
   template: `
     <button mat-button mat-raised-button>Always available</button>
-    <button disableIfViewer mat-button mat-raised-button>Only for editors!</button>
+    <button disableIfViewer mat-button mat-raised-button>
+      Only for editors!
+    </button>
     <mat-select disableIfViewer placeholder="Settings">
       <mat-option value="'setting1'">Setting 1</mat-option>
       <mat-option value="'setting2'">Setting 2</mat-option>

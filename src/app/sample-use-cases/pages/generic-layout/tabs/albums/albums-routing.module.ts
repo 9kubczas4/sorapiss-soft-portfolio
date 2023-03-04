@@ -10,12 +10,16 @@ const routes: Routes = [
       {
         path: ':id/edit',
         loadComponent: () =>
-          import('./containers/edit-slideout/edit-slideout.component').then(c => c.EditSlideoutComponent),
+          import('./containers/edit-slideout/edit-slideout.component').then(
+            (c) => c.EditSlideoutComponent
+          ),
       },
       {
         path: 'create',
         loadComponent: () =>
-          import('./containers/create-slideout/create-slideout.component').then(c => c.CreateSlideoutComponent),
+          import('./containers/create-slideout/create-slideout.component').then(
+            (c) => c.CreateSlideoutComponent
+          ),
       },
     ],
   },

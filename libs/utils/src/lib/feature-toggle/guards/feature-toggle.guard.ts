@@ -14,8 +14,13 @@ import { FeatureToggleService } from '../services/feature-toggle.service';
 @Injectable({
   providedIn: 'root',
 })
-export class FeatureToggleGuard<T extends string> implements CanActivate, CanLoad, CanActivateChild {
-  constructor(private readonly featureToggle: FeatureToggleService<T>, private readonly router: Router) {}
+export class FeatureToggleGuard<T extends string>
+  implements CanActivate, CanLoad, CanActivateChild
+{
+  constructor(
+    private readonly featureToggle: FeatureToggleService<T>,
+    private readonly router: Router
+  ) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean | UrlTree {
     return this.#isEnabled(route);

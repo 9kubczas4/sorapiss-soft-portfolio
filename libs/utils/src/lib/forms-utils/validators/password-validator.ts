@@ -1,6 +1,8 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
-export const strengthPassword = (control: AbstractControl): ValidationErrors | null => {
+export const strengthPassword = (
+  control: AbstractControl
+): ValidationErrors | null => {
   const hasNumber = /\d/.test(control.value);
   const hasUpper = /[A-Z]/.test(control.value);
   const hasLower = /[a-z]/.test(control.value);
@@ -12,8 +14,12 @@ export const strengthPassword = (control: AbstractControl): ValidationErrors | n
   return null;
 };
 
-export const checkPasswords: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+export const checkPasswords: ValidatorFn = (
+  control: AbstractControl
+): ValidationErrors | null => {
   const pass = control.get('password')?.value;
   const confirmPass = control.get('confirmPassword')?.value;
-  return pass === confirmPass || !pass || !confirmPass ? null : { differentPasswords: true };
+  return pass === confirmPass || !pass || !confirmPass
+    ? null
+    : { differentPasswords: true };
 };

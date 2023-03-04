@@ -1,18 +1,34 @@
 import { UrlService } from './url.service';
 import { SelectionService } from './selection.service';
 import { OnDestroy, inject, Injectable } from '@angular/core';
-import { Observable, ReplaySubject, BehaviorSubject, switchMap, of, takeUntil, first, delay, tap, map } from 'rxjs';
+import {
+  Observable,
+  ReplaySubject,
+  BehaviorSubject,
+  switchMap,
+  of,
+  takeUntil,
+  first,
+  delay,
+  tap,
+  map,
+} from 'rxjs';
 import { FeatureActions } from '../enums/feature-actions';
 import { FeatureService } from '../interfaces/feature.service';
 import { Item } from '../interfaces/item';
 import { ActionsService } from './actions.service';
 
 @Injectable()
-export abstract class FeatureServiceBase<T extends Item> implements FeatureService<T>, OnDestroy {
+export abstract class FeatureServiceBase<T extends Item>
+  implements FeatureService<T>, OnDestroy
+{
   protected readonly destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
-  protected readonly dataSource$: BehaviorSubject<T[] | null> = new BehaviorSubject<T[] | null>(null);
-  protected readonly isLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  protected readonly isDeleting$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  protected readonly dataSource$: BehaviorSubject<T[] | null> =
+    new BehaviorSubject<T[] | null>(null);
+  protected readonly isLoading$: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  protected readonly isDeleting$: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
 
   protected readonly actionsService = inject(ActionsService);
   protected readonly selectionService = inject(SelectionService);
@@ -23,12 +39,12 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
       .onAction()
       .pipe(
         takeUntil(this.destroyed$),
-        switchMap(action => {
+        switchMap((action) => {
           switch (action) {
             case FeatureActions.Delete: {
               return this.selectionService.selection().pipe(
                 first(),
-                switchMap(selection => this.delete(selection)),
+                switchMap((selection) => this.delete(selection))
               );
             }
             case FeatureActions.Refresh: {
@@ -50,7 +66,7 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
               return of();
             }
           }
-        }),
+        })
       )
       .subscribe();
   }
@@ -77,10 +93,10 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
     return this.fetchItems().pipe(
       first(),
       delay(2000),
-      tap(items => this.selectionService.setFormGroupItems(items)),
-      tap(items => this.dataSource$.next(items)),
-      tap(_ => this.isLoading$.next(false)),
-      map(_ => undefined),
+      tap((items) => this.selectionService.setFormGroupItems(items)),
+      tap((items) => this.dataSource$.next(items)),
+      tap((_) => this.isLoading$.next(false)),
+      map((_) => undefined)
     );
   }
 
@@ -88,21 +104,21 @@ export abstract class FeatureServiceBase<T extends Item> implements FeatureServi
     this.isDeleting$.next(true);
     return this.deleteItems(itemsIds).pipe(
       delay(2000),
-      switchMap(_ => this.fetch()),
+      switchMap((_) => this.fetch())
     );
   }
 
   edit(item: Partial<T>): Observable<void> {
     return this.editItem(item).pipe(
       delay(2000),
-      switchMap(_ => this.fetch()),
+      switchMap((_) => this.fetch())
     );
   }
 
   create(item: Partial<T>): Observable<void> {
     return this.createItem(item).pipe(
       delay(2000),
-      switchMap(_ => this.fetch()),
+      switchMap((_) => this.fetch())
     );
   }
 

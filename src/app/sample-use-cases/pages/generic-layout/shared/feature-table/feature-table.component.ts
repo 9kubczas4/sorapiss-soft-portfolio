@@ -1,7 +1,15 @@
 import { SelectionService } from './../../services/selection.service';
-import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterModule,
+} from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
-import { FeatureService, FEATURE_SERVICE } from './../../interfaces/feature.service';
+import {
+  FeatureService,
+  FEATURE_SERVICE,
+} from './../../interfaces/feature.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Item } from '../../interfaces/item';
@@ -30,15 +38,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   ],
 })
 export class FeatureTableComponent implements OnInit {
-  dataSource$ = this.service.dataSource().pipe(map(items => items ?? []));
+  dataSource$ = this.service.dataSource().pipe(map((items) => items ?? []));
 
   columns$ = this.router.events.pipe(
-    filter(event => event instanceof NavigationEnd),
-    map(_ => this.getColumns()),
-    startWith(this.getColumns()),
+    filter((event) => event instanceof NavigationEnd),
+    map((_) => this.getColumns()),
+    startWith(this.getColumns())
   );
 
-  displayedColumns$ = this.columns$.pipe(map(column => ['select', ...column.map(c => c.property)]));
+  displayedColumns$ = this.columns$.pipe(
+    map((column) => ['select', ...column.map((c) => c.property)])
+  );
 
   formGroup = this.selectionService.formGroup;
 
@@ -46,7 +56,7 @@ export class FeatureTableComponent implements OnInit {
     @Inject(FEATURE_SERVICE) private readonly service: FeatureService<Item>,
     private readonly activatedRoute: ActivatedRoute,
     private readonly router: Router,
-    readonly selectionService: SelectionService,
+    readonly selectionService: SelectionService
   ) {}
 
   ngOnInit(): void {
@@ -54,6 +64,8 @@ export class FeatureTableComponent implements OnInit {
   }
 
   private getColumns(): Array<Column<Item>> {
-    return this.activatedRoute.parent?.parent?.routeConfig?.data?.['columns'] ?? [];
+    return (
+      this.activatedRoute.parent?.parent?.routeConfig?.data?.['columns'] ?? []
+    );
   }
 }

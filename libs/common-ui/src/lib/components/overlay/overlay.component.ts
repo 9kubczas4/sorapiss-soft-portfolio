@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Position } from '@sorapiss-soft-portfolio/utils';
-import { Component, TemplateRef, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  TemplateRef,
+  Input,
+  ChangeDetectionStrategy,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'ssp-overlay',
@@ -8,7 +15,7 @@ import { Component, TemplateRef, Input, ChangeDetectionStrategy, EventEmitter, O
   styleUrls: ['./overlay.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
 export class OverlayComponent {
   @Input() content?: TemplateRef<any>;

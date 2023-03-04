@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ControlErrorStateMatcher, FormProvider } from '@sorapiss-soft-portfolio/utils';
+import {
+  ControlErrorStateMatcher,
+  FormProvider,
+} from '@sorapiss-soft-portfolio/utils';
 import { ContactDetailsCreateFormService } from '../strategies/create-form-strategy.service';
 import { FORM } from '../strategies/form-strategy';
 
@@ -12,18 +15,24 @@ import { FORM } from '../strategies/form-strategy';
   providers: [
     {
       provide: FORM,
-      useFactory: (activatedRoute: ActivatedRoute, createStrategy: ContactDetailsCreateFormService) => {
+      useFactory: (
+        activatedRoute: ActivatedRoute,
+        createStrategy: ContactDetailsCreateFormService
+      ) => {
         return createStrategy;
       },
-      deps: [ActivatedRoute, ContactDetailsCreateFormService]
-    }
-  ]
+      deps: [ActivatedRoute, ContactDetailsCreateFormService],
+    },
+  ],
 })
 export class ContactDetailsComponent implements OnInit {
   form: FormGroup | null = null;
   matcher = new ControlErrorStateMatcher();
 
-  constructor(private readonly formProvider: FormProvider, private readonly router: Router) {}
+  constructor(
+    private readonly formProvider: FormProvider,
+    private readonly router: Router
+  ) {}
 
   get firstNameFormControl(): FormControl {
     return this.form?.get('firstName') as FormControl;

@@ -1,5 +1,8 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { MatDrawerContainer, MatSidenavModule } from '@angular/material/sidenav';
+import {
+  MatDrawerContainer,
+  MatSidenavModule,
+} from '@angular/material/sidenav';
 
 @Component({
   selector: 'ssp-edit-slideout',

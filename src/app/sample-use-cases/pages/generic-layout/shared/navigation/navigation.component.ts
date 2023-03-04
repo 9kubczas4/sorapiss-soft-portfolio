@@ -9,12 +9,12 @@ import { map } from 'rxjs';
 })
 export class NavigationComponent {
   tabs$ = this.activatedRoute.url.pipe(
-    map(_ =>
-      this.activatedRoute.routeConfig?.children?.map(item => ({
+    map((_) =>
+      this.activatedRoute.routeConfig?.children?.map((item) => ({
         label: item.data?.['label'],
         path: item.path,
-      })),
-    ),
+      }))
+    )
   );
 
   constructor(private readonly activatedRoute: ActivatedRoute) {}

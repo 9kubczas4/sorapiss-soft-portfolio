@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 export const materialModules = [MatButtonModule];
 
-
 @NgModule({
   declarations: [SampleFunctionsComponent],
   imports: [
@@ -22,7 +21,7 @@ export const materialModules = [MatButtonModule];
     ...materialModules,
 
     // common
-    SamplePageComponent
+    SamplePageComponent,
   ],
 })
 export class SampleFunctionsModule {}

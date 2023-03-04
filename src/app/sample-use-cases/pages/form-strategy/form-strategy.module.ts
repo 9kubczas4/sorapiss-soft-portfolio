@@ -15,7 +15,7 @@ import { SamplePageComponent } from '@sorapiss-soft-portfolio/common-ui';
     FormStrategyRoutingModule,
 
     // common
-    SamplePageComponent
+    SamplePageComponent,
   ],
 })
 export class FormStrategyModule {}

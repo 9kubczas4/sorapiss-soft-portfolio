@@ -9,7 +9,6 @@ import { MatTableModule } from '@angular/material/table';
 
 export const materialModules = [MatTableModule];
 
-
 @NgModule({
   declarations: [AdvancedDirectivesComponent, ...directives],
   imports: [
@@ -23,6 +22,7 @@ export const materialModules = [MatTableModule];
     SamplePageComponent,
 
     // material
-    ...materialModules],
+    ...materialModules,
+  ],
 })
 export class AdvancedDirectivesModule {}

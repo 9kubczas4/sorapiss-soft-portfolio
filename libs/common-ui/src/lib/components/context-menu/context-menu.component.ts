@@ -8,7 +8,10 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ContextMenuContentDirective, MENU_CONTENT } from './context-menu-content/context-menu-content.directive';
+import {
+  ContextMenuContentDirective,
+  MENU_CONTENT,
+} from './context-menu-content/context-menu-content.directive';
 import { ContextMenuItemComponent } from './context-menu-item/context-menu-item.component';
 import { menuAnimations } from './context-menu.animations';
 

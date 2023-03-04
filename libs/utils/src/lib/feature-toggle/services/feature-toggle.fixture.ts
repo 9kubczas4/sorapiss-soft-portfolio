@@ -1,4 +1,7 @@
-import { FeatureFlag, FeatureFlagApiResponse } from '../models/feature-toggle.model';
+import {
+  FeatureFlag,
+  FeatureFlagApiResponse,
+} from '../models/feature-toggle.model';
 import { FeatureToggleService } from './feature-toggle.service';
 import fetchMock from 'jest-fetch-mock';
 
@@ -19,7 +22,10 @@ const response: FeatureFlagApiResponse<TestFeatureFlag> = {
 
 export type TestFeatureFlag = 'enabledFeature' | 'disabledFeature';
 
-export const setupFakeFeatureToggles = (service: FeatureToggleService<TestFeatureFlag>, done: jest.DoneCallback) => {
+export const setupFakeFeatureToggles = (
+  service: FeatureToggleService<TestFeatureFlag>,
+  done: jest.DoneCallback
+) => {
   fetchMock.mockResponse(JSON.stringify(response));
   service.loadFeatureFlags().then(() => {
     done();
