@@ -7,8 +7,8 @@
     "build": "nx build",
     "test": "nx run-many --all --target=test --parallel",
     "lint": "nx run-many --all --target=lint",
-    "format:check": "nx format:check",
-    "format:write": "nx format:write",
+    "format:check": "nx format:check --base=main",
+    "format:write": "nx format:write --base=main",
     "prepare": "husky install"
   },
   "private": true,

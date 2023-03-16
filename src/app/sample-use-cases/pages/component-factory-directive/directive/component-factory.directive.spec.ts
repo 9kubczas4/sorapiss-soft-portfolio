@@ -11,7 +11,7 @@ describe('WidgetDirective', () => {
   });
 
   it('should not create widget type component', () => {
-    spectator = createDirective(`<div [appComponentFactory]></div>`);
+    spectator = createDirective(`<div [ssComponentFactory]></div>`);
     directive = spectator.directive;
 
     expect(directive.component).toBeFalsy();
@@ -19,7 +19,7 @@ describe('WidgetDirective', () => {
 
   it('should create widget type component', () => {
     spectator = createDirective(
-      `<div [appComponentFactory] type="square"></div>`
+      `<div [sspComponentFactory] type="square"></div>`
     );
     directive = spectator.directive;
 
