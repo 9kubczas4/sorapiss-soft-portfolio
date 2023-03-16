@@ -60,6 +60,7 @@
     "jest-environment-jsdom": "28.1.1",
     "jest-fetch-mock": "^3.0.3",
     "jest-preset-angular": "~12.2.3",
+    "lint-staged": "^13.2.0",
     "nx": "15.6.3",
     "prettier": "^2.6.2",
     "ts-jest": "28.0.5",
@@ -68,7 +69,12 @@
   },
   "husky": {
     "hooks": {
-        "pre-push": "npm test & npm run lint & npm run format:write"       
+        "pre-commit": "lint-staged"       
     }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,css,html}": [
+        "npm run format:check"
+    ]
   }
 }
