@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,13 +11,18 @@ import { MatTableModule } from '@angular/material/table';
 export const materialModules = [MatTableModule];
 
 @NgModule({
-  declarations: [AdvancedDirectivesComponent, ...directives],
+  declarations: [AdvancedDirectivesComponent],
   imports: [
     // vendor
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     // routing
     AdvancedDirectivesRoutingModule,
+
+    // directives
+    ...directives,
 
     // common
     SamplePageComponent,

@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
 export class AdvancedDirectivesComponent {
   readmeImport = import('raw-loader!./readme.md');
   displayedColumns = ['firstName', 'lastName', 'role'];
+
+  formControl = new FormControl('10');
 }
