@@ -1,6 +1,6 @@
-// import { MaskedInputDirective } from './masked-input.directive';
+// import { ParenthesesNotationInputDirective } from './masked-input.directive';
 
-describe('MaskedInputDirective', () => {
+describe('ParenthesesNotationInputDirective', () => {
   // it('should create an instance', () => {
   //   const directive = new MaskedInputDirective();
   //   expect(directive).toBeTruthy();
