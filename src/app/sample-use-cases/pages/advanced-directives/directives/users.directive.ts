@@ -6,6 +6,7 @@ import { User } from '../interfaces/user';
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[users]',
+  standalone: true
 })
 export class UsersDirective implements OnInit {
   constructor(
