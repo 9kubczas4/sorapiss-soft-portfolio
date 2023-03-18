@@ -1,14 +1,17 @@
 
-import { Directive, HostListener, Optional, Self, OnInit } from '@angular/core';
+import { Directive, HostListener, Optional, Self, OnInit, inject } from '@angular/core';
 import { FormControlDirective } from '@angular/forms';
-import { isNumber, parenthesesNotationValidatorFn, PARENTHESES_NOTATION_FORMAT } from '@sorapiss-soft-portfolio/utils';
-import { debounceTime, tap } from 'rxjs';
+import { isNumber, parenthesesNotationValidatorFn, PARENTHESES_NOTATION_FORMAT, DestroyedDirective } from '@sorapiss-soft-portfolio/utils';
+import { debounceTime, tap, filter, takeUntil, MonoTypeOperatorFunction } from 'rxjs';
 
 @Directive({
   selector: '[sspParenthesesNotationInput]',
-  standalone: true
+  standalone: true,
+  hostDirectives: [DestroyedDirective]
 })
 export class ParenthesesNotationInputDirective implements OnInit {
+  private readonly destroyed$ = inject(DestroyedDirective).destroyed$;
+
   constructor(@Self() @Optional() private readonly formControl: FormControlDirective) { }
 
   ngOnInit(): void {
@@ -20,15 +23,9 @@ export class ParenthesesNotationInputDirective implements OnInit {
     this.formControl.control.valueChanges
       .pipe(
         debounceTime(100),
-        tap(value => {
-          if (this.isValidFormat(value) && !isNumber(value)) {
-            const valueWithoutBrackets = Number(value.replace('(', '').replace(')', '')) * -1;
-
-            this.formControl.control.setValue(valueWithoutBrackets, {
-              emitModelToViewChange: false
-            });
-          }
-      }))
+        filter(value => !!(this.isValidFormat(value) && !isNumber(value))),
+        setDisplayValue(this.formControl),
+        takeUntil(this.destroyed$))
       .subscribe()
   }
 
@@ -47,10 +44,20 @@ export class ParenthesesNotationInputDirective implements OnInit {
   onPaste(event: ClipboardEvent) {
     const pastedValue = event.clipboardData?.getData('text/plain') ?? '';
 
-    if (!this.isValidFormat(pastedValue)) {
+    if (!this.isValidFormat(pastedValue) && !isNumber(pastedValue)) {
       event.preventDefault();
     }
   }
 
   private isValidFormat = (value: string) => PARENTHESES_NOTATION_FORMAT.test(value);
+}
+
+function setDisplayValue(formControl: FormControlDirective): MonoTypeOperatorFunction<string> {
+  return tap((value: string) => {
+    const valueWithoutBrackets = Number(value.replace('(', '').replace(')', '')) * -1;
+
+    formControl.control.setValue(valueWithoutBrackets, {
+      emitModelToViewChange: false
+    });
+  });
 }

@@ -6,9 +6,9 @@ import { AdvancedDirectivesRoutingModule } from './advanced-directives-routing.m
 import { AdvancedDirectivesComponent } from './advanced-directives.component';
 import { SamplePageComponent } from '@sorapiss-soft-portfolio/common-ui';
 import { directives } from './directives';
-import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
-export const materialModules = [MatTableModule];
+export const materialModules = [MatButtonModule];
 
 @NgModule({
   declarations: [AdvancedDirectivesComponent],

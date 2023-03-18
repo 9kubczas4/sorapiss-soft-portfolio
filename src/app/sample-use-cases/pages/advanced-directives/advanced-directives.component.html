@@ -4,5 +4,6 @@
     <input sspParenthesesNotationInput type="text" [formControl]="formControl">
     <p>Form Control Value: {{ formControlValue$ | async }}</p>
     <p>Form Control Validation Status: {{ isFormControlValid$ | async }}</p>
+    <button mat-raised-button (click)="double()">Double</button>
   </section>
 </ssp-sample-page>
