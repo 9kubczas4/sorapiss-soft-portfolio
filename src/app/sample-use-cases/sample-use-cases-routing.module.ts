@@ -70,7 +70,7 @@ const routes: Routes = [
         {
           label: 'Advanced Dependency Injection',
           url: 'use-cases/advanced-dependency-injection',
-          icon: 'jump_to_element',
+          icon: 'merge_type',
         },
         {
           label: 'Advanced Directives',
