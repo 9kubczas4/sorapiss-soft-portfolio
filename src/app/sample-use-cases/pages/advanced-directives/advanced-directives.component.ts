@@ -1,28 +1,19 @@
-import { takeUntil } from 'rxjs';
+import { map, startWith } from 'rxjs';
 import { FormControl } from '@angular/forms';
-import { Component, OnInit, inject } from '@angular/core';
-import { DestroyedDirective } from '@sorapiss-soft-portfolio/utils';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ssp-advanced-directives',
   templateUrl: './advanced-directives.component.html',
   styleUrls: ['./advanced-directives.component.scss'],
-  hostDirectives: [DestroyedDirective]
 })
-export class AdvancedDirectivesComponent implements OnInit {
-  private readonly destroyed$ = inject(DestroyedDirective).destroyed$;
-
+export class AdvancedDirectivesComponent {
   readmeImport = import('raw-loader!./readme.md');
-  displayedColumns = ['firstName', 'lastName', 'role'];
 
   formControl = new FormControl('10');
 
-  ngOnInit(): void {
-    this.formControl.valueChanges
-    .pipe(takeUntil(this.destroyed$))
-    .subscribe(value => {
-      console.log(`Value: ${value}`);
-      console.log(`Is valid: ${this.formControl.valid}`);
-    });
-  }
+  formControlValue$ = this.formControl.valueChanges.pipe(startWith(this.formControl.value));
+  isFormControlValid$ = this.formControlValue$.pipe(
+    map(_ => this.formControl.valid)
+  );
 }

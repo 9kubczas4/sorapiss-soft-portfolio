@@ -1,3 +1,4 @@
+export * from './lib/consts';
 export * from './lib/directives';
 export * from './lib/feature-toggle';
 export * from './lib/forms-utils';
