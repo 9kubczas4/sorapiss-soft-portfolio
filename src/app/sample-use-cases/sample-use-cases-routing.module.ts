@@ -39,6 +39,13 @@ const routes: Routes = [
           ).then((m) => m.ComponentFactoryDirectiveModule),
       },
       {
+        path: 'change-detection-demo',
+        loadChildren: () =>
+          import(
+            './pages/change-detection-demo/change-detection-demo.module'
+          ).then((m) => m.ChangeDetectionDemoModule),
+      },
+      {
         path: 'enhance-material',
         loadChildren: () =>
           import(
@@ -76,6 +83,11 @@ const routes: Routes = [
           label: 'Advanced Directives',
           url: 'use-cases/advanced-directives',
           icon: 'switch_access_shortcut_add',
+        },
+        {
+          label: 'Change Detection Demo',
+          url: 'use-cases/change-detection-demo',
+          icon: 'settings_backup_restore',
         },
         {
           label: 'Component Factory Directive',
