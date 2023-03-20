@@ -1,0 +1,14 @@
+.options,
+.childs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.options {
+  margin-bottom: 0.5rem;
+}
+
+.detecting {
+  background-color: red !important;
+}
