@@ -1,0 +1,17 @@
+<article>
+  <h2>Use rxjs +  async pipe</h2>
+  <ol>
+    <li *ngFor="let item of items$ | async;">
+      {{ item }}
+    </li>
+  </ol>
+</article>
+<section class="options">
+  <button (click)="doNothing()">Do Nothing</button>
+  <button (click)="changeDataSource()">Change Data Source</button>
+</section>
+<section class="childs">
+  <ssp-child-element name="Child 1"></ssp-child-element>
+  <ssp-child-element name="Child 2"></ssp-child-element>
+</section>
+<span>{{ visualizeChangeDetectionRan() }}</span>
