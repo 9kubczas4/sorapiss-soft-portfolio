@@ -22,9 +22,9 @@ export class ParenthesesNotationInputDirective implements OnInit {
     this.formControl.control.addValidators(parenthesesNotationValidatorFn);
     this.formControl.control.valueChanges
       .pipe(
-        debounceTime(100),
-        filter(value => !!(this.isValidFormat(value) && !isNumber(value))),
-        setDisplayValue(this.formControl),
+        debounceTime(50),
+        filter(value => this.isValidFormat(value) && !isNumber(value)),
+        parseFormControlValue(this.formControl),
         takeUntil(this.destroyed$))
       .subscribe()
   }
@@ -52,7 +52,7 @@ export class ParenthesesNotationInputDirective implements OnInit {
   private isValidFormat = (value: string) => PARENTHESES_NOTATION_FORMAT.test(value);
 }
 
-function setDisplayValue(formControl: FormControlDirective): MonoTypeOperatorFunction<string> {
+function parseFormControlValue(formControl: FormControlDirective): MonoTypeOperatorFunction<string> {
   return tap((value: string) => {
     const valueWithoutBrackets = Number(value.replace('(', '').replace(')', '')) * -1;
 
