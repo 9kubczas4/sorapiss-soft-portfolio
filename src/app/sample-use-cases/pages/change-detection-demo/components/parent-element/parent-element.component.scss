@@ -1,13 +1,13 @@
 :host {
   display: block;
+  border: 3px dashed blue;
+  border-radius: 0.25rem;
 }
 
 .change-detection-examples {
   display: grid;
   column-gap: 1rem;
   padding: 1rem;
-  border-color: orange;
-  border-style: dashed;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
 
@@ -16,6 +16,7 @@
     border-radius: 0.25rem;
     border-color: greenyellow;
     border-style: dashed;
+    border-width: 2px;
     padding: 1rem;
   }
 }
