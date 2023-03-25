@@ -1,4 +1,5 @@
 import { Directive, ElementRef, inject, NgZone } from '@angular/core';
+import { ChangeDetectionLogService } from '../../services/change-detection-log.service';
 
 @Directive()
 export abstract class SampleBaseDirective {
@@ -6,12 +7,19 @@ export abstract class SampleBaseDirective {
 
   private readonly elementRef = inject(ElementRef);
   private readonly zone = inject(NgZone);
+  protected readonly changeDetectionLogService = inject(
+    ChangeDetectionLogService
+  );
 
   doNothing(): void {
-    console.log(`Do nothing ${this.name}`);
+    this.changeDetectionLogService.appendLog(this.name, `Do nothing`);
   }
 
   public visualizeChangeDetectionRan(): void {
+    this.changeDetectionLogService.appendLog(
+      this.name,
+      `Change detection triggered.`
+    );
     this.elementRef.nativeElement.classList.add('detecting');
     this.zone.runOutsideAngular(() => {
       setTimeout(() => {

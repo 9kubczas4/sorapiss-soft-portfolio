@@ -22,10 +22,11 @@ export class ElementWithGetterComponent extends SampleBaseDirective {
   }
 
   changeDataSource(): void {
-    console.log('change dataSource');
     this.processDataService.dataSource = [
       ...this.processDataService.dataSource,
       this.processDataService.dataSource.length + 1,
     ];
+
+    this.changeDetectionLogService.appendLog(this.name, `Change Data Source`);
   }
 }

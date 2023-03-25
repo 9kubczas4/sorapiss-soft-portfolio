@@ -16,3 +16,16 @@
 .detecting {
   border-color: red !important;
 }
+
+ssp-child-element-with-default-strategy,
+ssp-child-element {
+  background-color: #dddddd;
+  border-radius: 0.25rem;
+  border-color: blue;
+  border-style: dashed;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
