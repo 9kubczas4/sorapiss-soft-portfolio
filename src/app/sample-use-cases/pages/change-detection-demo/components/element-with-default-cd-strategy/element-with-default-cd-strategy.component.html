@@ -1,0 +1,12 @@
+<h2>Default CD Strategy</h2>
+<section class="options">
+  <button (click)="doNothing()">Do Nothing</button>
+</section>
+<section class="childs">
+  <ssp-child-element name="Child 1 - default strategy"></ssp-child-element>
+  <ssp-child-element name="Child 2 - default strategy"></ssp-child-element>
+  <ssp-child-element-with-default-strategy
+    name="Child 3 with default strategy"
+  ></ssp-child-element-with-default-strategy>
+</section>
+<span>{{ visualizeChangeDetectionRan() }}</span>

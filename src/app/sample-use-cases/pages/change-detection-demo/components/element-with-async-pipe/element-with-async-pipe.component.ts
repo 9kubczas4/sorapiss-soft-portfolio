@@ -24,11 +24,12 @@ export class ElementWithAsyncPipeComponent extends SampleBaseDirective {
   );
 
   changeDataSource(): void {
-    console.log('change dataSource');
     this.processDataService.dataSource = [
       ...this.processDataService.dataSource,
       this.processDataService.dataSource.length + 1,
     ];
     this.dataSource$.next(this.processDataService.dataSource);
+
+    this.changeDetectionLogService.appendLog(this.name, `Change Data Source`);
   }
 }

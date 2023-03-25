@@ -1,7 +1,7 @@
 <article>
   <h2>Use pipe</h2>
   <ol>
-    <li *ngFor="let item of dataSource | processData;">
+    <li *ngFor="let item of dataSource | processData">
       {{ item }}
     </li>
   </ol>
@@ -11,7 +11,7 @@
   <button (click)="changeDataSource()">Change Data Source</button>
 </section>
 <section class="childs">
-  <ssp-child-element name="Child 1"></ssp-child-element>
-  <ssp-child-element name="Child 2"></ssp-child-element>
+  <ssp-child-element name="Child 1 - pipe"></ssp-child-element>
+  <ssp-child-element name="Child 2 - pipe"></ssp-child-element>
 </section>
 <span>{{ visualizeChangeDetectionRan() }}</span>
