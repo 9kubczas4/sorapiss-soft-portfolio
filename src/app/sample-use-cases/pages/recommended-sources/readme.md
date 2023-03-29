@@ -76,13 +76,34 @@
 ## Change Detection + Angular Performance
 * [V - Angular Performance – Maciej Hanajczyk](https://www.youtube.com/watch?v=Tgdmc4NCCF0) by [Maciej Hanajczyk]
 * [V - 4 Runtime Performance Optimizations](https://www.youtube.com/watch?v=f8sA-i6gkGQ) by [Minko Gechev]()
+* [A - Angular Change Detection Cheat Sheet Explained](https://blog.simplified.courses/angular-change-detection-cheat-sheet-explained/) by [Brecht Billiet]()
+* [A - Angular Change Detection Quiz explained](https://blog.simplified.courses/angular-change-detection-quiz-explained/) by [Brecht Billiet]()
+* [A - Angular Change Detection OnPush or not?](https://blog.simplified.courses/angular-change-detection-onpush-or-not/) by [Brecht Billiet]()
 * [A - Angular Performance: Optimize Angular Change Detection](https://dev.to/angular/angular-performance-optimize-angular-change-detection-2anc) by [GDE Juri Strumpflohner]()
 
 ## Forms
+* [V - Building Forms in Angular Apps | Mosh](https://www.youtube.com/watch?v=hAaoPOx_oIw) by [Mosh]()
+* [V - Advanced Angular Forms - Free Mini-Course (Template-Driven)](https://www.youtube.com/watch?v=cWXhaFBGArk) by [GDE Dmytro]()
+* [V - Reactive Forms - The Basics](https://www.youtube.com/watch?v=JeeUY6WaXiA) by [Fireship]()
+* [V - Create a Dynamic Reactive Angular Form with JSON](https://www.youtube.com/watch?v=ByHw_RMjkKM) by [GDE Joshua Morony]()
+* [V - Control Value Accessor in Angular [Advanced, 2020]](https://www.youtube.com/watch?v=OrmIfW8Ak3w) by [GDE Dmytro]()
+* [A - Angular Typed Reactive Forms](https://dev.to/prestonjlamb/angular-typed-reactive-forms-29c7) by [GDE Preston Lamb]()
 
 ## Testing
+* [V - Testable Architecture in Angular | Rainer Hahnekamp | Reliable Web Summit 2021](https://www.youtube.com/watch?v=pAmdyvJ5VNY) by [GDE Rainer Hahnekamp]()
+* [V - Angular Testing In TDD | Shai Reznik | AngularConnect 2018](https://www.youtube.com/watch?v=k9LWSh2xxjM) by [GDE Shai Reznik]()
+* [V - Angular TDD Like You Never Seen Before | Shai Reznik | ng- conf 2022](https://www.youtube.com/watch?v=KHaeVaSkhIE) by [GDE Shai Reznik]()
+* [V - Angular + Jest: Testing Titbits | Maria Korneeva | Reliable Web Summit 2021](https://www.youtube.com/watch?v=HfKdktNB9wA) by [Maria Korneeva]()
+* [V - Getting Started with Angular Component Testing](https://www.youtube.com/watch?v=weWTHGWe6uU) by [GDE Jordan Powell]()
 
 ## State Management
 
 ## Other resources
 * [Angular Challanges](https://github.com/tomalaforge/angular-challenges) by [GDE Thomas Laforge]()
+
+* [V - ]() by []()
+* [V - ]() by []()
+* [V - ]() by []()
+* [A - ]() by []()
+* [A - ]() by []()
+* [A - ]() by []()
