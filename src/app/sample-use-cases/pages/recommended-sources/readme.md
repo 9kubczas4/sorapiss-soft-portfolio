@@ -59,10 +59,13 @@
 * [V - Router Guards Pt.1: CanActivate vs CanActivateChild (2021)](https://www.youtube.com/watch?v=NxidP4I9EHE) by [GDE Dmytro Mezhenskyi]()
 * [V - CanMatch Guard in Angular 14.1 Router (2022)](https://www.youtube.com/watch?v=OpBFhnLlhdE) by [GDE Dmytro Mezhenskyi]()
 * [V - CanLoad Guard in Angular Router & Preloading Strategies (2021)](https://www.youtube.com/watch?v=HMJA05iGtfY) by [GDE Dmytro Mezhenskyi]()
+* [V - Angular 14 Functional Router Guards: What They Are & How to Use Them](https://www.youtube.com/watch?v=pD8vzZs559I) by [GDE Fanis]()
 * [A - Everything you need to know about route Guard in Angular](https://dev.to/this-is-angular/everything-you-need-to-know-about-route-guard-in-angular-2hkn) by [GDE Thomas Laforge]()
 * [A - Create a route Guard to manage permissions](https://dev.to/this-is-angular/create-a-route-guard-to-manage-permissions-4c09) by [GDE Thomas Laforge]()
 
 ## Dependency Injection
+* [C - Angular Dependency Injection – Understanding hierarchical injectors (2021)](https://www.youtube.com/playlist?list=PLX7eV3JL9sfmJ6AaZj9eDlAKrJrEul4Vz) by [GDE Dmytro Mezhenskyi]()
+* [V - Learn How to Use the Inject Method in Angular 14](https://www.youtube.com/watch?v=4omKgGdL9to) by [GDE Fanis]()
 
 ### Basics
 
@@ -70,6 +73,13 @@
 * [A - Stop being scared of InjectionTokens](https://dev.to/this-is-angular/stop-being-scared-of-injectiontokens-2406) by [GDE Thomas Laforge]()
 
 ## Reactive Programming
+* [V - ]() by []()
+* [V - ]() by []()
+* [V - ]() by []()
+* [A - ]() by []()
+* [A - ]() by []()
+* [A - ]() by []()
+
 
 ## Data-Flow Best Practices
 
