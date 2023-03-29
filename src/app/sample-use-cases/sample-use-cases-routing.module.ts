@@ -60,6 +60,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'recommended-resources',
+        loadChildren: () =>
+          import('./pages/recommended-sources/recommended-sources.module').then(
+            m => m.RecommendedSourcesModule
+          )
+      },
+      {
         path: 'generic-layout',
         loadChildren: () =>
           import('./pages/generic-layout/generic-layout.module').then(
@@ -103,6 +110,11 @@ const routes: Routes = [
           label: 'Generic Layout',
           url: 'use-cases/generic-layout',
           icon: 'view_column',
+        },
+        {
+          label: 'Recommended Resources',
+          url: 'use-cases/recommended-resources',
+          icon: 'bookmark_border',
         },
         {
           label: 'User Permissions',
