@@ -16,7 +16,8 @@
 ## The main artifacts of an Angular app
 
 ### Components
-  * [V - Angular Components Beginner's Guide](https://www.youtube.com/watch?v=23o0evRtrFI) by [Fireship]
+  * [V - Angular Components Beginner's Guide](https://www.youtube.com/watch?v=23o0evRtrFI) by [Fireship]()
+  * [V - Sharing Data between Components in Angular](https://www.youtube.com/watch?v=I317BhehZKM) by [Fireship]()
 
 ### Directives
 
@@ -31,6 +32,7 @@
   * [V - Demystified Angular Directives](https://www.youtube.com/watch?v=bVyw2njDoZw) by [Nir Kaufman]() - explain how works structural *ngIf and *ngFor works
   * [V - Structural Directives in Angular – How to Create Custom Directive](https://www.youtube.com/watch?v=07CaGlbMPbw) by [GDE Dmytro Mezhenskyi]()
   * [V - Angular Authentication: Custom Structural Directive](https://www.youtube.com/watch?v=pUra6iPzhFA) by [GDE Fanis ]
+  * [V - NgTemplateOutlet in Angular - Everything You Have to Know (2022)](https://www.youtube.com/watch?v=vfPVdJ2oQlM) by [Dmytro Mezhenskyi]()
   * [A - Superpowers with Directives and Dependency Injection: Part 2](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-2-16ea) by [GDE Armen Vardanyan]()
   * [A - Create a custom Structural Directive to manage permissions](https://dev.to/this-is-angular/create-a-custom-structural-directive-to-manage-permissions-like-a-pro-5293) by [GDE Thomas Laforge]()
 
@@ -47,14 +49,19 @@
 ### Services
 * [V - Understanding Angular 2 Services - Tutorial](https://www.youtube.com/watch?v=h5tB_kvuQO8) by [Design Course]()
 
+## Styling
+* [A - Component styles](https://angular.io/guide/component-styles) by [Angular]()
+* [A - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) by [Chris Coyier]()
+* [A - A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) by [Chris House]()
+* [Game - Flexbox Froggy](https://flexboxfroggy.com/)
+* [Game - Grid Garden](https://cssgridgarden.com/)
+
 ## Router
-
-### Basics
 * [V - Angular Router - The Basics and Beyond](https://www.youtube.com/watch?v=Np3ULAMqwNo) by [Fireship]()
+* [V - Angular Router - Undiscovered Parts - Santosh Yadav - NG-BE 2023](https://www.youtube.com/watch?v=8ntac2p6qUM) by [GDE Santosh Yadav]()
+* [V - Multiple Router Outlets in Angular using Named Outlets (2021)](https://www.youtube.com/watch?v=9fH09nJGm-U) by [GDE Dmytro Mezhenskyi]()
 
-### Passing data to routes
-
-### Guards
+## Guards
 * [V - Router Guards Pt.1: CanActivate vs CanActivateChild (2021)](https://www.youtube.com/watch?v=NxidP4I9EHE) by [GDE Dmytro Mezhenskyi]()
 * [V - CanMatch Guard in Angular 14.1 Router (2022)](https://www.youtube.com/watch?v=OpBFhnLlhdE) by [GDE Dmytro Mezhenskyi]()
 * [V - CanLoad Guard in Angular Router & Preloading Strategies (2021)](https://www.youtube.com/watch?v=HMJA05iGtfY) by [GDE Dmytro Mezhenskyi]()
@@ -123,13 +130,8 @@
 * [V - Getting Started with Angular Component Testing](https://www.youtube.com/watch?v=weWTHGWe6uU) by [GDE Jordan Powell]()
 
 ## State Management
+* [V - My go to way to manage state in Angular applications](https://www.youtube.com/watch?v=JnwjU06yoEE) by [Joshua Morony]()
+* [V - State Management in Angular - Do I need Redux & NgRx? (2021, Advanced)](https://www.youtube.com/watch?v=2LwuV6s-Cy4) by [Dmytro Mezhenskyi]()
 
 ## Other resources
 * [Angular Challanges](https://github.com/tomalaforge/angular-challenges) by [GDE Thomas Laforge]()
-
-* [V - ]() by []()
-* [V - ]() by []()
-* [V - ]() by []()
-* [A - ]() by []()
-* [A - ]() by []()
-* [A - ]() by []()
