@@ -1,12 +1,53 @@
-# Recommended Angular Free Resources
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recommended Angular Free Sources by Synergy Codes</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		/* CSS for the header */
+		header {
+			background-color: #120c28;
+			padding: 20px;
+			text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+		}
+    .heading {
+      font-family: usual,"Open Sans",Verdana,sans-serif;
+      font-size: 16px;
+      color: white;
+    }
+    hr {
+      width: 6px;
+      height: 80px;
+      background-color: #a388ff;
+    }
+    a {
+      color: #a388ff;
+      text-decoration: none;
+      border-bottom: unset;
+    }
+    a:hover {
+      color: #673aff;
+      text-decoration: none;
+      border-bottom: unset;
+    }
+	</style>
+</head>
+<body>
+
+<header>
+	<img width="264" height="107" src="https://synergycodes.com/wp-content/uploads/SC_Forge_color.svg" data-src="https://synergycodes.com/wp-content/uploads/SC_Forge_color.svg" class="forge-footer__logo ls-is-cached lazyloaded" alt="" decoding="async">
+  <hr>
+  <h2 class="heading">Recommended Angular Free Sources</h2>
+</header>
+
 
 ## Entire courses for beginners
-* [Course - Angular for Beginners Course](https://www.youtube.com/watch?v=3qBXWUpoPHo) by [Santosh Yadav](https://twitter.com/SantoshYadavDev)
-  * Almost 18 hours of course.
-  * Angular 13
-* [Course - Angular Tutorial for Beginners](https://www.youtube.com/watch?v=k5E2AVpwsko) by [Mosh](https://twitter.com/moshhamedani)
-  * Well structured knowledge, created in 2017, but most of the information's are still up to date.
-  * Angular 4
+* [Course - Angular for Beginners Course](https://www.youtube.com/watch?v=3qBXWUpoPHo) by [Santosh Yadav](https://twitter.com/SantoshYadavDev) - Angular 13, approx 18 hours of learning
+* [Course - Angular Tutorial for Beginners](https://www.youtube.com/watch?v=k5E2AVpwsko) by [Mosh](https://twitter.com/moshhamedani) - Well structured knowledge, created in 2017, but most of the information's are still up to date.
 
 ## Angular CLI
   * [Video - The Basics](https://www.youtube.com/watch?v=IZEolKjcjks) by [Fireship](https://twitter.com/fireship_dev)
@@ -20,7 +61,7 @@
 ### Directives
 
 ##### Attribute Directive
-  * [Video - Angular Directives - Build a Hold-to-Delete Button](https://www.youtube.com/watch?v=kl-UMCHpEsw) by [Fireship]
+  * [Video - Angular Directives - Build a Hold-to-Delete Button](https://www.youtube.com/watch?v=kl-UMCHpEsw) by [Fireship](https://twitter.com/fireship_dev)
   * [Article - Use Angular directives to extend components that you don't own](https://timdeschryver.dev/blog/use-angular-directives-to-extend-components-that-you-dont-own) by [Tim Deschryver](https://twitter.com/tim_deschryver)
   * [Article - Superpowers with Directives and Dependency Injection: Part 1](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-1-ho7) by [Armen Vardanyan](https://twitter.com/Armandotrue)
   * [Article - Superpowers with Directives and Dependency Injection: Part 3](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-3-18ja) by [Armen Vardanyan](https://twitter.com/Armandotrue)
@@ -34,6 +75,8 @@
   * [Article - Superpowers with Directives and Dependency Injection: Part 2](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-2-16ea) by [Armen Vardanyan](https://twitter.com/Armandotrue)
   * [Article - Create a custom Structural Directive to manage permissions](https://dev.to/this-is-angular/create-a-custom-structural-directive-to-manage-permissions-like-a-pro-5293) by [Thomas Laforge](https://twitter.com/laforge_toma)
   * [Article - Making DRY Conditional Structural Directives Using Angular Directive Composition API](https://netbasal.com/making-dry-conditional-structural-directives-using-angular-directive-composition-api-bc346672445d) by [Netanel Basal](https://twitter.com/NetanelBasal)
+
+<div style="page-break-after: always;"></div>
 
 ##### Directive Composition API - new feature Angular 15
   * [Video - Introducing the Directive Composition API in Angular v15](https://www.youtube.com/watch?v=EJJwyyjsRGs) by [Angular](https://twitter.com/angular) - new feature Angular 15
@@ -51,7 +94,7 @@
 ## Styling
 * [Article - Component styles](https://angular.io/guide/component-styles) by [Angular](https://twitter.com/angular)
 * [Article - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) by [Chris Coyier](https://twitter.com/chriscoyier)
-* [Article - A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) by [Chris House]
+* [Article - A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) by Chris House
 * [Game - Flexbox Froggy](https://flexboxfroggy.com/)
 * [Game - Grid Garden](https://cssgridgarden.com/)
 
@@ -83,8 +126,8 @@
 
 #### RxJs Operators
 * [Video - I only ever use *these* RxJS operators to code reactively](https://www.youtube.com/watch?v=Byttv3YpjQk) by [Joshua Morony](https://twitter.com/joshuamorony)
-* [Video - 20 RXJS Operators in 20 minutes | Mike Brocchi & John Niedzwiecki](https://www.youtube.com/watch?v=ak3MvMn8u18) by [Mike Brocchi](https://twitter.com/Brocco) & [John Niedzwiecki]
-* [Video - I switched a map and you'll never guess what happened next - Pete Darwin, Shai Reznik, Mike Brocchi](https://www.youtube.com/watch?v=rUZ9CjcaCEw) by [Pete Darwin], [Shai Reznik](https://twitter.com/shai_reznik) and [Mike Brocchi](https://twitter.com/Brocco)
+* [Video - 20 RXJS Operators in 20 minutes | Mike Brocchi & John Niedzwiecki](https://www.youtube.com/watch?v=ak3MvMn8u18) by [Mike Brocchi](https://twitter.com/Brocco) & John Niedzwiecki
+* [Video - I switched a map and you'll never guess what happened next - Pete Darwin, Shai Reznik, Mike Brocchi](https://www.youtube.com/watch?v=rUZ9CjcaCEw) by Pete Darwin, [Shai Reznik](https://twitter.com/shai_reznik) and [Mike Brocchi](https://twitter.com/Brocco)
 * [Video - RxJs Operators - ExhaustMap vs concatMap (2021)](https://www.youtube.com/watch?v=nh13_aPRQ0Q) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - RxJs switchMap vs mergeMap - Intro to Flattening Operators (2021)](https://www.youtube.com/watch?v=qYdKmYp95Jg) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - RxJs Zip - Real-Life Analog of ZIP operator (Reactive Dürüm, 2021)](https://www.youtube.com/watch?v=csRIMubWYnw) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
@@ -107,13 +150,15 @@
 * [Video - Marble testing with RxJS testing utils](https://www.youtube.com/watch?v=rlkCeeyBwf8) by [Kevin Kreuzer](https://twitter.com/kreuzercode)
 * [Video - Is reactive code with RxJS too hard to test?](https://www.youtube.com/watch?v=z12fxor21gA) by [Joshua Morony](https://twitter.com/joshuamorony)
 
+<div style="page-break-after: always;"></div>
+
 #### Signals - new feature Angular 16
 * [Video - Reactive Angular. At its core. - Pawel Kozlowski - NGBE 2023](https://www.youtube.com/watch?v=bByZ6FGyuO0) by [Pawel Kozlowski](https://twitter.com/pkozlowski_os)
 * [Video - Signals & fine grained reactivity in Angular - Michael Hladky - NG-BE 2023](https://www.youtube.com/watch?v=oGDgjIV7jrs) by [Michael Hladky](https://twitter.com/Michael_Hladky)
 * [Article - Angular Signals WWW](https://github.com/SanderElias/Samples/tree/1ce26dcea5d4e3f0c3d93295c6de146229a7d327/Angular-Signals) by [Sander Elias](https://twitter.com/esosanderelias)
 
 ## Change Detection + Angular Performance
-* [Video - Angular Performance – Maciej Hanajczyk](https://www.youtube.com/watch?v=Tgdmc4NCCF0) by [Maciej Hanajczyk]
+* [Video - PL - Angular Performance – Maciej Hanajczyk](https://www.youtube.com/watch?v=Tgdmc4NCCF0) by Maciej Hanajczyk
 * [Video - 4 Runtime Performance Optimizations](https://www.youtube.com/watch?v=f8sA-i6gkGQ) by [Minko Gechev](https://twitter.com/mgechev)
 * [Video - WTF is "Zone.js" and is it making your app slow?](https://www.youtube.com/watch?v=lmrf_gPIOZU) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Article - Angular Change Detection Cheat Sheet Explained](https://blog.simplified.courses/angular-change-detection-cheat-sheet-explained/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
@@ -144,6 +189,8 @@
 * [Video - State Management in Angular - Do I need Redux & NgRx? (2021, Advanced)](https://www.youtube.com/watch?v=2LwuV6s-Cy4) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - How to use NgRx ComponentStore? - Alex Okrushko | NG-DE 2022](https://www.youtube.com/watch?v=xPmtsD5LRqQ) by [Alex Okrushko](https://twitter.com/AlexOkrushko)
 * [Article - Managing State in Angular Applications](https://blog.nrwl.io/managing-state-in-angular-applications-22b75ef5625f) by [Victor Savkin](https://twitter.com/victorsavkin)
+
+<div style="page-break-after: always;"></div>
 
 ## Architecture
 * [Video - Lightweight Architectures with Angular's Latest Innovations - Manfred Steyer - NG-BE 2023](https://www.youtube.com/watch?v=yZodjJgSGhA) by [Manfred Steyer](https://twitter.com/ManfredSteyer)
@@ -201,3 +248,9 @@
 * [Tomas Trajan](https://twitter.com/tomastrajan)
 * [Wojciech Trawiński](https://twitter.com/wojtrawi)
 * [Victor Savkin](https://twitter.com/victorsavkin)
+
+Created by [Paweł Kubiak](https://twitter.com/pawelkubiakdev).
+&copy; 2023 Synergy Codes. All rights reserved.
+
+</body>
+</html>
