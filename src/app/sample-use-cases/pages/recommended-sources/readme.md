@@ -33,6 +33,7 @@
   * [Video - NgTemplateOutlet in Angular - Everything You Have to Know (2022)](https://www.youtube.com/watch?v=vfPVdJ2oQlM) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
   * [Article - Superpowers with Directives and Dependency Injection: Part 2](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-2-16ea) by [Armen Vardanyan](https://twitter.com/Armandotrue)
   * [Article - Create a custom Structural Directive to manage permissions](https://dev.to/this-is-angular/create-a-custom-structural-directive-to-manage-permissions-like-a-pro-5293) by [Thomas Laforge](https://twitter.com/laforge_toma)
+  * [Article - Making DRY Conditional Structural Directives Using Angular Directive Composition API](https://netbasal.com/making-dry-conditional-structural-directives-using-angular-directive-composition-api-bc346672445d) by [Netanel Basal](https://twitter.com/NetanelBasal)
 
 ##### Directive Composition API - new feature Angular 15
   * [Video - Introducing the Directive Composition API in Angular v15](https://www.youtube.com/watch?v=EJJwyyjsRGs) by [Angular](https://twitter.com/angular) - new feature Angular 15
@@ -77,6 +78,8 @@
 * [Video - RxJS Crash Course](https://www.youtube.com/watch?v=tGWBy6Vqq9w) by [Laith Academy](https://www.youtube.com/@laithacademy)
 * [Video - 3 Levels of Learning RxJS Operators](https://www.youtube.com/watch?v=4laSr0wjAvw) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - Thinking Reactively: Most Difficult | Mike Pearson](https://www.youtube.com/watch?v=-4cwkHNguXE) by [Mike Pearson](https://twitter.com/mfpears)
+* [Article - The Best Way To Unsubscribe RxJS Observables In The Angular Applications!](https://medium.com/angular-in-depth/the-best-way-to-unsubscribe-rxjs-observable-in-the-angular-applications-d8f9aa42f6a0) by [Tomas Trajan](https://twitter.com/tomastrajan)
+* [Article - JavaScript Theory: Promise vs Observable](https://medium.com/javascript-everyday/javascript-theory-promise-vs-observable-d3087bc1239a) by [Wojciech Trawiński](https://twitter.com/wojtrawi)
 
 #### RxJs Operators
 * [Video - I only ever use *these* RxJS operators to code reactively](https://www.youtube.com/watch?v=Byttv3YpjQk) by [Joshua Morony](https://twitter.com/joshuamorony)
@@ -86,6 +89,10 @@
 * [Video - RxJs switchMap vs mergeMap - Intro to Flattening Operators (2021)](https://www.youtube.com/watch?v=qYdKmYp95Jg) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - RxJs Zip - Real-Life Analog of ZIP operator (Reactive Dürüm, 2021)](https://www.youtube.com/watch?v=csRIMubWYnw) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - RxJs Schedulers - Why do we need them? (Advanced, 2021)](https://www.youtube.com/watch?v=-OhAR6l-Q0Q) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
+* [Article - RxJS hint [first, take(1)]](https://medium.com/javascript-everyday/rxjs-hint-first-take-1-a8084f73db37) by [Wojciech Trawiński](https://twitter.com/wojtrawi)
+* [Article - RxJS hint [filter, takeWhile]](https://medium.com/javascript-everyday/rxjs-hint-filter-takewhile-750aa73b1f2c) by [Wojciech Trawiński](https://twitter.com/wojtrawi)
+* [Article - RxJS hint [retry]](https://medium.com/javascript-everyday/rxjs-hint-retry-e8293a204d91) by [Wojciech Trawiński](https://twitter.com/wojtrawi)
+* [Article - https://medium.com/javascript-everyday/rxjs-hint-repeat-2a834ff85dc3](https://medium.com/javascript-everyday/rxjs-hint-repeat-2a834ff85dc3) by [Wojciech Trawiński](https://twitter.com/wojtrawi)
 
 #### RxJs Hot vs Cold
 * [Video - How to share your RxJS observables for improved performance](https://www.youtube.com/watch?v=H542ZSyubrE) by [Joshua Morony](https://twitter.com/joshuamorony)
@@ -100,6 +107,11 @@
 * [Video - Marble testing with RxJS testing utils](https://www.youtube.com/watch?v=rlkCeeyBwf8) by [Kevin Kreuzer](https://twitter.com/kreuzercode)
 * [Video - Is reactive code with RxJS too hard to test?](https://www.youtube.com/watch?v=z12fxor21gA) by [Joshua Morony](https://twitter.com/joshuamorony)
 
+#### Signals - new feature Angular 16
+* [Video - Reactive Angular. At its core. - Pawel Kozlowski - NGBE 2023](https://www.youtube.com/watch?v=bByZ6FGyuO0) by [Pawel Kozlowski](https://twitter.com/pkozlowski_os)
+* [Video - Signals & fine grained reactivity in Angular - Michael Hladky - NG-BE 2023](https://www.youtube.com/watch?v=oGDgjIV7jrs) by [Michael Hladky](https://twitter.com/Michael_Hladky)
+* [Article - Angular Signals WWW](https://github.com/SanderElias/Samples/tree/1ce26dcea5d4e3f0c3d93295c6de146229a7d327/Angular-Signals) by [Sander Elias](https://twitter.com/esosanderelias)
+
 ## Change Detection + Angular Performance
 * [Video - Angular Performance – Maciej Hanajczyk](https://www.youtube.com/watch?v=Tgdmc4NCCF0) by [Maciej Hanajczyk]
 * [Video - 4 Runtime Performance Optimizations](https://www.youtube.com/watch?v=f8sA-i6gkGQ) by [Minko Gechev](https://twitter.com/mgechev)
@@ -108,6 +120,7 @@
 * [Article - Angular Change Detection Quiz explained](https://blog.simplified.courses/angular-change-detection-quiz-explained/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
 * [Article - Angular Change Detection OnPush or not?](https://blog.simplified.courses/angular-change-detection-onpush-or-not/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
 * [Article - Angular Performance: Optimize Angular Change Detection](https://dev.to/angular/angular-performance-optimize-angular-change-detection-2anc) by [Juri Strumpflohner](https://twitter.com/juristr)
+* [Article - From zone.js to zoneless Angular and back — how it all works](https://medium.com/angular-in-depth/from-zone-js-to-zoneless-angular-and-back-how-it-all-works-4bfb631e11d4) by [Max Koretskyi](https://twitter.com/maxkoretskyi)
 
 ## Forms
 * [Video - Building Forms in Angular Apps | Mosh](https://www.youtube.com/watch?v=hAaoPOx_oIw) by [Mosh](https://twitter.com/moshhamedani)
@@ -116,6 +129,8 @@
 * [Video - Create a Dynamic Reactive Angular Form with JSON](https://www.youtube.com/watch?v=ByHw_RMjkKM) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - Control Value Accessor in Angular [Advanced, 2020]](https://www.youtube.com/watch?v=OrmIfW8Ak3w) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Article - Angular Typed Reactive Forms](https://dev.to/prestonjlamb/angular-typed-reactive-forms-29c7) by [Preston Lamb](https://twitter.com/prestonjlamb)
+* [Article - Create a Multi-Step Form in Angular](https://netbasal.com/create-a-multi-step-form-in-angular-44cdc5b75cdc) by [Netanel Basal](https://twitter.com/NetanelBasal)
+* [Article - Typed Reactive Forms in Angular — No Longer a Type Dream 💭](https://netbasal.com/typed-reactive-forms-in-angular-no-longer-a-type-dream-bf6982b0af28) by [Netanel Basal](https://twitter.com/NetanelBasal)
 
 ## Testing
 * [Video - Testable Architecture in Angular | Rainer Hahnekamp | Reliable Web Summit 2021](https://www.youtube.com/watch?v=pAmdyvJ5VNY) by [Rainer Hahnekamp](https://twitter.com/rainerhahnekamp)
@@ -127,12 +142,25 @@
 ## State Management
 * [Video - My go to way to manage state in Angular applications](https://www.youtube.com/watch?v=JnwjU06yoEE) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - State Management in Angular - Do I need Redux & NgRx? (2021, Advanced)](https://www.youtube.com/watch?v=2LwuV6s-Cy4) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
+* [Video - How to use NgRx ComponentStore? - Alex Okrushko | NG-DE 2022](https://www.youtube.com/watch?v=xPmtsD5LRqQ) by [Alex Okrushko](https://twitter.com/AlexOkrushko)
+* [Article - Managing State in Angular Applications](https://blog.nrwl.io/managing-state-in-angular-applications-22b75ef5625f) by [Victor Savkin](https://twitter.com/victorsavkin)
+
+## Architecture
+* [Video - Lightweight Architectures with Angular's Latest Innovations - Manfred Steyer - NG-BE 2023](https://www.youtube.com/watch?v=yZodjJgSGhA) by [Manfred Steyer](https://twitter.com/ManfredSteyer)
+* [Article - How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://tomastrajan.medium.com/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [Tomas Trajan](https://twitter.com/tomastrajan)
+* [Book - The Angular Developer's Nx Handbook](https://leanpub.com/the-angular-developers-nx-handbook) by [Lars Gyrup Brink Nielsen](https://twitter.com/LayZeeDK)
+* [Book - Enterprise Monorepo Angular Patterns](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book) by [Nitin Vericherla](https://twitter.com/nitinvericherla) & [Victor Savkin](https://twitter.com/victorsavkin)
+* [Book - Micro Frontends and Moduliths with Angular](https://www.angulararchitects.io/en/book/#getebook) by [Manfred Steyer](https://twitter.com/ManfredSteyer)
 
 ## Other resources
 * [Angular Challanges](https://github.com/tomalaforge/angular-challenges) by [Thomas Laforge](https://twitter.com/laforge_toma)
 
+## Content in Polish
+* [Angular Love](https://www.angular.love/)
+
 ## Content Creators
 * [Alain Chautard](https://twitter.com/AlainChautard)
+* [Alex Okrushko](https://twitter.com/AlexOkrushko)
 * [Angular](https://twitter.com/angular)
 * [Armen Vardanyan](https://twitter.com/Armandotrue)
 * [Brecht Billiet](https://twitter.com/brechtbilliet)
@@ -149,17 +177,27 @@
 * [Kristiyan Kostadinov](https://twitter.com/_crisbeto)
 * [Laith Academy](https://www.youtube.com/@laithacademy)
 * Maciej Hanajczyk
+* [Manfred Steyer](https://twitter.com/ManfredSteyer)
 * [Maria Korneeva](https://twitter.com/BrowserPerson)
+* [Max Koretskyi](https://twitter.com/maxkoretskyi)
 * [Michael Hladky](https://twitter.com/Michael_Hladky)
 * [Mike Brocchi](https://twitter.com/Brocco)
 * [Mike Pearson](https://twitter.com/mfpears)
 * [Minko Gechev](https://twitter.com/mgechev)
+* [Netanel Basal](https://twitter.com/NetanelBasal)
+* [Nitin Vericherla](https://twitter.com/nitinvericherla)
+* [Pawel Kozlowski](https://twitter.com/pkozlowski_os)
 * Pete Darwin
 * [Preston Lamb](https://twitter.com/prestonjlamb)
 * [Rainer Hahnekamp](https://twitter.com/rainerhahnekamp)
 * [Mosh](https://twitter.com/moshhamedani)
+* [Netanel Basal](https://twitter.com/NetanelBasal)
 * [Nir Kaufman](https://twitter.com/nirkaufman)
+* [Sander Elias](https://twitter.com/esosanderelias)
 * [Santosh Yadav](https://twitter.com/SantoshYadavDev)
 * [Shai Reznik](https://twitter.com/shai_reznik)
 * [Tim Deschryver](https://twitter.com/tim_deschryver)
 * [Thomas Laforge](https://twitter.com/laforge_toma)
+* [Tomas Trajan](https://twitter.com/tomastrajan)
+* [Wojciech Trawiński](https://twitter.com/wojtrawi)
+* [Victor Savkin](https://twitter.com/victorsavkin)
