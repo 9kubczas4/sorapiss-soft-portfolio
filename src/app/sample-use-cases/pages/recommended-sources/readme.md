@@ -1,121 +1,142 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Recommended Angular Free Sources by Synergy Codes</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		/* CSS for the header */
-		header {
-			background-color: #120c28;
-			padding: 20px;
-			text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-		}
-    .heading {
-      font-family: usual,"Open Sans",Verdana,sans-serif;
-      font-size: 16px;
-      color: white;
-    }
-    hr {
-      width: 6px;
-      height: 80px;
-      background-color: #a388ff;
-    }
-    a {
-      color: #a388ff;
-      text-decoration: none;
-      border-bottom: unset;
-    }
-    a:hover {
-      color: #673aff;
-      text-decoration: none;
-      border-bottom: unset;
-    }
-	</style>
-</head>
-<body>
+# Learn Angular for Free: Top 15 Online Resources You Shouldn't Miss - Part 1
+# Free Angular Learning Materials: Unlock Your Full Development Potential - Part 1
 
-<header>
-	<img width="264" height="107" src="https://synergycodes.com/wp-content/uploads/SC_Forge_color.svg" data-src="https://synergycodes.com/wp-content/uploads/SC_Forge_color.svg" class="forge-footer__logo ls-is-cached lazyloaded" alt="" decoding="async">
-  <hr>
-  <h2 class="heading">Recommended Angular Free Sources</h2>
-</header>
+### Intro
+Learning a programming language or framework can be a tough challenge, and when it comes to Angular, even experienced front-end developers often consider it to have a high entry threshold in comparison to others. With the abundance of information, courses, and materials available, it's easy to feel overwhelmed and unsure of where to begin.
+
+To make your Angular learning journey smoother, I've written down a comprehensive list of free resources that will take you to the next level of expertise in the Angular world. This list includes carefully selected courses, videos, articles, and books, categorized by relevant topics. Rest assured that I have personally gone through each resource, either in its entirety or by extensively sampling full courses, so I can honestly recommend each one to you.
+
+I'd like to keep this list up to date, as the Angular ecosystem is continuously evolving, and exciting developments are on the horizon. The current version covers materials created up to Angular 16, and I promise to update this article whenever a new version of Angular is released. I aim to maintain this list's vitality so that you can stay in tune with the latest advancements in our dynamic Angular community.
+
+Join me on this learning journey, and together, let's explore the world of Angular.
+
+### Exploring the Angular Learning Journey: Foundational Concepts and Advanced Topics
+The list has been organized into two separate articles. The first article will concentrate on the core concepts and building blocks of Angular, encompassing components, directives, pipelines, services, routing, gatekeepers, and dependency injection. We will thoroughly explore essential topics, including change detection, which can pose challenges even for experienced developers.
+
+In the subsequent article, I provide recommendations for learning or enhancing your skills in RxJS, Forms, State Management, Architecture, Testing, and the latest features, such as Signals. These resources are carefully selected to assist you in gaining proficiency in these areas, empowering you to leverage advanced techniques and stay abreast of the newest developments within Angular.
+
+By dividing the list into these two articles, I aim to ensure a focused and comprehensive learning experience, catering to both the foundational aspects and advanced topics of Angular. Whether you are starting your Angular journey or seeking to deepen your knowledge, these curated materials will guide you toward mastering the intricacies of Angular development.
 
 
-## Entire courses for beginners
-* [Course - Angular for Beginners Course](https://www.youtube.com/watch?v=3qBXWUpoPHo) by [Santosh Yadav](https://twitter.com/SantoshYadavDev) - Angular 13, approx 18 hours of learning
-* [Course - Angular Tutorial for Beginners](https://www.youtube.com/watch?v=k5E2AVpwsko) by [Mosh](https://twitter.com/moshhamedani) - Well structured knowledge, created in 2017, but most of the information's are still up to date.
+### How to use this list effectively?
+Answering this question definitively is challenging, as it largely depends on your current level of proficiency. If you're a beginner embarking on your programming journey or aiming to learn Angular from scratch, I highly recommend starting with the comprehensive course prepared by [Santosh Yadav](https://twitter.com/SantoshYadavDev), available [here](https://www.youtube.com/watch?v=3qBXWUpoPHo). This course will provide a solid foundation in Angular. Additionally, if you wish to delve deeper into specific areas of interest, explore the relevant sections such as components, directives, and more.
 
-## Angular CLI
-  * [Video - The Basics](https://www.youtube.com/watch?v=IZEolKjcjks) by [Fireship](https://twitter.com/fireship_dev)
+The sections in this list are thoughtfully organized, progressing from fundamental Angular elements to more intricate concepts. If you're an experienced programmer with a specific area in mind that you'd like to learn, feel free to jump straight to the materials within those sections.
 
-## The main artifacts of an Angular app
+Furthermore, consider this list as a valuable library of resources that you can recommend to your friends or mentor junior developers. It serves as a repository of materials suitable for various learning levels and can be a helpful tool for guiding others on their Angular learning journey.
 
 ### Components
-  * [Video - Angular Components Beginner's Guide](https://www.youtube.com/watch?v=23o0evRtrFI) by [Fireship](https://twitter.com/fireship_dev)
+
+The top 5 materials about Angular components include a beginner's guide by Fireship, covering the basics of creating and styling components; another video by Fireship that explores data sharing techniques between components in Angular. Additionally, there is an official Angular video on standalone components, Joshua Morony's video discussing the importance of creating "DUMB" components, and an article by Angular University comparing smart and presentational components in Angular architecture, offering valuable insights for building maintainable Angular applications.
+
+  * [Video - Angular Components Beginner's Guide](https://www.youtube.com/watch?v=23o0evRtrFI) by [Fireship](https://twitter.com/fireship_dev) - 
   * [Video - Sharing Data between Components in Angular](https://www.youtube.com/watch?v=I317BhehZKM) by [Fireship](https://twitter.com/fireship_dev)
+  * [Video - Getting Started with Standalone Components in Angular](https://www.youtube.com/watch?v=x5PZwb4XurU) by [Angular](https://twitter.com/angular)
+  * [Video - Are your Angular components DUMB enough?](https://www.youtube.com/watch?v=9QU_GzcU184) by [Joshua Morony](https://twitter.com/joshuamorony)
+  * [Article - Angular Architecture - Smart Components vs Presentational Components](https://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/) by [Angular University](https://twitter.com/AngularUniv)
 
-### Directives
+### Attribute Directives
+The top 5 materials about Attribute Directives include a Fireship video tutorial on building a hold-to-delete button using Angular directives. My favorite article by Tim Deschryver about implementing custom directives to extend components that you don't own. This article helps me a lot in understanding how and when to use Angular Directives. I'm highly recommending a series of articles by Armen Vardanyan titled "Superpowers with Directives and Dependency Injection," which provide insights and techniques for leveraging the power of directives and dependency injection in Angular. These resources offer practical use cases and in-depth explanations to enhance your understanding and proficiency in working with attribute directives in Angular.
 
-##### Attribute Directive
   * [Video - Angular Directives - Build a Hold-to-Delete Button](https://www.youtube.com/watch?v=kl-UMCHpEsw) by [Fireship](https://twitter.com/fireship_dev)
   * [Article - Use Angular directives to extend components that you don't own](https://timdeschryver.dev/blog/use-angular-directives-to-extend-components-that-you-dont-own) by [Tim Deschryver](https://twitter.com/tim_deschryver)
   * [Article - Superpowers with Directives and Dependency Injection: Part 1](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-1-ho7) by [Armen Vardanyan](https://twitter.com/Armandotrue)
   * [Article - Superpowers with Directives and Dependency Injection: Part 3](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-3-18ja) by [Armen Vardanyan](https://twitter.com/Armandotrue)
   * [Article - Superpowers with Directives and Dependency Injection: Part 4](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-4-2gi8) by [Armen Vardanyan](https://twitter.com/Armandotrue)
 
-##### Structural Directive
-  * [Video - Demystified Angular Directives](https://www.youtube.com/watch?v=bVyw2njDoZw) by [Nir Kaufman](https://twitter.com/nirkaufman) - explain how works structural *ngIf and *ngFor works
+### Structural Directives
+The top 5 materials about Structural Directives include a video by Nir Kaufman that demystifies the workings of structural directives such as *ngIf and *ngFor. The videos by Dmytro Mezhenskyi explaining how to create custom structural directives in Angular, and explain how works NgTemplateOutlet in Angular. Additionally, there is an article from series mentioned earlier written by Armen Vardanyan which shows how structural directive could be used to implement loader. Last but not least article by Thomas Laforge guiding readers in creating a custom structural directive to manage permissions.
+
+  * [Video - Demystified Angular Directives](https://www.youtube.com/watch?v=bVyw2njDoZw) by [Nir Kaufman](https://twitter.com/nirkaufman)
   * [Video - Structural Directives in Angular – How to Create Custom Directive](https://www.youtube.com/watch?v=07CaGlbMPbw) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
-  * [Video - Angular Authentication: Custom Structural Directive](https://www.youtube.com/watch?v=pUra6iPzhFA) by [Fanis Prodromou](https://twitter.com/prodromouf)
   * [Video - NgTemplateOutlet in Angular - Everything You Have to Know (2022)](https://www.youtube.com/watch?v=vfPVdJ2oQlM) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
   * [Article - Superpowers with Directives and Dependency Injection: Part 2](https://dev.to/this-is-angular/superpowers-with-directives-and-dependency-injection-part-2-16ea) by [Armen Vardanyan](https://twitter.com/Armandotrue)
   * [Article - Create a custom Structural Directive to manage permissions](https://dev.to/this-is-angular/create-a-custom-structural-directive-to-manage-permissions-like-a-pro-5293) by [Thomas Laforge](https://twitter.com/laforge_toma)
-  * [Article - Making DRY Conditional Structural Directives Using Angular Directive Composition API](https://netbasal.com/making-dry-conditional-structural-directives-using-angular-directive-composition-api-bc346672445d) by [Netanel Basal](https://twitter.com/NetanelBasal)
 
-<div style="page-break-after: always;"></div>
 
-##### Directive Composition API - new feature Angular 15
+### Directive Composition API - new feature Angular 15
+The Directive Composition API is my favorite feature of Angular 15. In this section you can find the presentation with great examples of Kevin Kreuzer at Angular Tiny Conf 2022, an introduction video by Angular showcasing the new feature in Angular 15, video by Kristiyan Kostadinov providing an introduction to the Directive Composition API. Additionally, there is a video by Fanis Prodromou explaining the Directive Composition API and an article by Netanel Basal demonstrating the creation of DRY conditional structural directives using the Directive Composition API.
+
+  * [Video - Angular Directive Composition | Kevin Kreuzer | Angular Tiny Conf Peret 2022](https://www.youtube.com/watch?v=5lYs251skTA) by [Kevin Kreuzer](https://twitter.com/kreuzercode)
   * [Video - Introducing the Directive Composition API in Angular v15](https://www.youtube.com/watch?v=EJJwyyjsRGs) by [Angular](https://twitter.com/angular) - new feature Angular 15
   * [Video - Directive Composition API Intro w/ Kristiyan Kostadinov](https://www.youtube.com/watch?v=oC9Qd9yw3pE) by [Kristiyan Kostadinov](https://twitter.com/_crisbeto)
+  * [Video - Learn What the Directive Composition API Is and How To Use It in Angular 15](https://www.youtube.com/watch?v=2S6FVt-tQ7M) by [Fanis Prodromou](https://twitter.com/prodromouf)
+  * [Article - Making DRY Conditional Structural Directives Using Angular Directive Composition API](https://netbasal.com/making-dry-conditional-structural-directives-using-angular-directive-composition-api-bc346672445d) by [Netanel Basal](https://twitter.com/NetanelBasal)
 
 ### Pipes
+The pipes in Angular are one of the most simple things to learn, however even in this area we could find interesting materials, for example: a video by Dmytro Mezhenskyi on performance optimization using pure pipes, a video by Joshua Morony demonstrating effective usage of the async pipe. Additionally, there is an article by Thomas Laforge providing a deep dive into Angular pipes, another article by Alain Chautard highlighting 3 Angular pipes you should know, and an article by Maria Zayed offering a complete guide to Angular pipes.
+
 * [Video - Angular Performance Optimization using Pure Pipes (2020, Advanced)](https://www.youtube.com/watch?v=YsOf90RZfss) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - How to use the ASYNC PIPE effectively in Angular Templates](https://www.youtube.com/watch?v=ev1yE0SYs9Y) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Article - Deep Dive into Angular pipes](https://medium.com/ngconf/deep-dive-into-angular-pipes-c040588cd15d) by [Thomas Laforge](https://twitter.com/laforge_toma)
 * [Article - 3 Angular pipes you should know about](https://medium.com/angular-training/3-angular-pipes-you-should-now-about-f635d6ab891f) by [Alain Chautard](https://twitter.com/AlainChautard)
+* [Article - Angular Pipes: Complete Guide](https://indepth.dev/tutorials/angular/angular-pipes-complete-guide) by [Maria Zayed](https://twitter.com/mariawzayed)
 
-### Services
+### Services and Dependency Injection
+Becoming an expert in the Dependency Injection mechanism can unlock incredible opportunities, although it can be challenging to grasp initially. The list starts with a beginner-friendly material, a YouTube course by Dmytro Mezhenskyi, which provides a comprehensive understanding of implementing a website and DI in Angular. Additionally, there's a video by Fanis Prodromou discussing the inject method, a new feature introduced in Angular 14. The list concludes with two informative articles, one covering InjectionTokens and the other focusing on decorators utilized by DI. These resources collectively offer valuable insights and knowledge for mastering Dependency Injection in Angular.
+
 * [Video - Understanding Angular 2 Services - Tutorial](https://www.youtube.com/watch?v=h5tB_kvuQO8) by [Design Course](https://www.youtube.com/@DesignCourse/videos)
+* [Course - Angular Dependency Injection – Understanding hierarchical injectors (2021)](https://www.youtube.com/playlist?list=PLX7eV3JL9sfmJ6AaZj9eDlAKrJrEul4Vz) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
+* [Video - Learn How to Use the Inject Method in Angular 14](https://www.youtube.com/watch?v=4omKgGdL9to) by [Fanis Prodromou](https://twitter.com/prodromouf)
+* [Article - Stop being scared of InjectionTokens](https://dev.to/this-is-angular/stop-being-scared-of-injectiontokens-2406) by [Thomas Laforge](https://twitter.com/laforge_toma)
+* [Article - Angular & Dependency Injection: tricks with Decorators](https://medium.com/@michelestieven/angular-dependency-injection-tricks-with-decorators-1ebbb53a321c) by [Michele Stieven](https://twitter.com/MicheleStieven)
 
-## Styling
-* [Article - Component styles](https://angular.io/guide/component-styles) by [Angular](https://twitter.com/angular)
-* [Article - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) by [Chris Coyier](https://twitter.com/chriscoyier)
-* [Article - A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) by Chris House
-* [Game - Flexbox Froggy](https://flexboxfroggy.com/)
-* [Game - Grid Garden](https://cssgridgarden.com/)
+### Routing
+In this section, you'll find a collection of informative videos. To begin, there's an excellent video from Fireship that covers the foundational concepts of routing. Next, there's a noteworthy presentation by Santosh Yadav at the NG-BE 2023 conference. The remaining three videos, all by Decoded Frontend, cover various topics, with the video on providers in Angular Route being particularly intriguing. This video discusses a new feature introduced in Angular 14 and can serve as a valuable supplement to the previous paragraph.
 
-## Router
 * [Video - Angular Router - The Basics and Beyond](https://www.youtube.com/watch?v=Np3ULAMqwNo) by [Fireship](https://twitter.com/fireship_dev)
 * [Video - Angular Router - Undiscovered Parts - Santosh Yadav - NG-BE 2023](https://www.youtube.com/watch?v=8ntac2p6qUM) by [Santosh Yadav](https://twitter.com/SantoshYadavDev)
 * [Video - Multiple Router Outlets in Angular using Named Outlets (2021)](https://www.youtube.com/watch?v=9fH09nJGm-U) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
+* [Video - Providers in Angular Route - New Feature in Angular 14 (2022)](https://www.youtube.com/watch?v=3iSADIqLp2E) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
+* [Video - Angular 14 Router - Updating the Page Title (2022)](https://www.youtube.com/watch?v=WKCweQOI9-U) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 
-## Guards
+### Guards
+The topic of Guards is closely tied to Dependency Injection and routing. The initial three materials feature informative videos by Decoded Frontend, demonstrating the implementation of different guards. There's also a captivating and humorous presentation at NgConf, directed by the remarkable Shai Reznik, featuring renowned Angular experts portraying the implementation of authentication and authorization in Angular in an accessible manner. Furthermore, Thomas Laforge contributes two articles, one of which is also related to an article from the section on structural directives, offering insights on managing permissions.
+
 * [Video - Router Guards Pt.1: CanActivate vs CanActivateChild (2021)](https://www.youtube.com/watch?v=NxidP4I9EHE) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - CanMatch Guard in Angular 14.1 Router (2022)](https://www.youtube.com/watch?v=OpBFhnLlhdE) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - CanLoad Guard in Angular Router & Preloading Strategies (2021)](https://www.youtube.com/watch?v=HMJA05iGtfY) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
-* [Video - Angular 14 Functional Router Guards: What They Are & How to Use Them](https://www.youtube.com/watch?v=pD8vzZs559I) by [Fanis Prodromou](https://twitter.com/prodromouf)
 * [Video - Angular Router Authentication and Authorization Real LIVE LIVE LIVE LIVE LIVE Demo - Shai Reznik](https://www.youtube.com/watch?v=yjxOYsRkozQ) by [Shai Reznik](https://twitter.com/shai_reznik)
 * [Article - Everything you need to know about route Guard in Angular](https://dev.to/this-is-angular/everything-you-need-to-know-about-route-guard-in-angular-2hkn) by [Thomas Laforge](https://twitter.com/laforge_toma)
 * [Article - Create a route Guard to manage permissions](https://dev.to/this-is-angular/create-a-route-guard-to-manage-permissions-4c09) by [Thomas Laforge](https://twitter.com/laforge_toma)
 
-## Dependency Injection
-* [Course - Angular Dependency Injection – Understanding hierarchical injectors (2021)](https://www.youtube.com/playlist?list=PLX7eV3JL9sfmJ6AaZj9eDlAKrJrEul4Vz) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
-* [Video - Learn How to Use the Inject Method in Angular 14](https://www.youtube.com/watch?v=4omKgGdL9to) by [Fanis Prodromou](https://twitter.com/prodromouf)
-* [Article - Stop being scared of InjectionTokens](https://dev.to/this-is-angular/stop-being-scared-of-injectiontokens-2406) by [Thomas Laforge](https://twitter.com/laforge_toma)
+### Change Detection
+Change detection is a challenging aspect that even experienced developers can find difficult to master. Future versions of Angular are expected to bring significant changes, such as signal-based components. However, it is still valuable to familiarize oneself with the current change detection mechanism, including understanding concepts like zones and exploring the implementation of zoneless applications. Change detection is intricately connected to optimizing performance, and the following materials will undoubtedly aid in gaining a better understanding of this topic.
+* [Video - 4 Runtime Performance Optimizations](https://www.youtube.com/watch?v=f8sA-i6gkGQ) by [Minko Gechev](https://twitter.com/mgechev)
+* [Video - WTF is "Zone.js" and is it making your app slow?](https://www.youtube.com/watch?v=lmrf_gPIOZU) by [Joshua Morony](https://twitter.com/joshuamorony)
+* [Article - Angular Change Detection Cheat Sheet Explained](https://blog.simplified.courses/angular-change-detection-cheat-sheet-explained/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
+* [Article - Angular Change Detection OnPush or not?](https://blog.simplified.courses/angular-change-detection-onpush-or-not/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
+* [Article - Angular Performance: Optimize Angular Change Detection](https://dev.to/angular/angular-performance-optimize-angular-change-detection-2anc) by [Juri Strumpflohner](https://twitter.com/juristr)
+* [Article - From zone.js to zoneless Angular and back — how it all works](https://medium.com/angular-in-depth/from-zone-js-to-zoneless-angular-and-back-how-it-all-works-4bfb631e11d4) by [Max Koretskyi](https://twitter.com/maxkoretskyi)
+
+### Acknowledging the Incredible Contributors
+
+I would like to thank all the creators who made this list possible. Each of you creates amazing content that allows us to become better programmers. In the first part of the article, the creators of the materials are (in alphabetical order):
+
+* [Alain Chautard](https://twitter.com/AlainChautard)
+* [Angular](https://twitter.com/angular)
+* [Angular University](https://twitter.com/AngularUniv)
+* [Armen Vardanyan](https://twitter.com/Armandotrue)
+* [Brecht Billiet](https://twitter.com/brechtbilliet)
+* [Design Course](https://www.youtube.com/@DesignCourse/videos)
+* [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
+* [Fireship](https://twitter.com/fireship_dev)
+* [Joshua Morony](https://twitter.com/joshuamorony)
+* [Juri Strumpflohner](https://twitter.com/juristr)
+* [Kevin Kreuzer](https://twitter.com/kreuzercode)
+* [Kristiyan Kostadinov](https://twitter.com/_crisbeto)
+* [Max Koretskyi](https://twitter.com/maxkoretskyi)
+* [Minko Gechev](https://twitter.com/mgechev)
+* [Netanel Basal](https://twitter.com/NetanelBasal)
+* [Nir Kaufman](https://twitter.com/nirkaufman)
+* [Santosh Yadav](https://twitter.com/SantoshYadavDev)
+* [Shai Reznik](https://twitter.com/shai_reznik)
+* [Tim Deschryver](https://twitter.com/tim_deschryver)
+* [Thomas Laforge](https://twitter.com/laforge_toma)
+
+Their dedication and hard work deserve our appreciation and gratitude. I encourage everyone to follow these talented authors, engage with their content, and support their ongoing efforts to empower and educate Angular programmers.
+
+-----
 
 ## Reactive Programming
 * [Video - RxJS Crash Course](https://www.youtube.com/watch?v=tGWBy6Vqq9w) by [Laith Academy](https://www.youtube.com/@laithacademy)
@@ -150,22 +171,11 @@
 * [Video - Marble testing with RxJS testing utils](https://www.youtube.com/watch?v=rlkCeeyBwf8) by [Kevin Kreuzer](https://twitter.com/kreuzercode)
 * [Video - Is reactive code with RxJS too hard to test?](https://www.youtube.com/watch?v=z12fxor21gA) by [Joshua Morony](https://twitter.com/joshuamorony)
 
-<div style="page-break-after: always;"></div>
-
 #### Signals - new feature Angular 16
 * [Video - Reactive Angular. At its core. - Pawel Kozlowski - NGBE 2023](https://www.youtube.com/watch?v=bByZ6FGyuO0) by [Pawel Kozlowski](https://twitter.com/pkozlowski_os)
 * [Video - Signals & fine grained reactivity in Angular - Michael Hladky - NG-BE 2023](https://www.youtube.com/watch?v=oGDgjIV7jrs) by [Michael Hladky](https://twitter.com/Michael_Hladky)
 * [Article - Angular Signals WWW](https://github.com/SanderElias/Samples/tree/1ce26dcea5d4e3f0c3d93295c6de146229a7d327/Angular-Signals) by [Sander Elias](https://twitter.com/esosanderelias)
 
-## Change Detection + Angular Performance
-* [Video - PL - Angular Performance – Maciej Hanajczyk](https://www.youtube.com/watch?v=Tgdmc4NCCF0) by Maciej Hanajczyk
-* [Video - 4 Runtime Performance Optimizations](https://www.youtube.com/watch?v=f8sA-i6gkGQ) by [Minko Gechev](https://twitter.com/mgechev)
-* [Video - WTF is "Zone.js" and is it making your app slow?](https://www.youtube.com/watch?v=lmrf_gPIOZU) by [Joshua Morony](https://twitter.com/joshuamorony)
-* [Article - Angular Change Detection Cheat Sheet Explained](https://blog.simplified.courses/angular-change-detection-cheat-sheet-explained/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
-* [Article - Angular Change Detection Quiz explained](https://blog.simplified.courses/angular-change-detection-quiz-explained/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
-* [Article - Angular Change Detection OnPush or not?](https://blog.simplified.courses/angular-change-detection-onpush-or-not/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
-* [Article - Angular Performance: Optimize Angular Change Detection](https://dev.to/angular/angular-performance-optimize-angular-change-detection-2anc) by [Juri Strumpflohner](https://twitter.com/juristr)
-* [Article - From zone.js to zoneless Angular and back — how it all works](https://medium.com/angular-in-depth/from-zone-js-to-zoneless-angular-and-back-how-it-all-works-4bfb631e11d4) by [Max Koretskyi](https://twitter.com/maxkoretskyi)
 
 ## Forms
 * [Video - Building Forms in Angular Apps | Mosh](https://www.youtube.com/watch?v=hAaoPOx_oIw) by [Mosh](https://twitter.com/moshhamedani)
@@ -190,8 +200,6 @@
 * [Video - How to use NgRx ComponentStore? - Alex Okrushko | NG-DE 2022](https://www.youtube.com/watch?v=xPmtsD5LRqQ) by [Alex Okrushko](https://twitter.com/AlexOkrushko)
 * [Article - Managing State in Angular Applications](https://blog.nrwl.io/managing-state-in-angular-applications-22b75ef5625f) by [Victor Savkin](https://twitter.com/victorsavkin)
 
-<div style="page-break-after: always;"></div>
-
 ## Architecture
 * [Video - Lightweight Architectures with Angular's Latest Innovations - Manfred Steyer - NG-BE 2023](https://www.youtube.com/watch?v=yZodjJgSGhA) by [Manfred Steyer](https://twitter.com/ManfredSteyer)
 * [Article - How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://tomastrajan.medium.com/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [Tomas Trajan](https://twitter.com/tomastrajan)
@@ -202,13 +210,12 @@
 ## Other resources
 * [Angular Challanges](https://github.com/tomalaforge/angular-challenges) by [Thomas Laforge](https://twitter.com/laforge_toma)
 
-## Content in Polish
-* [Angular Love](https://www.angular.love/)
 
 ## Content Creators
 * [Alain Chautard](https://twitter.com/AlainChautard)
 * [Alex Okrushko](https://twitter.com/AlexOkrushko)
 * [Angular](https://twitter.com/angular)
+* [Angular University](https://twitter.com/AngularUniv)
 * [Armen Vardanyan](https://twitter.com/Armandotrue)
 * [Brecht Billiet](https://twitter.com/brechtbilliet)
 * [Chris Coyier](https://twitter.com/chriscoyier)
@@ -251,6 +258,3 @@
 
 Created by [Paweł Kubiak](https://twitter.com/pawelkubiakdev).
 &copy; 2023 Synergy Codes. All rights reserved.
-
-</body>
-</html>
