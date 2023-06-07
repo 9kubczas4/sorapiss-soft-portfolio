@@ -1,5 +1,4 @@
-# Learn Angular for Free: Top 15 Online Resources You Shouldn't Miss - Part 1
-# Free Angular Learning Materials: Unlock Your Full Development Potential - Part 1
+# Learn Angular for Free: Top Online Resources You Shouldn't Miss - Part 1
 
 ### Intro
 Learning a programming language or framework can be a tough challenge, and when it comes to Angular, even experienced front-end developers often consider it to have a high entry threshold in comparison to others. With the abundance of information, courses, and materials available, it's easy to feel overwhelmed and unsure of where to begin.
@@ -138,14 +137,29 @@ Their dedication and hard work deserve our appreciation and gratitude. I encoura
 
 -----
 
-## Reactive Programming
-* [Video - RxJS Crash Course](https://www.youtube.com/watch?v=tGWBy6Vqq9w) by [Laith Academy](https://www.youtube.com/@laithacademy)
+# Learn Angular for Free: Top Online Resources You Shouldn't Miss - Part 2
+
+The "Learn Angular for Free" series comprises carefully curated free resources that assist you in acquiring proficiency in various programming techniques with Angular. The final segment of the article primarily emphasizes reactive development, forms, testing, and architecture. If you haven't had the opportunity to read the first article, I highly recommend giving them a thorough read - [link](https://synergycodes.com/blog/learn-angular-for-free-top-online-resources-you-shouldnt-miss-1-2/).
+
+## RxJS
+RxJS plays a vital role in Angular, enabling us to handle asynchrony, reactive programming, state management, and the composition of operations within our applications. While there is a perception that mastering RxJS can be challenging, I believe that learning RxJS itself is not overly complex. However, it does require a significant investment of time and patience. With a vast array of operators available in RxJS, it can be overwhelming initially, and choosing the right solutions may not be intuitive at first.
+
+I have curated a selection of five videos that serve as great introductions to RxJS. The first video by Joshua Morony explores three different approaches to learning RxJS. Next, Mike Person's speech at ng-conf demonstrates the distinction between an imperative and reactive approach through a practical example. Laith Academy offers a comprehensive hour-long course that explains the fundamentals of RxJS from scratch. While the examples in this course are implemented in vanilla JavaScript, the knowledge gained can be directly applied in Angular. Lastly, I recommend a conversation conducted by ng-conf with Brian Love, where he shares effective strategies for learning RxJS.
+
+By exploring these video resources, you can gain valuable insights into RxJS and enhance your understanding of this powerful tool within the Angular ecosystem.
+
 * [Video - 3 Levels of Learning RxJS Operators](https://www.youtube.com/watch?v=4laSr0wjAvw) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - Thinking Reactively: Most Difficult | Mike Pearson](https://www.youtube.com/watch?v=-4cwkHNguXE) by [Mike Pearson](https://twitter.com/mfpears)
-* [Article - The Best Way To Unsubscribe RxJS Observables In The Angular Applications!](https://medium.com/angular-in-depth/the-best-way-to-unsubscribe-rxjs-observable-in-the-angular-applications-d8f9aa42f6a0) by [Tomas Trajan](https://twitter.com/tomastrajan)
-* [Article - JavaScript Theory: Promise vs Observable](https://medium.com/javascript-everyday/javascript-theory-promise-vs-observable-d3087bc1239a) by [Wojciech Trawiński](https://twitter.com/wojtrawi)
+* [Video - RxJS Crash Course](https://www.youtube.com/watch?v=tGWBy6Vqq9w) by [Laith Academy](https://www.youtube.com/@laithacademy)
+* [Video - Hot vs Cold Observable in RxJs (2021)](https://www.youtube.com/watch?v=oKqcL-iMITY) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
+* [Video - A Guided Approach to Learning RxJS with BrianLove](https://www.youtube.com/watch?v=K9_e8TJjrVI) by [Brian Love](https://twitter.com/brian_love)
 
 #### RxJs Operators
+As mentioned earlier, the number of operators in RxJS is extensive, totaling over 100. However, in everyday programming, we typically rely on a selected set of operators. Nonetheless, the more familiar we are with the capabilities of RxJS, the more effectively we can produce high-quality code. In this section, I have curated additional materials that delve into RxJS operators.
+
+The first featured resource by Joshua Morony focuses on the most commonly used RxJS operators. In the second material, Mike Brocchi and John Niedzwiecki shed light on 20 lesser-known operators that are often overlooked. Subsequently, the next three videos explore the distinctions between various transformation operators. Dmytro Mezhenskyi also discusses the zip operator and provides insights into RxJS schedulers. Lastly, Wojciech Trawiński's article series showcases practical use cases for different RxJS operators.
+
+By exploring these resources, you will gain a deeper understanding of specific RxJS operators and their applications. Remember that while there is a vast array of operators available, focusing on a core set and mastering their usage will greatly benefit your coding skills.
 * [Video - I only ever use *these* RxJS operators to code reactively](https://www.youtube.com/watch?v=Byttv3YpjQk) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - 20 RXJS Operators in 20 minutes | Mike Brocchi & John Niedzwiecki](https://www.youtube.com/watch?v=ak3MvMn8u18) by [Mike Brocchi](https://twitter.com/Brocco) & John Niedzwiecki
 * [Video - I switched a map and you'll never guess what happened next - Pete Darwin, Shai Reznik, Mike Brocchi](https://www.youtube.com/watch?v=rUZ9CjcaCEw) by Pete Darwin, [Shai Reznik](https://twitter.com/shai_reznik) and [Mike Brocchi](https://twitter.com/Brocco)
@@ -158,24 +172,24 @@ Their dedication and hard work deserve our appreciation and gratitude. I encoura
 * [Article - RxJS hint [retry]](https://medium.com/javascript-everyday/rxjs-hint-retry-e8293a204d91) by [Wojciech Trawiński](https://twitter.com/wojtrawi)
 * [Article - https://medium.com/javascript-everyday/rxjs-hint-repeat-2a834ff85dc3](https://medium.com/javascript-everyday/rxjs-hint-repeat-2a834ff85dc3) by [Wojciech Trawiński](https://twitter.com/wojtrawi)
 
-#### RxJs Hot vs Cold
-* [Video - How to share your RxJS observables for improved performance](https://www.youtube.com/watch?v=H542ZSyubrE) by [Joshua Morony](https://twitter.com/joshuamorony)
-* [Video - Hot vs Cold Observable in RxJs (2021)](https://www.youtube.com/watch?v=oKqcL-iMITY) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 
 #### RxJS Best Practices
 * [Video - RxJS Advanced Patterns – Operate Heavily Dynamic UI’s | Michael Hladky](https://www.youtube.com/watch?v=XKfhGntZROQ) by [Michael Hladky](https://twitter.com/Michael_Hladky)
 * [Video - RxJS Best Practices Aren't Always Black and White | Deborah Kurata | ng-conf 2022](https://www.youtube.com/watch?v=rQTSMbeqv7I) by [Deborah Kurata](https://twitter.com/DeborahKurata)
 * [Video - Reactive patterns for Angular Enterprise Solutions - Brecht Billiet - NG-BE 2023](https://www.youtube.com/watch?v=58h_w7PzNtM) by [Brecht Billiet](https://twitter.com/brechtbilliet)
+* [Article - The Most Impactful RxJs Best Practice Of All Time](https://angularexperts.io/blog/the-most-impactful-rx-js-best-practice-of-all-time) by [Tomas Trajan](https://twitter.com/tomastrajan)
+* [Article - RxJS best practices in Angular](https://blog.brecht.io/rxjs-best-practices-in-angular/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
 
 #### RxJS Testing
 * [Video - Marble testing with RxJS testing utils](https://www.youtube.com/watch?v=rlkCeeyBwf8) by [Kevin Kreuzer](https://twitter.com/kreuzercode)
 * [Video - Is reactive code with RxJS too hard to test?](https://www.youtube.com/watch?v=z12fxor21gA) by [Joshua Morony](https://twitter.com/joshuamorony)
 
 #### Signals - new feature Angular 16
+* [Video - Rethinking reactivity with Angular Signals](https://www.youtube.com/watch?v=EIF0g9LDHcQ) by [Angular](https://twitter.com/angular)
+* [Video - Getting started with Angular Signals](https://www.youtube.com/watch?v=EEzDLpIbW9w) by [Angular](https://twitter.com/angular)
 * [Video - Reactive Angular. At its core. - Pawel Kozlowski - NGBE 2023](https://www.youtube.com/watch?v=bByZ6FGyuO0) by [Pawel Kozlowski](https://twitter.com/pkozlowski_os)
 * [Video - Signals & fine grained reactivity in Angular - Michael Hladky - NG-BE 2023](https://www.youtube.com/watch?v=oGDgjIV7jrs) by [Michael Hladky](https://twitter.com/Michael_Hladky)
 * [Article - Angular Signals WWW](https://github.com/SanderElias/Samples/tree/1ce26dcea5d4e3f0c3d93295c6de146229a7d327/Angular-Signals) by [Sander Elias](https://twitter.com/esosanderelias)
-
 
 ## Forms
 * [Video - Building Forms in Angular Apps | Mosh](https://www.youtube.com/watch?v=hAaoPOx_oIw) by [Mosh](https://twitter.com/moshhamedani)
@@ -198,6 +212,7 @@ Their dedication and hard work deserve our appreciation and gratitude. I encoura
 * [Video - My go to way to manage state in Angular applications](https://www.youtube.com/watch?v=JnwjU06yoEE) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - State Management in Angular - Do I need Redux & NgRx? (2021, Advanced)](https://www.youtube.com/watch?v=2LwuV6s-Cy4) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - How to use NgRx ComponentStore? - Alex Okrushko | NG-DE 2022](https://www.youtube.com/watch?v=xPmtsD5LRqQ) by [Alex Okrushko](https://twitter.com/AlexOkrushko)
+* [Video - RxAngular State, The Component Reactive Store](https://www.youtube.com/watch?v=CcQYj4V2IKw) by [Younes Jaaidi](https://twitter.com/yjaaidi)
 * [Article - Managing State in Angular Applications](https://blog.nrwl.io/managing-state-in-angular-applications-22b75ef5625f) by [Victor Savkin](https://twitter.com/victorsavkin)
 
 ## Architecture
@@ -210,6 +225,14 @@ Their dedication and hard work deserve our appreciation and gratitude. I encoura
 ## Other resources
 * [Angular Challanges](https://github.com/tomalaforge/angular-challenges) by [Thomas Laforge](https://twitter.com/laforge_toma)
 
+## Angular 16
+* [Article - Angular v16 is here!](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d) by [Minko Gechev](https://twitter.com/mgechev)
+* [Video - New framework features in Angular v16](https://www.youtube.com/watch?v=dFO2Lb-fcBs) by [Angular](https://twitter.com/angular)
+* [Article - What’s new in Angular 16? – Signals, Hydration, esbuild and More!](https://www.angulararchitects.io/aktuelles/whats-new-in-angular-16-signals-hydration-esbuild-and-more/) by [Manfred Steyer](https://twitter.com/ManfredSteyer)
+
+### Acknowledging the Incredible Contributors
+
+I would like to thank all the creators who made this list possible. Each of you creates amazing content that allows us to become better programmers. In the first part of the article, the creators of the materials are (in alphabetical order):
 
 ## Content Creators
 * [Alain Chautard](https://twitter.com/AlainChautard)
@@ -256,5 +279,4 @@ Their dedication and hard work deserve our appreciation and gratitude. I encoura
 * [Wojciech Trawiński](https://twitter.com/wojtrawi)
 * [Victor Savkin](https://twitter.com/victorsavkin)
 
-Created by [Paweł Kubiak](https://twitter.com/pawelkubiakdev).
-&copy; 2023 Synergy Codes. All rights reserved.
+Their dedication and hard work deserve our appreciation and gratitude. I encourage everyone to follow these talented authors, engage with their content, and support their ongoing efforts to empower and educate Angular programmers.
