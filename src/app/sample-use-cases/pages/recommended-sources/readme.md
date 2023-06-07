@@ -160,6 +160,7 @@ As mentioned earlier, the number of operators in RxJS is extensive, totaling ove
 The first featured resource by Joshua Morony focuses on the most commonly used RxJS operators. In the second material, Mike Brocchi and John Niedzwiecki shed light on 20 lesser-known operators that are often overlooked. Subsequently, the next three videos explore the distinctions between various transformation operators. Dmytro Mezhenskyi also discusses the zip operator and provides insights into RxJS schedulers. Lastly, Wojciech Trawiński's article series showcases practical use cases for different RxJS operators.
 
 By exploring these resources, you will gain a deeper understanding of specific RxJS operators and their applications. Remember that while there is a vast array of operators available, focusing on a core set and mastering their usage will greatly benefit your coding skills.
+
 * [Video - I only ever use *these* RxJS operators to code reactively](https://www.youtube.com/watch?v=Byttv3YpjQk) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - 20 RXJS Operators in 20 minutes | Mike Brocchi & John Niedzwiecki](https://www.youtube.com/watch?v=ak3MvMn8u18) by [Mike Brocchi](https://twitter.com/Brocco) & John Niedzwiecki
 * [Video - I switched a map and you'll never guess what happened next - Pete Darwin, Shai Reznik, Mike Brocchi](https://www.youtube.com/watch?v=rUZ9CjcaCEw) by Pete Darwin, [Shai Reznik](https://twitter.com/shai_reznik) and [Mike Brocchi](https://twitter.com/Brocco)
@@ -174,6 +175,12 @@ By exploring these resources, you will gain a deeper understanding of specific R
 
 
 #### RxJS Best Practices
+As we explore the capabilities of RxJS, it is crucial to also familiarize ourselves with the best practices associated with it. To gain insights into these practices, I recommend watching Michael Hladky's presentation at the ng-conf conference. In his workshop-style talk, Michael demonstrates advanced patterns that can be applied in business applications. Additionally, Deborah Kurata's presentation highlights the fact that not all best practices are universally applicable, offering valuable insights into their context-dependent nature.
+
+To further delve into best practices, I have included a video from NG-BE 2023 where Brecht Billiet proposes Reactive Patterns specifically tailored for large business applications. Additionally, I have curated two articles on the subject. The first article, authored by Tomas Trajan, explores RxJS best practices, while the second article, written by Brecht Billiet, offers valuable insights into effective practices for utilizing RxJS.
+
+By engaging with these resources, you will gain a deeper understanding of the best practices associated with RxJS. It is important to consider both general guidelines and context-specific recommendations to make the most of RxJS in your applications.
+
 * [Video - RxJS Advanced Patterns – Operate Heavily Dynamic UI’s | Michael Hladky](https://www.youtube.com/watch?v=XKfhGntZROQ) by [Michael Hladky](https://twitter.com/Michael_Hladky)
 * [Video - RxJS Best Practices Aren't Always Black and White | Deborah Kurata | ng-conf 2022](https://www.youtube.com/watch?v=rQTSMbeqv7I) by [Deborah Kurata](https://twitter.com/DeborahKurata)
 * [Video - Reactive patterns for Angular Enterprise Solutions - Brecht Billiet - NG-BE 2023](https://www.youtube.com/watch?v=58h_w7PzNtM) by [Brecht Billiet](https://twitter.com/brechtbilliet)
@@ -181,10 +188,16 @@ By exploring these resources, you will gain a deeper understanding of specific R
 * [Article - RxJS best practices in Angular](https://blog.brecht.io/rxjs-best-practices-in-angular/) by [Brecht Billiet](https://twitter.com/brechtbilliet)
 
 #### RxJS Testing
+Testing RxJS code is often considered a challenging aspect to master, but there are valuable resources available to aid in understanding this process. Kevin Kreuzer's video provides insights into using marble tests for testing reactive code, offering a helpful approach in this regard. Furthermore, Joshua Morony's comprehensive material demonstrates various techniques that can be employed to test reactive code in different components such as dumb components, smart components, services, and more.
+
 * [Video - Marble testing with RxJS testing utils](https://www.youtube.com/watch?v=rlkCeeyBwf8) by [Kevin Kreuzer](https://twitter.com/kreuzercode)
 * [Video - Is reactive code with RxJS too hard to test?](https://www.youtube.com/watch?v=z12fxor21gA) by [Joshua Morony](https://twitter.com/joshuamorony)
 
 #### Signals - new feature Angular 16
+Signals have emerged as a highly discussed topic among Angular developers in recent months. This feature was introduced as a developer preview in Angular version 16. To delve into this exciting development, I recommend starting with the first two videos created by Angular's official YouTube account. In these videos, members of the Angular Core Team share insights about the reactivity approach with Signals, the advantages they offer, the roadmap ahead, and the anticipated changes in upcoming Angular versions. Additionally, the second video demonstrates practical usage of Signals within an application.
+
+For further exploration, I suggest watching two speeches from the NG-BE 2023 conference delivered by Paweł Kozłowski and Michael Hladky. These talks provide valuable insights and perspectives on Signals. Lastly, I have included a noteworthy post by Sander Elias that perfectly explains the reasons behind Angular's introduction of Signals, their nature, and how they can be utilized. It's important to note that the post was created shortly after the announcement of the Proof-of-Concept (PoC) of Signals, so there may be differences in content compared to the final version of Signals implementation.
+
 * [Video - Rethinking reactivity with Angular Signals](https://www.youtube.com/watch?v=EIF0g9LDHcQ) by [Angular](https://twitter.com/angular)
 * [Video - Getting started with Angular Signals](https://www.youtube.com/watch?v=EEzDLpIbW9w) by [Angular](https://twitter.com/angular)
 * [Video - Reactive Angular. At its core. - Pawel Kozlowski - NGBE 2023](https://www.youtube.com/watch?v=bByZ6FGyuO0) by [Pawel Kozlowski](https://twitter.com/pkozlowski_os)
@@ -192,16 +205,25 @@ By exploring these resources, you will gain a deeper understanding of specific R
 * [Article - Angular Signals WWW](https://github.com/SanderElias/Samples/tree/1ce26dcea5d4e3f0c3d93295c6de146229a7d327/Angular-Signals) by [Sander Elias](https://twitter.com/esosanderelias)
 
 ## Forms
-* [Video - Building Forms in Angular Apps | Mosh](https://www.youtube.com/watch?v=hAaoPOx_oIw) by [Mosh](https://twitter.com/moshhamedani)
-* [Video - Advanced Angular Forms - Free Mini-Course (Template-Driven)](https://www.youtube.com/watch?v=cWXhaFBGArk) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
+Mastering forms is a crucial aspect when it comes to building major business applications. In this section, I have curated a selection of videos and articles that will introduce you to various aspects of forms in Angular.
+
+To start, Fireship and Decoded Frontend have created informative videos that cover the basics of reactive and template forms, providing a solid foundation for understanding form handling in Angular. Joshy Morona's video showcases the creation of dynamic forms based on JSON, offering insights into building dynamic and customizable form structures.
+
+Additionally, I recommend two articles that delve into advanced form features. The first article discusses Typed Reactive Forms, a powerful feature available from Angular version 14, which allows for type-safe form handling. The second article, written by Netanel Basal, demonstrates how to create multi-step forms using the Dependency Injection and Routing mechanisms in Angular, providing a structured approach for building complex form workflows.
+
 * [Video - Reactive Forms - The Basics](https://www.youtube.com/watch?v=JeeUY6WaXiA) by [Fireship](https://twitter.com/fireship_dev)
+* [Video - Advanced Angular Forms - Free Mini-Course (Template-Driven)](https://www.youtube.com/watch?v=cWXhaFBGArk) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - Create a Dynamic Reactive Angular Form with JSON](https://www.youtube.com/watch?v=ByHw_RMjkKM) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - Control Value Accessor in Angular [Advanced, 2020]](https://www.youtube.com/watch?v=OrmIfW8Ak3w) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Article - Angular Typed Reactive Forms](https://dev.to/prestonjlamb/angular-typed-reactive-forms-29c7) by [Preston Lamb](https://twitter.com/prestonjlamb)
-* [Article - Create a Multi-Step Form in Angular](https://netbasal.com/create-a-multi-step-form-in-angular-44cdc5b75cdc) by [Netanel Basal](https://twitter.com/NetanelBasal)
 * [Article - Typed Reactive Forms in Angular — No Longer a Type Dream 💭](https://netbasal.com/typed-reactive-forms-in-angular-no-longer-a-type-dream-bf6982b0af28) by [Netanel Basal](https://twitter.com/NetanelBasal)
+* [Article - Create a Multi-Step Form in Angular](https://netbasal.com/create-a-multi-step-form-in-angular-44cdc5b75cdc) by [Netanel Basal](https://twitter.com/NetanelBasal)
+
 
 ## Testing
+I once came across a tweet stating that testing Angular applications is often more challenging than writing the code itself. To delve deeper into the mechanics of writing effective tests, I recommend watching the following videos:
+Reiner Hahnekamp delivers a speech showcasing various testing techniques in Angular. He discusses their advantages, disadvantages, and intertwines practical examples with testing theory, providing valuable insights into the subject. Shai Reznik's two presentations focus on the Test-Driven Development (TDD) approach in Angular. Of particular interest is his ng-conf 2022 presentation, which showcases Conference Programming—a unique twist on Pair Programming involving the entire conference audience.
+Maria Korneeva's video explores the use of Jest in Angular's unit tests. She provides practical guidance on harnessing the power of Jest for efficient unit testing in Angular applications. Jordan Powell's material delves into Component Testing using Cypress.
 * [Video - Testable Architecture in Angular | Rainer Hahnekamp | Reliable Web Summit 2021](https://www.youtube.com/watch?v=pAmdyvJ5VNY) by [Rainer Hahnekamp](https://twitter.com/rainerhahnekamp)
 * [Video - Angular Testing In TDD | Shai Reznik | AngularConnect 2018](https://www.youtube.com/watch?v=k9LWSh2xxjM) by [Shai Reznik](https://twitter.com/shai_reznik)
 * [Video - Angular TDD Like You Never Seen Before | Shai Reznik | ng- conf 2022](https://www.youtube.com/watch?v=KHaeVaSkhIE) by [Shai Reznik](https://twitter.com/shai_reznik)
@@ -209,6 +231,8 @@ By exploring these resources, you will gain a deeper understanding of specific R
 * [Video - Getting Started with Angular Component Testing](https://www.youtube.com/watch?v=weWTHGWe6uU) by [Jordan Powell](https://twitter.com/JordanPowell88)
 
 ## State Management
+The resources provided below will assist you in exploring the concept of state management and determining whether the usage of libraries like ngrx or rx-angular is necessary. It's important to note that this is a vast topic, and definitive answers may be elusive as the decision relies on various factors, such as the application's scale and the complexity of the state
+
 * [Video - My go to way to manage state in Angular applications](https://www.youtube.com/watch?v=JnwjU06yoEE) by [Joshua Morony](https://twitter.com/joshuamorony)
 * [Video - State Management in Angular - Do I need Redux & NgRx? (2021, Advanced)](https://www.youtube.com/watch?v=2LwuV6s-Cy4) by [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
 * [Video - How to use NgRx ComponentStore? - Alex Okrushko | NG-DE 2022](https://www.youtube.com/watch?v=xPmtsD5LRqQ) by [Alex Okrushko](https://twitter.com/AlexOkrushko)
@@ -216,32 +240,35 @@ By exploring these resources, you will gain a deeper understanding of specific R
 * [Article - Managing State in Angular Applications](https://blog.nrwl.io/managing-state-in-angular-applications-22b75ef5625f) by [Victor Savkin](https://twitter.com/victorsavkin)
 
 ## Architecture
+In the first video, Manfred Steyer explores lightweight architectures using the latest innovations in Angular. It provides valuable insights into designing scalable and efficient Angular applications. Tomas Trajan's article presents a quick guide on building an epic Angular application with clean architecture. It offers practical tips and techniques to architect your Angular projects effectively. Then three books that talk about the use of Nx to create scalable Angular applications, about the use of monorepo in business solutions and the use of the Micro Frontends approach.
+
+Together, these resources offer a well-rounded exploration of lightweight architectures, clean architecture principles, the use of Nx, monorepo strategies, and the application of Micro Frontends in Angular. They serve as valuable references for developers seeking to enhance their architectural skills and design robust Angular applications
 * [Video - Lightweight Architectures with Angular's Latest Innovations - Manfred Steyer - NG-BE 2023](https://www.youtube.com/watch?v=yZodjJgSGhA) by [Manfred Steyer](https://twitter.com/ManfredSteyer)
 * [Article - How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://tomastrajan.medium.com/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [Tomas Trajan](https://twitter.com/tomastrajan)
 * [Book - The Angular Developer's Nx Handbook](https://leanpub.com/the-angular-developers-nx-handbook) by [Lars Gyrup Brink Nielsen](https://twitter.com/LayZeeDK)
 * [Book - Enterprise Monorepo Angular Patterns](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book) by [Nitin Vericherla](https://twitter.com/nitinvericherla) & [Victor Savkin](https://twitter.com/victorsavkin)
 * [Book - Micro Frontends and Moduliths with Angular](https://www.angulararchitects.io/en/book/#getebook) by [Manfred Steyer](https://twitter.com/ManfredSteyer)
 
-## Other resources
+## 'Learning by reading is good but learning by doing is better.'
+Engaging in problem-solving is an incredibly valuable approach to learning Angular. Thomas Laforge has developed a project that offers a hands-on experience, enabling you to enhance your Angular skills by tackling real-world challenges commonly encountered in your professional journey. Remember, learning by doing is an effective way to consolidate your knowledge and skills in Angular development.
 * [Angular Challanges](https://github.com/tomalaforge/angular-challenges) by [Thomas Laforge](https://twitter.com/laforge_toma)
 
 ## Angular 16
+Angular 16 has brought us a lot of good, many new opportunities. Make sure to explore the dedicated Signals section mentioned earlier. In addition, I wanted to put here some materials prepared by Minko Gechev, Angular Team and Manfred Steyer, in which they listed all the news from the new version of Angular 16. These materials serve as valuable references to stay updated on the latest developments in this version of Angular.
+
 * [Article - Angular v16 is here!](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d) by [Minko Gechev](https://twitter.com/mgechev)
 * [Video - New framework features in Angular v16](https://www.youtube.com/watch?v=dFO2Lb-fcBs) by [Angular](https://twitter.com/angular)
 * [Article - What’s new in Angular 16? – Signals, Hydration, esbuild and More!](https://www.angulararchitects.io/aktuelles/whats-new-in-angular-16-signals-hydration-esbuild-and-more/) by [Manfred Steyer](https://twitter.com/ManfredSteyer)
 
 ### Acknowledging the Incredible Contributors
 
-I would like to thank all the creators who made this list possible. Each of you creates amazing content that allows us to become better programmers. In the first part of the article, the creators of the materials are (in alphabetical order):
+I would like to thank all the creators who made this list possible. Each of you creates amazing content that allows us to become better programmers. In the second part of the article, the creators of the materials are (in alphabetical order):
 
 ## Content Creators
-* [Alain Chautard](https://twitter.com/AlainChautard)
 * [Alex Okrushko](https://twitter.com/AlexOkrushko)
 * [Angular](https://twitter.com/angular)
-* [Angular University](https://twitter.com/AngularUniv)
-* [Armen Vardanyan](https://twitter.com/Armandotrue)
 * [Brecht Billiet](https://twitter.com/brechtbilliet)
-* [Chris Coyier](https://twitter.com/chriscoyier)
+* [Brian Love](https://twitter.com/brian_love)
 * [Deborah Kurata](https://twitter.com/DeborahKurata)
 * [Design Course](https://www.youtube.com/@DesignCourse/videos)
 * [Dmytro Mezhenskyi](https://twitter.com/DecodedFrontend)
@@ -249,11 +276,9 @@ I would like to thank all the creators who made this list possible. Each of you 
 * John Niedzwiecki
 * [Jordan Powell](https://twitter.com/JordanPowell88)
 * [Joshua Morony](https://twitter.com/joshuamorony)
-* [Juri Strumpflohner](https://twitter.com/juristr)
 * [Kevin Kreuzer](https://twitter.com/kreuzercode)
-* [Kristiyan Kostadinov](https://twitter.com/_crisbeto)
 * [Laith Academy](https://www.youtube.com/@laithacademy)
-* Maciej Hanajczyk
+* [Lars Gyrup Brink Nielsen](https://twitter.com/LayZeeDK)
 * [Manfred Steyer](https://twitter.com/ManfredSteyer)
 * [Maria Korneeva](https://twitter.com/BrowserPerson)
 * [Max Koretskyi](https://twitter.com/maxkoretskyi)
@@ -267,16 +292,12 @@ I would like to thank all the creators who made this list possible. Each of you 
 * Pete Darwin
 * [Preston Lamb](https://twitter.com/prestonjlamb)
 * [Rainer Hahnekamp](https://twitter.com/rainerhahnekamp)
-* [Mosh](https://twitter.com/moshhamedani)
-* [Netanel Basal](https://twitter.com/NetanelBasal)
-* [Nir Kaufman](https://twitter.com/nirkaufman)
 * [Sander Elias](https://twitter.com/esosanderelias)
-* [Santosh Yadav](https://twitter.com/SantoshYadavDev)
 * [Shai Reznik](https://twitter.com/shai_reznik)
-* [Tim Deschryver](https://twitter.com/tim_deschryver)
 * [Thomas Laforge](https://twitter.com/laforge_toma)
 * [Tomas Trajan](https://twitter.com/tomastrajan)
 * [Wojciech Trawiński](https://twitter.com/wojtrawi)
 * [Victor Savkin](https://twitter.com/victorsavkin)
+* [Younes Jaaidi](https://twitter.com/yjaaidi)
 
 Their dedication and hard work deserve our appreciation and gratitude. I encourage everyone to follow these talented authors, engage with their content, and support their ongoing efforts to empower and educate Angular programmers.
