@@ -1,13 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  CanActivateChild,
-  CanLoad,
-  Route,
-  Router,
-  UrlTree,
-} from '@angular/router';
+import { ActivatedRouteSnapshot, Route, Router, UrlTree } from '@angular/router';
 import { FeatureToggleRouteData } from '../models/feature-toggle.model';
 import { FeatureToggleService } from '../services/feature-toggle.service';
 
@@ -15,7 +7,7 @@ import { FeatureToggleService } from '../services/feature-toggle.service';
   providedIn: 'root',
 })
 export class FeatureToggleGuard<T extends string>
-  implements CanActivate, CanLoad, CanActivateChild
+  
 {
   constructor(
     private readonly featureToggle: FeatureToggleService<T>,

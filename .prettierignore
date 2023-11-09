@@ -5,3 +5,4 @@
 /.angular
 /.vscode
 /node_modules
+/.nx/cache
