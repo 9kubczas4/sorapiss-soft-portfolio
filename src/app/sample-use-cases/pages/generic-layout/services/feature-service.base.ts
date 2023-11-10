@@ -95,8 +95,8 @@ export abstract class FeatureServiceBase<T extends Item>
       delay(2000),
       tap((items) => this.selectionService.setFormGroupItems(items)),
       tap((items) => this.dataSource$.next(items)),
-      tap((_) => this.isLoading$.next(false)),
-      map((_) => undefined)
+      tap(() => this.isLoading$.next(false)),
+      map(() => undefined)
     );
   }
 
@@ -104,21 +104,21 @@ export abstract class FeatureServiceBase<T extends Item>
     this.isDeleting$.next(true);
     return this.deleteItems(itemsIds).pipe(
       delay(2000),
-      switchMap((_) => this.fetch())
+      switchMap(() => this.fetch())
     );
   }
 
   edit(item: Partial<T>): Observable<void> {
     return this.editItem(item).pipe(
       delay(2000),
-      switchMap((_) => this.fetch())
+      switchMap(() => this.fetch())
     );
   }
 
   create(item: Partial<T>): Observable<void> {
     return this.createItem(item).pipe(
       delay(2000),
-      switchMap((_) => this.fetch())
+      switchMap(() => this.fetch())
     );
   }
 

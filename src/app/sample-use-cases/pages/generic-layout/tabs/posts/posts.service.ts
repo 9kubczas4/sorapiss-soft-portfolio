@@ -25,10 +25,12 @@ export class PostsService extends FeatureServiceBase<Post> {
   }
 
   editItem(item: Partial<Post>): Observable<void> {
-    throw new Error('Method not implemented.');
+    alert(`Edit ${JSON.stringify(item)}`);
+    return of();
   }
 
   createItem(item: Partial<Post>): Observable<void> {
-    throw new Error('Method not implemented.');
+    alert(`Create ${JSON.stringify(item)}`);
+    return of();
   }
 }

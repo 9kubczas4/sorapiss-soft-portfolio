@@ -13,12 +13,19 @@ export class AdvancedDirectivesComponent {
 
   formControl = new FormControl('10');
 
-  formControlValue$ = this.formControl.valueChanges.pipe(startWith(this.formControl.value));
+  formControlValue$ = this.formControl.valueChanges.pipe(
+    startWith(this.formControl.value)
+  );
   isFormControlValid$ = this.formControlValue$.pipe(
-    map(_ => this.formControl.valid)
+    map(() => this.formControl.valid)
   );
 
   double(): void {
-    this.formControl.patchValue((isNumber(this.formControl.value) ? Number(this.formControl.value) * 2 : 0).toString());
+    this.formControl.patchValue(
+      (isNumber(this.formControl.value)
+        ? Number(this.formControl.value) * 2
+        : 0
+      ).toString()
+    );
   }
 }

@@ -4,7 +4,6 @@ import {
   map,
   Observable,
   ReplaySubject,
-  Subject,
   takeUntil,
 } from 'rxjs';
 import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
@@ -42,8 +41,8 @@ export class SelectionService implements OnDestroy {
     this.formGroup = this.formBuilder.group({});
     this.formGroup.valueChanges
       .pipe(takeUntil(this.destroyed$))
-      .subscribe((_) => {
-        const controls: { [key: string]: AbstractControl<any, any> } =
+      .subscribe(() => {
+        const controls: { [key: string]: AbstractControl<unknown, unknown> } =
           this.formGroup.controls;
         this.selection$.next(
           Object.keys(controls)
@@ -64,7 +63,7 @@ export class SelectionService implements OnDestroy {
   }
 
   toggle(selectAll: boolean): void {
-    const controls: { [key: string]: AbstractControl<any, any> } =
+    const controls: { [key: string]: AbstractControl<unknown, unknown> } =
       this.formGroup.controls;
     Object.keys(controls).forEach((key) => {
       controls[key].patchValue(selectAll);

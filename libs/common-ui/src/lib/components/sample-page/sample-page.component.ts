@@ -9,5 +9,5 @@ import { ReadmeComponent } from '../readme';
   standalone: true,
 })
 export class SamplePageComponent {
-  @Input() readmeImport?: Promise<any>;
+  @Input() readmeImport?: Promise<{ default: string }>;
 }

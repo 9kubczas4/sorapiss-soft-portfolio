@@ -28,6 +28,7 @@ describe('FeatureToggleService', () => {
   });
 
   it('should disable unknown flags', () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(service.isFlagEnabled('unknownFeature' as any)).toBe(false);
   });
 });

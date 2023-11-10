@@ -9,7 +9,7 @@ import { map } from 'rxjs';
 })
 export class NavigationComponent {
   tabs$ = this.activatedRoute.url.pipe(
-    map((_) =>
+    map(() =>
       this.activatedRoute.routeConfig?.children?.map((item) => ({
         label: item.data?.['label'],
         path: item.path,
