@@ -1,4 +1,3 @@
-import { ContextMenuModule } from '@sorapiss-soft-portfolio/common-ui';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

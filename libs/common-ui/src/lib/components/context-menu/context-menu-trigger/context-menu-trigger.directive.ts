@@ -13,6 +13,8 @@ import {
 } from '@angular/core';
 import { skip, Subscription, filter } from 'rxjs';
 
+export type ContextMenuData = { [key: string]: string | boolean | number };
+
 @Directive({
   selector: '[sspContextMenuTriggerFor]',
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property
@@ -22,7 +24,7 @@ import { skip, Subscription, filter } from 'rxjs';
 })
 export class ContextMenuTriggerDirective implements OnDestroy, OnInit {
   @Input('sspContextMenuTriggerFor') menu: ContextMenuComponent | null = null;
-  @Input() sspContextMenuTriggerData: any;
+  @Input() sspContextMenuTriggerData?: ContextMenuData;
 
   @Output() readonly menuOpened: EventEmitter<void> = new EventEmitter<void>();
   @Output() readonly menuClosed: EventEmitter<void> = new EventEmitter<void>();
@@ -52,7 +54,7 @@ export class ContextMenuTriggerDirective implements OnDestroy, OnInit {
     this.closingActionsSubscription.unsubscribe();
   }
 
-  handleClick(event: MouseEvent): void {
+  handleClick(): void {
     return this.menuOpen ? this.closeMenu() : this.openMenu();
   }
 
@@ -72,7 +74,7 @@ export class ContextMenuTriggerDirective implements OnDestroy, OnInit {
       this.menu.lazyContent.attach(this.sspContextMenuTriggerData);
     }
 
-    this.#initMenu(this.menu);
+    this.#initMenu();
 
     if (this.menu instanceof ContextMenuComponent) {
       this.menu.startAnimation();
@@ -88,7 +90,7 @@ export class ContextMenuTriggerDirective implements OnDestroy, OnInit {
     }
   }
 
-  #initMenu(menu: ContextMenuComponent): void {
+  #initMenu(): void {
     this.#setIsMenuOpen(true);
   }
 

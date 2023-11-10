@@ -18,10 +18,10 @@ export const MENU_CONTENT = new InjectionToken<ContextMenuContentDirective>(
 export class ContextMenuContentDirective {
   constructor(
     private readonly viewContainerRef: ViewContainerRef,
-    private readonly template: TemplateRef<any>
+    private readonly template: TemplateRef<unknown>
   ) {}
 
-  attach(context: any): void {
+  attach(context: unknown): void {
     this.viewContainerRef.createEmbeddedView(this.template, context);
   }
 

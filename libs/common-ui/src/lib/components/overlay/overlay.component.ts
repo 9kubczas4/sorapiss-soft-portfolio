@@ -18,7 +18,7 @@ import {
   imports: [CommonModule],
 })
 export class OverlayComponent {
-  @Input() content?: TemplateRef<any>;
+  @Input() content?: TemplateRef<unknown>;
   @Input() position?: Position;
   @Input() hasBackdrop = false;
   @Output() outsideClicked = new EventEmitter<void>();

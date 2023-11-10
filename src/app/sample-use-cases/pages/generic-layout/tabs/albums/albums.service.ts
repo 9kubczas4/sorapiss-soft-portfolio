@@ -24,10 +24,12 @@ export class AlbumsService extends FeatureServiceBase<Album> {
   }
 
   editItem(item: Partial<Album>): Observable<void> {
-    throw new Error('Method not implemented.');
+    alert(`Edit ${JSON.stringify(item)}`);
+    return of();
   }
 
   createItem(item: Partial<Album>): Observable<void> {
-    throw new Error('Method not implemented.');
+    alert(`Create ${JSON.stringify(item)}`);
+    return of();
   }
 }

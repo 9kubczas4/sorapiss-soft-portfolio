@@ -42,7 +42,7 @@ export class FeatureTableComponent implements OnInit {
 
   columns$ = this.router.events.pipe(
     filter((event) => event instanceof NavigationEnd),
-    map((_) => this.getColumns()),
+    map(() => this.getColumns()),
     startWith(this.getColumns())
   );
 

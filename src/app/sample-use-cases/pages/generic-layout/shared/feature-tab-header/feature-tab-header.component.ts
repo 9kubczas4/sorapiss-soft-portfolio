@@ -23,7 +23,7 @@ import { ActionsService } from '../../services/actions.service';
 export class FeatureTabHeaderComponent implements OnInit {
   actions$ = this.router.events.pipe(
     filter((event) => event instanceof NavigationEnd),
-    map((_) => this.getActions()),
+    map(() => this.getActions()),
     startWith(this.getActions())
   );
 
@@ -35,6 +35,7 @@ export class FeatureTabHeaderComponent implements OnInit {
     private readonly uiService: UiService,
     private readonly actionsService: ActionsService,
     private readonly urlService: UrlService,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     @Inject(FEATURE_SERVICE) private featureService: FeatureService<any>
   ) {
     console.log(this.activatedRoute);

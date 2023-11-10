@@ -17,7 +17,7 @@ import {
   imports: [CommonModule, MarkdownModule],
 })
 export class ReadmeComponent implements AfterViewInit {
-  @Input() readmeImport?: Promise<any>;
+  @Input() readmeImport?: Promise<{ default: string }>;
   readme?: string;
 
   constructor(private readonly cdRef: ChangeDetectorRef) {}

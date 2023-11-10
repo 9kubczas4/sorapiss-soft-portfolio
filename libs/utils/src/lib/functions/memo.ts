@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const memo = <T extends Function>(fnToMemoize: T) => {
   let prevArgs = [{}];

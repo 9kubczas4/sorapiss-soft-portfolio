@@ -30,7 +30,7 @@ describe('FeatureToggleGuard', () => {
     featureToggleService: FeatureToggleGuard<TestFeatureFlag>
   ) => {
     const spy = jest.spyOn(
-      (featureToggleService as any).featureToggle,
+      featureToggleService['featureToggle'],
       'isFlagEnabled'
     );
     spy.mockReturnValue(false);

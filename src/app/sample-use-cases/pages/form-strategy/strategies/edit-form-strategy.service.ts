@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable, of, Subject } from 'rxjs';

@@ -29,7 +29,7 @@ export class OverlayService implements OnDestroy {
   displayOverlay(
     viewContainerRef: ViewContainerRef,
     element: ElementRef<HTMLElement>,
-    templateRef: TemplateRef<any>,
+    templateRef: TemplateRef<unknown>,
     changeDetectorRef: ChangeDetectorRef
   ): void {
     this.#isDisplayed.next(true);

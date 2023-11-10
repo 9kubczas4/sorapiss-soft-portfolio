@@ -27,7 +27,7 @@ export class ContextMenuComponent {
   @ContentChildren(ContextMenuItemComponent, { descendants: false })
   items: QueryList<ContextMenuItemComponent> | null = null;
 
-  @ViewChild(TemplateRef) templateRef: TemplateRef<any> | null = null;
+  @ViewChild(TemplateRef) templateRef: TemplateRef<unknown> | null = null;
 
   @ContentChild(MENU_CONTENT) lazyContent?: ContextMenuContentDirective;
 
@@ -49,7 +49,7 @@ export class ContextMenuComponent {
     this.isAnimating = false;
   }
 
-  onAnimationStart(event: AnimationEvent) {
+  onAnimationStart() {
     this.isAnimating = true;
   }
 }

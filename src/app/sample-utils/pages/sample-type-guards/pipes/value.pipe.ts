@@ -4,7 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'value',
 })
 export class ValuePipe implements PipeTransform {
-  transform(value: any, ...args: unknown[]): string {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  transform(value: any): string {
     if (value === null) {
       return 'null';
     }
