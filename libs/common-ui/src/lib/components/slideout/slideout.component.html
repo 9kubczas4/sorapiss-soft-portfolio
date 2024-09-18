@@ -1,5 +1,5 @@
 <ssp-overlay
-  *ngIf="opened"
+  *ngIf="opened || transitionInProgress"
   [content]="slideoutContent"
   [hasBackdrop]="true"
   [position]="position | slideoutPosition"
@@ -7,11 +7,13 @@
 ></ssp-overlay>
 
 <ng-template #slideoutContent>
-  <section
+  <ng-container *ngIf="opened">
+    <section
     class="slideout-wrapper"
     [@slideInOut]
     [class.slideout-wrapper--large]="size === SlideoutSize.LARGE"
   >
-    <ng-content></ng-content>
-  </section>
+      <ng-content></ng-content>
+    </section>
+  </ng-container>
 </ng-template>
