@@ -1,5 +1,5 @@
 import { take, timer } from 'rxjs';
-import { ChangeDetectorRef, Component, DestroyRef, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, DestroyRef, EventEmitter, inject, Input, Output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SlideoutPosition, SlideoutSize } from './slideout.enum';
 import { SlideoutPositionPipe } from './slideout-position.pipe';
@@ -32,28 +32,26 @@ export class SlideoutComponent {
   @Output() openedChanged = new EventEmitter<boolean>();
   @Output() closed = new EventEmitter<void>();
 
-  protected transitionInProgress = false;
+  protected transitionInProgress = signal(false);
 
-  private readonly changeDetectorRef = inject(ChangeDetectorRef);
   private readonly destroyRef = inject(DestroyRef);
 
   position = SlideoutPosition.RIGHT;
   SlideoutSize = SlideoutSize;
 
   hide(): void {
-    if (this.transitionInProgress) {
+    if (this.transitionInProgress()) {
       return;
     }
 
-    this.transitionInProgress = true;
+    this.transitionInProgress.set(true);
     this.opened = !this.opened;
 
     timer(750).pipe(take(1), takeUntilDestroyed(this.destroyRef)).subscribe(() => {
       if (!this.opened) {
         this.closed.emit();
       }
-      this.transitionInProgress = false;
-      this.changeDetectorRef.markForCheck();
+      this.transitionInProgress.set(false);
     });
   }
 }

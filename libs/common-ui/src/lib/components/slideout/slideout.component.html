@@ -1,13 +1,14 @@
-<ssp-overlay
-  *ngIf="opened || transitionInProgress"
-  [content]="slideoutContent"
-  [hasBackdrop]="true"
-  [position]="position | slideoutPosition"
-  (outsideClicked)="hide()"
-></ssp-overlay>
+@if (opened || transitionInProgress()) {
+  <ssp-overlay
+    [content]="slideoutContent"
+    [hasBackdrop]="true"
+    [position]="position | slideoutPosition"
+    (outsideClicked)="hide()"
+  ></ssp-overlay>
+}
 
 <ng-template #slideoutContent>
-  <ng-container *ngIf="opened">
+  @if (opened) {
     <section
     class="slideout-wrapper"
     [@slideInOut]
@@ -15,5 +16,5 @@
   >
       <ng-content></ng-content>
     </section>
-  </ng-container>
+  }
 </ng-template>
