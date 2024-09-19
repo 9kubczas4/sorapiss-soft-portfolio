@@ -48,6 +48,7 @@ export class OverlayService implements OnDestroy {
     this.#hideOverlay$ = this.overlayRef.instance.outsideClicked.subscribe(
       () => {
         this.#isDisplayed.next(false);
+        this.overlayRef?.destroy();
       }
     );
 

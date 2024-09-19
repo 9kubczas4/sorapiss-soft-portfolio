@@ -3,7 +3,7 @@
   [class.overlay--backdrop]="hasBackdrop"
   (click)="outsideClicked.emit()"
 >
-  <ng-container *ngIf="content">
+  @if (content) {
     <div
       class="overlay__container"
       [style.top.px]="position?.top"
@@ -14,5 +14,5 @@
     >
       <ng-template *ngTemplateOutlet="content"></ng-template>
     </div>
-  </ng-container>
+  }
 </div>

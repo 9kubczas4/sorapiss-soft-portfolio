@@ -1,9 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { take, timer } from 'rxjs';
+import { Component, DestroyRef, EventEmitter, inject, Input, Output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SlideoutPosition, SlideoutSize } from './slideout.enum';
 import { SlideoutPositionPipe } from './slideout-position.pipe';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { OverlayComponent } from '../overlay/overlay.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'ssp-slideout',
@@ -30,13 +32,26 @@ export class SlideoutComponent {
   @Output() openedChanged = new EventEmitter<boolean>();
   @Output() closed = new EventEmitter<void>();
 
+  protected transitionInProgress = signal(false);
+
+  private readonly destroyRef = inject(DestroyRef);
+
   position = SlideoutPosition.RIGHT;
   SlideoutSize = SlideoutSize;
 
   hide(): void {
-    this.opened = !this.opened;
-    if (!this.opened) {
-      this.closed.emit();
+    if (this.transitionInProgress()) {
+      return;
     }
+
+    this.transitionInProgress.set(true);
+    this.opened = !this.opened;
+
+    timer(750).pipe(take(1), takeUntilDestroyed(this.destroyRef)).subscribe(() => {
+      if (!this.opened) {
+        this.closed.emit();
+      }
+      this.transitionInProgress.set(false);
+    });
   }
 }
